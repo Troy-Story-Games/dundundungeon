@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/prototype_textures/prototype.tres" type="Material" id=1]
 [ext_resource path="res://game/player/VRPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/characters/enemies/skeleton_king/SkeletonKing.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/objects/crate/Crate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/objects/torch/TorchWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/fx/environment/WorldEnvironment.tres" type="Environment" id=6]
 
 [node name="TestRoom" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 6 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0 )
@@ -56,3 +60,8 @@ transform = Transform( -1, 0.000114173, -6.87459e-05, 0.000114173, 1, 4.17847e-0
 
 [node name="TorchWall4" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.6, -2.6, 6.57671 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -6.9 )
+light_energy = 0.5
+omni_range = 19.0
