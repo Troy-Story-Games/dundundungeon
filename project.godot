@@ -118,11 +118,13 @@ _global_script_class_icons={
 
 config/name="dundundungeon"
 run/main_scene="res://game/TestRoom.tscn"
+boot_splash/image="res://logo.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/godot-openxr/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/godot-openxr/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg" )
 
 [gdnative]
 
@@ -131,6 +133,11 @@ singletons=[ "res://addons/godot-openxr/config/godot_openxr.gdnlib" ]
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
 
 [physics]
 
