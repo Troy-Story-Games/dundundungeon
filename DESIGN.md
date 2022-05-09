@@ -26,6 +26,28 @@ The room will consist of:
 
 The player will be able to pick up to 2 weapons (1 minimum) from the starting room to use on their run.
 
+### Settings Menu
+
+The settings menu will be the default menu in the starting room. Settings will be:
+
+* Movement type
+* Weapon hold or toggle (hold grip or toggle with grip)
+
+### Controls Menu
+
+This menu will display the 3D models of the quest controllers with arrows and text boxes off each button saying what they do. This will update based on the settings.
+
+### Default controls
+
+* Left controller grip, materialize left weapon (unless magic)
+* Right controller grip, materialize right weapon (unless magic)
+* Left thumb stick - glide or teleport movement
+* Right thumb stick - 45/90 degree rotation or dash movement?
+* Triggers - weapon specific
+    * Magic - requires both controllers, hold triggeres with hands close together to charge magic. Once fully charges, use trigger on the magic hand to fire.
+    * Sword - Trigger does nothing
+    * Bow and arrow - In the hand holding the arrow, grab the arrow by pulling trigger over either shoulder, draw the bow, release trigger to fire
+
 ## Weapons
 
 The following weapons will be available (all starting at level 1)
@@ -117,3 +139,4 @@ Here are some constraints we should stick to in order to avoid taking on more th
 * The "magic" option for this initial version should just be **one type of simple magic** that does generic splash damage. No slow/burn/freeze...just explode with some splash damage and be done.
 * No hands - Colored spheres for hands should be good enough for this version. Figuring out how to make hands that move around seems like a waste of time, especially given the art style and assets we picked don't have detailed human hands.
 * Procedural generation should be linear - Each room will have the entrance and the exit, not multiple exits. Eventually it'd be cool the have multiple exits.
+* Quest-only for now - Don't bother with other headsets
