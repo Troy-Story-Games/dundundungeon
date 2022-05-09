@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "CPUParticles",
+"class": "FireCPUParticles",
+"language": "GDScript",
+"path": "res://game/fx/fire/FireCPUParticles.gd"
+}, {
 "base": "MovementProvider",
 "class": "Function_ClimbMovement",
 "language": "GDScript",
@@ -95,6 +100,7 @@ _global_script_classes=[ {
 "path": "res://addons/godot-xr-tools/objects/Object_pickable.gd"
 } ]
 _global_script_class_icons={
+"FireCPUParticles": "",
 "Function_ClimbMovement": "",
 "Function_DirectMovement": "",
 "Function_Glide": "",

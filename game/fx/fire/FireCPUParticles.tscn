@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://game/fx/fire/FireCPUParticles.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=4]
 vertex_color_use_as_albedo = true
-params_cull_mode = 1
+params_diffuse_mode = 4
 
 [sub_resource type="CubeMesh" id=1]
 material = SubResource( 4 )
@@ -27,6 +29,8 @@ initial_velocity = 0.15
 initial_velocity_random = 1.0
 scale_amount_curve = SubResource( 3 )
 color_ramp = SubResource( 5 )
+script = ExtResource( 1 )
+LIGHT_RANGE = 5.0
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
