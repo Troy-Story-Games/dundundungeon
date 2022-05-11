@@ -143,7 +143,9 @@ common/drop_mouse_on_gui_input_disabled=true
 [layer_names]
 
 3d_physics/layer_1="world"
-3d_physics/layer_2="player"
+3d_physics/layer_2="character"
+3d_physics/layer_3="character_inner_collider"
+3d_physics/layer_4="player"
 
 [physics]
 

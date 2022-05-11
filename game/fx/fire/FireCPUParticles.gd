@@ -25,9 +25,9 @@ func _process(_delta):
     if value > MAX_VALUE:
         value = 0
     # Cause the torch light to flicker
-    var amnt = noise.get_noise_1d(value) + LIGHT_ENERGY
-    omniLight.light_energy = amnt
+    var amnt = noise.get_noise_1d(value)
+    omniLight.light_energy = LIGHT_ENERGY - (amnt * 2.0)
 
-    #if omniLight.light_energy < LIGHT_RANGE:
-    #    omniLight.light_energy = lerp(omniLight.light_energy, LIGHT_RANGE, 0.25)
-
+    omniLight.omni_range -= amnt
+    if omniLight.omni_range != LIGHT_RANGE:
+        omniLight.omni_range = lerp(omniLight.omni_range, LIGHT_RANGE, 0.85)
