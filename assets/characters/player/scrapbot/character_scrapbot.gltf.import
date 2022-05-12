@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/knightHeadA.gltf.glb-5e54c655c3aa9ca1bdc7ba0e893e7e18.scn"
+path="res://.import/character_scrapbot.gltf-babe86d90e977d88af16f0432450ff81.scn"
 
 [deps]
 
-source_file="res://assets/characters/player/knight/knightHeadA.gltf.glb"
-dest_files=[ "res://.import/knightHeadA.gltf.glb-5e54c655c3aa9ca1bdc7ba0e893e7e18.scn" ]
+source_file="res://assets/characters/player/scrapbot/character_scrapbot.gltf"
+dest_files=[ "res://.import/character_scrapbot.gltf-babe86d90e977d88af16f0432450ff81.scn" ]
 
 [params]
 
