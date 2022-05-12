@@ -331,6 +331,14 @@ script = ExtResource( 12 )
 
 [node name="Animations" parent="." instance=ExtResource( 9 )]
 
+[node name="Skeleton" parent="Animations" index="0"]
+bones/0/bound_children = [  ]
+bones/1/bound_children = [  ]
+bones/2/bound_children = [  ]
+bones/3/bound_children = [  ]
+bones/4/bound_children = [  ]
+bones/5/bound_children = [  ]
+
 [node name="character_skeletonKing_head" type="MeshInstance" parent="Animations/Skeleton/Head" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00705391, 0 )
 mesh = SubResource( 5 )
@@ -367,33 +375,39 @@ transform = Transform( -3.87132e-10, -2.53319e-07, -1, -0.471936, -0.881633, 2.5
 mesh = SubResource( 3 )
 skeleton = NodePath("../../Body/character_skeletonKing_body")
 
+[node name="HandSlotLeft" parent="Animations/Skeleton" index="5"]
+transform = Transform( -1, 2.92556e-08, 0, 0, 1.04171e-07, 1, -1.04757e-07, 1, -7.80337e-08, 0.4, 0.205887, -1.3956e-07 )
+
 [node name="shieldgltf" parent="Animations/Skeleton/HandSlotLeft" index="0" instance=ExtResource( 11 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="HandSlotRight" parent="Animations/Skeleton" index="6"]
+transform = Transform( -1, 1.0808e-07, 0, 0, -1.76167e-07, 1, 3.87132e-10, 1, 2.23518e-07, -0.4, 0.205887, 1.2314e-07 )
 
 [node name="swordgltf" parent="Animations/Skeleton/HandSlotRight" index="0" instance=ExtResource( 10 )]
 transform = Transform( 0.73038, -0.006236, 0.683013, 0.25, 0.933013, -0.258819, -0.635646, 0.359789, 0.683013, 0, 0, 0 )
 
 [node name="PhysicalBoneArmLeft" parent="Animations/Skeleton" index="8"]
 transform = Transform( -1.19209e-07, -0.881633, -0.471936, 2.5332e-07, -0.471936, 0.881633, -1, -1.19208e-07, 2.53319e-07, 0.27, 0.448743, -6.97797e-08 )
-joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22439e-13, 8.20938e-09, 0.275461 )
-body_offset = Transform( 1, -6.11067e-13, 1.22213e-12, 0, -2.98023e-08, -1, -3.55271e-15, 1, -2.98023e-08, -1.42109e-14, 0.275461, 0 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38097e-13, 8.20938e-09, 0.275461 )
+body_offset = Transform( 1, -6.39488e-13, 1.27898e-12, 0, -2.98023e-08, -1, -3.55271e-15, 1, -2.98023e-08, -1.42109e-14, 0.275461, 0 )
 
 [node name="PhysicalBoneArmRight" parent="Animations/Skeleton" index="9"]
-transform = Transform( -1.19209e-07, -0.881633, 0.471936, -2.23518e-07, 0.471936, 0.881633, -1, -1.19209e-07, -2.23517e-07, -0.27, 0.448743, 6.15697e-08 )
-joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54223e-13, 2.15929e-08, 0.275461 )
-body_offset = Transform( 1, -2.77112e-13, 0, 0, 2.98023e-08, -1, -8.32667e-17, 1, 2.98023e-08, 5.54223e-13, 0.275461, -2.98023e-08 )
+transform = Transform( -1.19209e-07, -0.881633, 0.471936, -2.23518e-07, 0.471936, 0.881633, -1, -1.19209e-07, -2.23517e-07, -0.27, 0.448743, 6.15696e-08 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82645e-13, 2.15929e-08, 0.275461 )
+body_offset = Transform( 1, -2.91323e-13, 0, 0, 2.98023e-08, -1, -8.32667e-17, 1, 2.98023e-08, 5.82645e-13, 0.275461, -2.98023e-08 )
 
 [node name="PhysicalBoneHandSlotLeft" parent="Animations/Skeleton" index="11"]
-transform = Transform( -1, 2.92556e-08, 4.54992e-21, 1.81839e-20, 1.04171e-07, 1, -1.04757e-07, 1, -7.80335e-08, 0.4, 0.205887, -1.3956e-07 )
-body_offset = Transform( 1, 0, 1.27055e-21, 1.98952e-13, 1, 1.98952e-13, -2.5411e-21, 1.98952e-13, 1, 0, 0, 0 )
+transform = Transform( -1, 2.92556e-08, 4.54215e-21, 1.88173e-20, 1.04171e-07, 1, -1.04757e-07, 1, -7.80335e-08, 0.4, 0.205887, -1.3956e-07 )
+body_offset = Transform( 1, 0, 1.69407e-21, 2.13163e-13, 1, 2.13163e-13, -3.38813e-21, 2.13163e-13, 1, 0, 0, 0 )
 
 [node name="CollisionShape" parent="Animations/Skeleton/PhysicalBoneHandSlotLeft" index="0"]
 transform = Transform( 1, 0, 0, 4.26326e-14, 1, 4.26326e-14, -2.5411e-21, 4.26326e-14, 1, -0.0405992, -0.0459702, 0 )
 shape = SubResource( 9 )
 
 [node name="PhysicalBoneHandSlotRight" parent="Animations/Skeleton" index="12"]
-transform = Transform( -1, 1.0808e-07, -4.74339e-20, -4.56066e-24, -1.76167e-07, 1, 3.87133e-10, 1, 2.23518e-07, -0.4, 0.205887, 1.2314e-07 )
-body_offset = Transform( 1, 1.98952e-13, 4.74338e-20, 7.77156e-16, 1, 0, 1.32349e-22, 0, 1, 0, 0, 0 )
+transform = Transform( -1, 1.0808e-07, -5.0822e-20, -7.72247e-24, -1.76167e-07, 1, 3.87133e-10, 1, 2.23518e-07, -0.4, 0.205887, 1.2314e-07 )
+body_offset = Transform( 1, 2.13163e-13, 5.0822e-20, 8.32667e-16, 1, 0, 1.38966e-22, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" parent="Animations/Skeleton/PhysicalBoneHandSlotRight" index="0"]
 transform = Transform( 1, -6.69908e-09, -3.74595e-08, -2.39956e-11, 0.938016, -0.346592, 1.34177e-10, 0.346592, 0.938016, 5.96046e-08, 0.520814, 0.197271 )

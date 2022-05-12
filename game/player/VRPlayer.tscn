@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/characters/player/knight/BrownDark.material" type="Material" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Teleport.tscn" type="PackedScene" id=9]
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Direct_movement.tscn" type="PackedScene" id=11]
 [ext_resource path="res://addons/godot-xr-tools/assets/PlayerBody.tscn" type="PackedScene" id=12]
-[ext_resource path="res://addons/godot-xr-tools/effects/vignette.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "knightHeadA_Cube3998"
@@ -129,9 +128,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.470908 )
 color_space = 0
 refresh_rate = 0.0
 
-[node name="Vignette" parent="FPController/ARVRCamera" index="0" instance=ExtResource( 13 )]
-
-[node name="character_knightHeadA" type="MeshInstance" parent="FPController/ARVRCamera" index="1"]
+[node name="character_knightHeadA" type="MeshInstance" parent="FPController/ARVRCamera" index="0"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.45852, 0.455803 )
 mesh = SubResource( 3 )
 skeleton = NodePath("../../../../../..")
@@ -142,7 +139,7 @@ mesh = SubResource( 4 )
 skeleton = NodePath("../../../../../../..")
 
 [node name="character_knightHelmetVisor" type="MeshInstance" parent="FPController/ARVRCamera/character_knightHeadA/character_knightHelmet"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.310447, 0.0497657 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.33067e-16, 0.310447, 0.0497657 )
 mesh = SubResource( 5 )
 
 [node name="LeftHandController" parent="FPController" index="2"]
@@ -173,6 +170,11 @@ mesh = SubResource( 2 )
 [node name="Function_Pickup" parent="FPController/RightHandController" index="1" instance=ExtResource( 8 )]
 
 [node name="Function_Direct_movement" parent="FPController/RightHandController" index="2" instance=ExtResource( 11 )]
+step_turn_delay = 0.1
+step_turn_angle = 45.0
+max_speed = 5.0
+move_type = 1
+canFly = false
 
 [node name="Hand" type="KinematicBody" parent="FPController/RightHandController" index="3"]
 collision_layer = 8
