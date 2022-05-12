@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/characters/player/scrapbot/Copper.material" type="Material" id=2]
@@ -116,6 +116,10 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 683
 }
+
+[sub_resource type="CapsuleShape" id=13]
+radius = 0.555185
+height = 1.03653
 
 [sub_resource type="CapsuleShape" id=9]
 radius = 0.118827
@@ -238,19 +242,26 @@ radius = 0.234
 [node name="FPController" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.470908 )
 
-[node name="character_scrapbot_head" type="MeshInstance" parent="FPController/ARVRCamera" index="0"]
+[node name="KinematicBody" type="KinematicBody" parent="FPController/ARVRCamera" index="0"]
+collision_layer = 8
+
+[node name="character_scrapbot_head" type="MeshInstance" parent="FPController/ARVRCamera/KinematicBody"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0194654, 0.0118374, 0.170908 )
 mesh = SubResource( 6 )
 skeleton = NodePath("../character_scrapbot_body")
 
-[node name="character_scrapbot_mouth" type="MeshInstance" parent="FPController/ARVRCamera/character_scrapbot_head"]
+[node name="character_scrapbot_mouth" type="MeshInstance" parent="FPController/ARVRCamera/KinematicBody/character_scrapbot_head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194654, 0.246841, 0.0808422 )
 mesh = SubResource( 7 )
 
-[node name="strawhat" type="MeshInstance" parent="FPController/ARVRCamera/character_scrapbot_head"]
+[node name="strawhat" type="MeshInstance" parent="FPController/ARVRCamera/KinematicBody/character_scrapbot_head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194654, 0.788163, 0 )
 mesh = SubResource( 8 )
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="FPController/ARVRCamera/KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.169772, 0.214848 )
+shape = SubResource( 13 )
 
 [node name="LeftHandController" parent="FPController" index="2"]
 visible = true
