@@ -66,9 +66,6 @@ omni_range = 512.0
 [node name="SkeletonKing" parent="." instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -3.7, 10.6037 )
 
-[node name="TestCamera" type="Camera" parent="."]
-transform = Transform( 0.739423, 0.350899, -0.574564, -0.00138044, 0.854218, 0.519914, 0.67324, -0.383643, 0.632112, -4.3, -0.1, -2.4 )
-
 [node name="Environment" type="Spatial" parent="."]
 
 [node name="FloorPieces" type="Spatial" parent="Environment"]

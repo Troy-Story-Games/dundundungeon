@@ -242,6 +242,9 @@ radius = 0.234
 [node name="FPController" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.470908 )
 
+[node name="ARVRCamera" parent="FPController" index="1"]
+current = true
+
 [node name="KinematicBody" type="KinematicBody" parent="FPController/ARVRCamera" index="0"]
 collision_layer = 8
 

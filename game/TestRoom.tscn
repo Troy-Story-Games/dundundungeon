@@ -7,7 +7,7 @@
 [ext_resource path="res://game/objects/torch/TorchWall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/fx/environment/WorldEnvironment.tres" type="Environment" id=6]
 
-[node name="TestRoom" type="Spatial"]
+[node name="TestRoom2" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
