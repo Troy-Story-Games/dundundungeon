@@ -34,5 +34,5 @@ LIGHT_RANGE = 5.0
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
-light_energy = 2.0
-omni_range = 8.0
+light_energy = 2.94335
+omni_range = 5.0833

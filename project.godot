@@ -123,7 +123,7 @@ _global_script_class_icons={
 [application]
 
 config/name="dundundungeon"
-run/main_scene="res://game/TestRoom.tscn"
+run/main_scene="res://game/levels/StartRoom.tscn"
 boot_splash/image="res://logo.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
