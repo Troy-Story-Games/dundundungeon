@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn"
+path="res://.import/arrow.gltf.glb-b3a0aaa775da818f95fb202edf4a2413.scn"
 
 [deps]
 
-source_file="res://assets/environment/doors/door.gltf.glb"
-dest_files=[ "res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn" ]
+source_file="res://assets/objects/weapons/arrow.gltf.glb"
+dest_files=[ "res://.import/arrow.gltf.glb-b3a0aaa775da818f95fb202edf4a2413.scn" ]
 
 [params]
 

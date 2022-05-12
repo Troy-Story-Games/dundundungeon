@@ -1,0 +1,279 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://game/rooms/Room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/prototype_textures/prototype.tres" type="Material" id=2]
+[ext_resource path="res://game/objects/weapons/StaffRare.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/objects/weapons/SpellBook.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/environment/door/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/objects/weapons/Arrow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/objects/torch/TorchWall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/characters/enemies/skeleton_king/SkeletonKing.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/environment/walls/wallCorner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/environment/walls/wall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/environment/walls/wall_door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/objects/weapons/Shield.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/objects/weapons/Hammer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/objects/weapons/Axe.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/objects/weapons/SwordRare.tscn" type="PackedScene" id=15]
+[ext_resource path="res://game/objects/weapons/Crossbow.tscn" type="PackedScene" id=16]
+[ext_resource path="res://game/environment/floor/tileBrickA_large.tscn" type="PackedScene" id=17]
+[ext_resource path="res://game/objects/target/TargetStand.tscn" type="PackedScene" id=18]
+[ext_resource path="res://game/objects/crate/Crate.tscn" type="PackedScene" id=19]
+[ext_resource path="res://game/objects/tables/TableLarge.tscn" type="PackedScene" id=20]
+
+[sub_resource type="ViewportTexture" id=5]
+viewport_path = NodePath("Mirror/Viewport")
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+albedo_texture = SubResource( 5 )
+
+[sub_resource type="PlaneMesh" id=4]
+material = SubResource( 2 )
+size = Vector2( 4, 4 )
+
+[node name="StartRoom" instance=ExtResource( 1 )]
+
+[node name="VRPlayer" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.63336, 0 )
+
+[node name="targetStand" parent="." index="3" instance=ExtResource( 18 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5297, -3.79298, 12.5583 )
+
+[node name="targetStand4" parent="." index="4" instance=ExtResource( 18 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 6.64175, -3.79298, 11.1747 )
+
+[node name="targetStand5" parent="." index="5" instance=ExtResource( 18 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6.1155, -3.79298, 11.1747 )
+
+[node name="targetStand2" parent="." index="6" instance=ExtResource( 18 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.31879, -3.79298, 12.5583 )
+
+[node name="Crate" parent="." index="7" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -3.14277, -8.41599 )
+
+[node name="tableLarge" parent="." index="8" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.34032, -3.85057, 0 )
+
+[node name="Crate2" parent="." index="9" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -3.14277, -8.41599 )
+
+[node name="Crate3" parent="." index="10" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -2.04277, -8.41599 )
+
+[node name="Crate4" parent="." index="11" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -2.04277, -8.41599 )
+
+[node name="SkeletonKing" parent="." index="12" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -3.7, 10.6037 )
+
+[node name="Environment" type="Spatial" parent="." index="13"]
+
+[node name="FloorPieces" type="Spatial" parent="Environment" index="0"]
+
+[node name="tileBrickA_large" parent="Environment/FloorPieces" index="0" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, -7.92752 )
+
+[node name="tileBrickA_large2" parent="Environment/FloorPieces" index="1" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, -7.92752 )
+
+[node name="tileBrickA_large3" parent="Environment/FloorPieces" index="2" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, -7.92752 )
+
+[node name="tileBrickA_large4" parent="Environment/FloorPieces" index="3" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, -2.10686 )
+
+[node name="tileBrickA_large5" parent="Environment/FloorPieces" index="4" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, -2.10686 )
+
+[node name="tileBrickA_large6" parent="Environment/FloorPieces" index="5" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, -2.10686 )
+
+[node name="tileBrickA_large7" parent="Environment/FloorPieces" index="6" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 3.76034 )
+
+[node name="tileBrickA_large8" parent="Environment/FloorPieces" index="7" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 3.76034 )
+
+[node name="tileBrickA_large9" parent="Environment/FloorPieces" index="8" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 3.76034 )
+
+[node name="tileBrickA_large10" parent="Environment/FloorPieces" index="9" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 9.57841 )
+
+[node name="tileBrickA_large11" parent="Environment/FloorPieces" index="10" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 9.57841 )
+
+[node name="tileBrickA_large12" parent="Environment/FloorPieces" index="11" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 9.57841 )
+
+[node name="tileBrickA_large13" parent="Environment/FloorPieces" index="12" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 15.5143 )
+
+[node name="tileBrickA_large14" parent="Environment/FloorPieces" index="13" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 15.5143 )
+
+[node name="tileBrickA_large15" parent="Environment/FloorPieces" index="14" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 15.5143 )
+
+[node name="WallPieces" type="Spatial" parent="Environment" index="1"]
+
+[node name="wallNorth" parent="Environment/WallPieces" index="0" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75816, -3.75, -10.0708 )
+
+[node name="wallSouth" parent="Environment/WallPieces" index="1" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75816, -3.75, 13.8586 )
+
+[node name="wallSouth2" parent="Environment/WallPieces" index="2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.757391, -3.75, 13.8586 )
+
+[node name="wallSouth3" parent="Environment/WallPieces" index="3" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21253, -3.75, 13.8586 )
+
+[node name="wallSouth4" parent="Environment/WallPieces" index="4" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.08677, -3.75, 13.8663 )
+
+[node name="wallNorth2" parent="Environment/WallPieces" index="5" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25502, -3.75, -10.0708 )
+
+[node name="wallCorner" parent="Environment/WallPieces" index="6" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.24891, -3.75, -10.0704 )
+
+[node name="wallCorner2" parent="Environment/WallPieces" index="7" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.74648, -3.75, -10.0704 )
+
+[node name="wallCorner3" parent="Environment/WallPieces" index="8" instance=ExtResource( 9 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.74648, -3.75, 13.8642 )
+
+[node name="wallCorner4" parent="Environment/WallPieces" index="9" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.23705, -3.75, 13.8642 )
+
+[node name="wall_door" parent="Environment/WallPieces" index="10" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234, -3.75, -10.0875 )
+
+[node name="wallEast" parent="Environment/WallPieces" index="11" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, -6.06905 )
+
+[node name="wallEast2" parent="Environment/WallPieces" index="12" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, -2.07345 )
+
+[node name="wallEast3" parent="Environment/WallPieces" index="13" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, 1.92105 )
+
+[node name="wallEast4" parent="Environment/WallPieces" index="14" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, 5.91345 )
+
+[node name="wallEast5" parent="Environment/WallPieces" index="15" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, 9.89424 )
+
+[node name="wallWest1" parent="Environment/WallPieces" index="16" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, -6.06905 )
+
+[node name="wallWest2" parent="Environment/WallPieces" index="17" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, -2.07345 )
+
+[node name="wallWest3" parent="Environment/WallPieces" index="18" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, 1.92105 )
+
+[node name="wallWest4" parent="Environment/WallPieces" index="19" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, 5.91345 )
+
+[node name="wallWest5" parent="Environment/WallPieces" index="20" instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, 9.89424 )
+
+[node name="DecorationPieces" type="Spatial" parent="Environment" index="2"]
+
+[node name="TorchWall" parent="Environment/DecorationPieces" index="0" instance=ExtResource( 7 )]
+transform = Transform( 1, -0.000114173, 6.86585e-05, 0.000114173, 1, 4.17847e-05, -6.86585e-05, -4.17847e-05, 1, -4.6, -2.6, -9.39645 )
+
+[node name="TorchWall2" parent="Environment/DecorationPieces" index="1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2.6, -9.39645 )
+
+[node name="TorchWall3" parent="Environment/DecorationPieces" index="2" instance=ExtResource( 7 )]
+transform = Transform( -1, 0.000114173, -6.87459e-05, 0.000114173, 1, 4.17847e-05, 6.87459e-05, 4.17847e-05, -1, 4, -2.6, 13.2072 )
+
+[node name="TorchWall4" parent="Environment/DecorationPieces" index="3" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.6, -2.6, 13.2072 )
+
+[node name="TorchWall5" parent="Environment/DecorationPieces" index="4" instance=ExtResource( 7 )]
+transform = Transform( -3.94467e-08, 3.49066e-05, -1, 0.000122173, 1, 3.49066e-05, 1, -0.000122173, -4.37114e-08, 8.51362, -2.6, 4.54851 )
+
+[node name="TorchWall8" parent="Environment/DecorationPieces" index="5" instance=ExtResource( 7 )]
+transform = Transform( -3.94467e-08, 3.49066e-05, -1, 0.000122173, 1, 3.49066e-05, 1, -0.000122173, -4.37114e-08, 8.51362, -2.6, -4.83285 )
+
+[node name="TorchWall6" parent="Environment/DecorationPieces" index="6" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.02153, -2.6, 4.58056 )
+
+[node name="TorchWall7" parent="Environment/DecorationPieces" index="7" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.02153, -2.6, -3.90606 )
+
+[node name="OmniLight" type="OmniLight" parent="Environment/DecorationPieces" index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.37185, 0 )
+omni_range = 10.3995
+
+[node name="shield" parent="." index="14" instance=ExtResource( 12 )]
+transform = Transform( 4.37114e-08, 1, 4.37114e-08, -8.74228e-08, -4.37114e-08, 1, 1, -4.37114e-08, 8.74228e-08, 4.74544, -2.86753, 0.390311 )
+
+[node name="hammer" parent="." index="15" instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 3.90261, -2.91392, 1.1923 )
+
+[node name="axe" parent="." index="16" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 3.88416, -2.92325, -1.09918 )
+
+[node name="sword_rare" parent="." index="17" instance=ExtResource( 15 )]
+transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 3.8436, -3.05431, 0.606287 )
+
+[node name="arrow" parent="." index="18" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00786, -2.94284, -1.0312 )
+
+[node name="crossbow" parent="." index="19" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05188, -2.9977, 1.6457 )
+
+[node name="staff" parent="." index="20" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14276, -3.08375, -1.64758 )
+
+[node name="spellBook" parent="." index="21" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72628, -2.96648, -0.393639 )
+
+[node name="door" parent="." index="22" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772459, -3.40948, -10.0196 )
+
+[node name="CSGBox" type="CSGBox" parent="." index="23"]
+transform = Transform( 1.10035, 0, 0, 0, 1, 0, 0, 0, 1.18251, 0.315884, -2.73583, 1.92153 )
+visible = false
+use_collision = true
+collision_mask = 0
+width = 16.4737
+height = 7.60384
+depth = 19.0277
+material = ExtResource( 2 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="CSGBox" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.862315, 0, 0, 0 )
+operation = 2
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox/CSGCombiner" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.21107, 0 )
+width = 15.0
+height = 8.4
+depth = 21.8
+material = ExtResource( 2 )
+
+[node name="TestCamera" type="Camera" parent="." index="24"]
+transform = Transform( 0.623961, 0, -0.781455, 0, 1, 0, 0.781455, 0, 0.623961, -5.26111, 0, -1.69227 )
+current = true
+
+[node name="Mirror" type="Spatial" parent="." index="25"]
+transform = Transform( -0.700822, 0, 0.713336, 0, 1, 0, -0.713336, 0, -0.700822, 8.02011, -1.8097, -8.58615 )
+
+[node name="Viewport" type="Viewport" parent="Mirror" index="0"]
+size = Vector2( 800, 800 )
+
+[node name="Camera" type="Camera" parent="Mirror/Viewport" index="0"]
+transform = Transform( -0.680516, 0, 0.732733, 0, 1, 0, -0.732733, 0, -0.680516, 6.55148, -1.63317, -7.49914 )
+current = true
+fov = 90.0
+
+[node name="MeshInstance" type="MeshInstance" parent="Mirror" index="1"]
+transform = Transform( 1, 0, -1.77636e-15, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.256797, 0.141257, -1.54879 )
+mesh = SubResource( 4 )

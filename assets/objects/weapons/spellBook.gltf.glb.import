@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn"
+path="res://.import/spellBook.gltf.glb-51683ccdd89133abfac991fea82310ee.scn"
 
 [deps]
 
-source_file="res://assets/environment/doors/door.gltf.glb"
-dest_files=[ "res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn" ]
+source_file="res://assets/objects/weapons/spellBook.gltf.glb"
+dest_files=[ "res://.import/spellBook.gltf.glb-51683ccdd89133abfac991fea82310ee.scn" ]
 
 [params]
 

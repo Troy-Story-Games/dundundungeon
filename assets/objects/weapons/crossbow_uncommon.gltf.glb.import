@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn"
+path="res://.import/crossbow_uncommon.gltf.glb-a54d1bb08bacea2b34d1e7d43fd9b30d.scn"
 
 [deps]
 
-source_file="res://assets/environment/doors/door.gltf.glb"
-dest_files=[ "res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn" ]
+source_file="res://assets/objects/weapons/crossbow_uncommon.gltf.glb"
+dest_files=[ "res://.import/crossbow_uncommon.gltf.glb-a54d1bb08bacea2b34d1e7d43fd9b30d.scn" ]
 
 [params]
 
