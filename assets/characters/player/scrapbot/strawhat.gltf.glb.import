@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/character_knight.gltf-95952a7613e7be086fb34cf830b9561c.scn"
+path="res://.import/strawhat.gltf.glb-b174f3004d65f5b3ec5f4f10596b5484.scn"
 
 [deps]
 
-source_file="res://assets/characters/player/knight/character_knight.gltf"
-dest_files=[ "res://.import/character_knight.gltf-95952a7613e7be086fb34cf830b9561c.scn" ]
+source_file="res://assets/characters/player/scrapbot/strawhat.gltf.glb"
+dest_files=[ "res://.import/strawhat.gltf.glb-b174f3004d65f5b3ec5f4f10596b5484.scn" ]
 
 [params]
 
