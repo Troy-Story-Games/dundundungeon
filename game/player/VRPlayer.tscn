@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/characters/player/scrapbot/Copper.material" type="Material" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/characters/player/scrapbot/Yellow.material" type="Material" id=9]
 [ext_resource path="res://assets/characters/player/scrapbot/Robot.material" type="Material" id=10]
 [ext_resource path="res://game/player/controller.gd" type="Script" id=11]
+[ext_resource path="res://game/player/VRPlayer.gd" type="Script" id=12]
 
 [sub_resource type="ArrayMesh" id=6]
 resource_name = "character_scrapbot_Cube524"
@@ -120,6 +121,9 @@ surfaces/0 = {
 [sub_resource type="CapsuleShape" id=13]
 radius = 0.555185
 height = 1.03653
+
+[sub_resource type="SphereShape" id=14]
+radius = 3.28202
 
 [sub_resource type="CapsuleShape" id=9]
 radius = 0.118827
@@ -238,10 +242,10 @@ surfaces/2 = {
 radius = 0.234
 
 [node name="VRPlayer" type="Spatial"]
+script = ExtResource( 12 )
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.470908 )
-auto_initialise = false
 
 [node name="Configuration" parent="FPController" index="0"]
 color_space = 0
@@ -270,6 +274,11 @@ skeleton = NodePath("../../../../..")
 [node name="CollisionShape" type="CollisionShape" parent="FPController/ARVRCamera/KinematicBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.169772, 0.214848 )
 shape = SubResource( 13 )
+
+[node name="SleepArea" type="Area" parent="FPController/ARVRCamera" index="1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="FPController/ARVRCamera/SleepArea"]
+shape = SubResource( 14 )
 
 [node name="LeftHandController" parent="FPController" index="2"]
 visible = true
@@ -326,5 +335,8 @@ skeleton = NodePath("../character_scrapbot_body")
 shape = SubResource( 12 )
 
 [node name="GrabPosition" type="Position3D" parent="FPController/RightHandController" index="2"]
+
+[connection signal="body_entered" from="FPController/ARVRCamera/SleepArea" to="." method="_on_SleepArea_body_entered"]
+[connection signal="body_exited" from="FPController/ARVRCamera/SleepArea" to="." method="_on_SleepArea_body_exited"]
 
 [editable path="FPController"]
