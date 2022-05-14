@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/overlap/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/player/weapons/Weapon.gd" type="Script" id=2]
+
+[node name="Weapon" type="KinematicBody"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource( 1 )]
+collision_mask = 32
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[editable path="Hitbox"]

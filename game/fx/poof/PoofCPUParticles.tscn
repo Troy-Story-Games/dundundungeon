@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id=1]
+material = SubResource( 3 )
+radius = 0.1
+height = 0.2
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0.255682 ), 0.0, 0.579545, 0, 0, Vector2( 0.230392, 1 ), -0.0534968, -0.0534968, 0, 0, Vector2( 1, 0.345455 ), -1.45714, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=4]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[node name="PoofCPUParticles" type="CPUParticles"]
+emitting = false
+amount = 400
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+mesh = SubResource( 1 )
+emission_shape = 2
+emission_box_extents = Vector3( 0.5, 0.5, 0.5 )
+direction = Vector3( 1, 1, 1 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.0
+initial_velocity_random = 0.5
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="queue_free"]

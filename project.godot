@@ -9,19 +9,79 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Weapon",
+"class": "Bow",
+"language": "GDScript",
+"path": "res://game/player/weapons/bow/Bow.gd"
+}, {
+"base": "Weapon",
+"class": "Crossbow",
+"language": "GDScript",
+"path": "res://game/player/weapons/crossbow/Crossbow.gd"
+}, {
+"base": "Projectile",
+"class": "CrossbowBolt",
+"language": "GDScript",
+"path": "res://game/projectiles/CrossbowBolt.gd"
+}, {
+"base": "Spatial",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://game/characters/enemies/Enemy.gd"
+}, {
+"base": "Spatial",
+"class": "EnemySpawner",
+"language": "GDScript",
+"path": "res://game/characters/enemies/EnemySpawner.gd"
+}, {
 "base": "CPUParticles",
 "class": "FireCPUParticles",
 "language": "GDScript",
 "path": "res://game/fx/fire/FireCPUParticles.gd"
 }, {
+"base": "Area",
+"class": "Hitbox",
+"language": "GDScript",
+"path": "res://game/overlap/Hitbox.gd"
+}, {
+"base": "Area",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://game/overlap/Hurtbox.gd"
+}, {
+"base": "Area",
+"class": "PickupArea",
+"language": "GDScript",
+"path": "res://game/player/PickupArea.gd"
+}, {
+"base": "KinematicBody",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://game/projectiles/Projectile.gd"
+}, {
 "base": "Spatial",
 "class": "VRPlayer",
 "language": "GDScript",
 "path": "res://game/player/VRPlayer.gd"
+}, {
+"base": "KinematicBody",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://game/player/weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
+"Bow": "",
+"Crossbow": "",
+"CrossbowBolt": "",
+"Enemy": "",
+"EnemySpawner": "",
 "FireCPUParticles": "",
-"VRPlayer": ""
+"Hitbox": "",
+"Hurtbox": "",
+"PickupArea": "",
+"Projectile": "",
+"VRPlayer": "",
+"Weapon": ""
 }
 
 [application]
@@ -31,6 +91,10 @@ run/main_scene="res://game/rooms/StartRoom.tscn"
 boot_splash/image="res://logo.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
+
+[autoload]
+
+Utils="*res://utils/Utils.gd"
 
 [editor_plugins]
 
@@ -47,12 +111,15 @@ common/drop_mouse_on_gui_input_disabled=true
 [layer_names]
 
 3d_physics/layer_1="world"
-3d_physics/layer_2="character"
-3d_physics/layer_3="character_inner_collider"
-3d_physics/layer_4="player"
+3d_physics/layer_2="player"
+3d_physics/layer_3="player_hurtbox"
+3d_physics/layer_4="enemy_hurtbox"
+3d_physics/layer_5="projectile"
+3d_physics/layer_16="enemy_inner_collider"
 
 [physics]
 
+common/physics_fps=90
 common/enable_pause_aware_picking=true
 
 [rendering]

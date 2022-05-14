@@ -19,6 +19,8 @@ export(float) var DIRECTIONAL_MOVEMENT_SPEED = 3.0
 export(float) var CONTROLLER_DEADZONE = 0.65
 export(MovementType) var MOVEMENT_TYPE = MovementType.TELEPORT
 export(Buttons) var PICKUP_BUTTON = Buttons.VR_TRIGGER
+export(Buttons) var WEAPON_BUTTON = Buttons.VR_GRIP
+export(bool) var WEAPON_TOGGLE = false
 
 var origin_node: ARVROrigin = null
 var vr_camera: ARVRCamera = null
@@ -29,10 +31,11 @@ var joystick_vector := Vector2.ZERO
 var joystick_x_axis := JOY_ANALOG_LX
 var joystick_y_axis := JOY_ANALOG_LY
 var just_rotated := false
-var pickup_area: Area = null
+var pickup_area: PickupArea = null
 var grab_position: Position3D = null
 var held_object: Node = null
 var held_object_data := {"mode": RigidBody.MODE_RIGID, "layer": 1, "mask": 1}
+var weapon_visible: bool = false
 
 
 func _ready():
@@ -159,6 +162,13 @@ func handle_pickup():
     if not rigid_body:
         return
 
+    if rigid_body.has_method("interact"):
+        # warning-ignore:unsafe_method_access
+        rigid_body.interact(self)
+
+    if "NO_PICKUP" in rigid_body:
+        return
+
     # Assign held object to it.
     held_object = rigid_body
     grab_position.global_transform = held_object.global_transform
@@ -171,14 +181,14 @@ func handle_pickup():
     # Set it to static, TODO - do we make it collide or not?
     held_object.mode = RigidBody.MODE_STATIC
 
+    # If the RigidBody has a variable called controller, then assign it to this controller.
+    if "controller" in held_object:
+        held_object.controller = self
+
     # If the RigidBody has a function called picked_up, then call it.
     if held_object.has_method("picked_up"):
         # warning-ignore:unsafe_method_access
         held_object.picked_up()
-
-    # If the RigidBody has a variable called controller, then assign it to this controller.
-    if "controller" in held_object:
-        held_object.controller = self
 
 
 func handle_drop():
@@ -209,12 +219,56 @@ func handle_drop():
     held_object = null
 
 
+func get_weapon() -> Weapon:
+    var weapon: Weapon = null
+    for child in get_children():
+        if child is Weapon:
+            weapon = child
+            break
+    return weapon
+
+
+func weapon_appear():
+    var weapon = get_weapon()
+    if not weapon:
+        return
+    weapon.appear()
+    weapon_visible = true
+    pickup_area.disabled = true
+
+
+func weapon_dissolve():
+    var weapon = get_weapon()
+    if not weapon:
+        return
+    weapon.dissolve()
+    weapon_visible = false
+    pickup_area.disabled = false
+
+
+func trigger_weapon():
+    var weapon = get_weapon()
+    weapon.trigger()
+
+
 func _on_button_pressed(button: int):
     if button == PICKUP_BUTTON:
-        handle_pickup()
+        if weapon_visible:
+            trigger_weapon()
+        else:
+            handle_pickup()
+    if button == WEAPON_BUTTON:
+        if weapon_visible and WEAPON_TOGGLE:
+            weapon_dissolve()
+        else:
+            weapon_appear()
 
 
 func _on_button_release(button: int):
     if button == PICKUP_BUTTON:
-        handle_drop()
+        if not weapon_visible:
+            handle_drop()
+    if button == WEAPON_BUTTON:
+        if weapon_visible and not WEAPON_TOGGLE:
+            weapon_dissolve()
 

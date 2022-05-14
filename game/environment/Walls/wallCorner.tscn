@@ -30,7 +30,7 @@ surfaces/1 = {
 "vertex_count": 422
 }
 
-[node name="wallCorner" type="Spatial"]
+[node name="WallCorner" type="Spatial"]
 
 [node name="wallCorner" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )

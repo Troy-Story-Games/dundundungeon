@@ -43,9 +43,8 @@ surfaces/2 = {
 "vertex_count": 210
 }
 
-[sub_resource type="CylinderShape" id=2]
-height = 1.16602
-radius = 0.127647
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.0729861
 
 [node name="StaffRare" type="RigidBody"]
 
@@ -53,5 +52,5 @@ radius = 0.127647
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125926, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.125926, 0 )
 shape = SubResource( 2 )
