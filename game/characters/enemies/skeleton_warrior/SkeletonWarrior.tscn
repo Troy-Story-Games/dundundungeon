@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/characters/enemies/skeleton_warrior/Black.material" type="Material" id=1]
 [ext_resource path="res://assets/characters/enemies/skeleton_warrior/BrownDark.material" type="Material" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://assets/characters/enemies/skeleton_warrior/Stone2.material" type="Material" id=9]
 [ext_resource path="res://assets/characters/enemies/skeleton_warrior/White.material" type="Material" id=10]
 [ext_resource path="res://game/characters/enemies/Enemy.tscn" type="PackedScene" id=11]
+
+[sub_resource type="CapsuleShape" id=10]
+radius = 0.533954
+height = 0.884712
 
 [sub_resource type="ArrayMesh" id=4]
 resource_name = "character_skeleton_warrior_Cube7633"
@@ -332,6 +336,18 @@ extents = Vector3( 0.0457547, 0.630293, 0.106219 )
 
 [node name="SkeletonWarrior" instance=ExtResource( 11 )]
 
+[node name="CollisionShape" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.860341, 0 )
+shape = SubResource( 10 )
+
+[node name="Skeleton" parent="Animations" index="0"]
+bones/0/bound_children = [  ]
+bones/1/bound_children = [  ]
+bones/2/bound_children = [  ]
+bones/3/bound_children = [  ]
+bones/4/bound_children = [  ]
+bones/5/bound_children = [  ]
+
 [node name="character_skeleton_warrior_head" type="MeshInstance" parent="Animations/Skeleton/Head" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00706196, 0 )
 mesh = SubResource( 4 )
@@ -376,15 +392,15 @@ weight = 196.0
 
 [node name="PhysicalBoneArmLeft" parent="Animations/Skeleton" index="8"]
 transform = Transform( -1.19209e-07, -0.881633, -0.471936, 2.5332e-07, -0.471936, 0.881633, -1, -1.19208e-07, 2.53318e-07, 0.27, 0.448743, -6.97797e-08 )
-joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45664e-13, -1.64187e-08, 0.275461 )
-body_offset = Transform( 1, -7.67386e-13, 1.87583e-12, 0, 5.96047e-08, -1, -3.55271e-15, 1, 5.96046e-08, -7.10543e-14, 0.275461, 0 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69152e-13, -1.64187e-08, 0.275461 )
+body_offset = Transform( 1, -7.88702e-13, 1.9611e-12, 0, 5.96047e-08, -1, -3.55271e-15, 1, 5.96046e-08, -7.10543e-14, 0.275461, 0 )
 mass = 3.0
 weight = 29.4
 
 [node name="PhysicalBoneArmRight" parent="Animations/Skeleton" index="9"]
 transform = Transform( -1.19209e-07, -0.881633, 0.471936, -2.23518e-07, 0.471936, 0.881633, -1, -1.19208e-07, -2.23517e-07, -0.27, 0.448743, 6.15695e-08 )
-joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.72845e-13, -6.7814e-08, 0.275461 )
-body_offset = Transform( 1, -5.04485e-13, -8.52651e-14, -1.42109e-13, 2.98023e-08, -1, -1.77719e-13, 1, 2.98023e-08, 6.96332e-13, 0.275461, 5.96046e-08 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01266e-13, -6.7814e-08, 0.275461 )
+body_offset = Transform( 1, -5.25802e-13, -8.52651e-14, -1.42109e-13, 2.98023e-08, -1, -1.77719e-13, 1, 2.98023e-08, 7.24754e-13, 0.275461, 5.96046e-08 )
 mass = 3.0
 weight = 29.4
 
@@ -394,11 +410,11 @@ weight = 78.4
 
 [node name="PhysicalBoneHandSlotLeft" parent="Animations/Skeleton" index="11"]
 transform = Transform( -1, 2.92556e-08, -3.53914e-15, 1.29717e-15, 1.04171e-07, 1, -1.04756e-07, 1, -7.80334e-08, 0.4, 0.205887, -1.3956e-07 )
-body_offset = Transform( 1, 0, 3.53915e-15, 3.69482e-13, 1, 3.48166e-13, 1.29713e-15, 3.90799e-13, 1, 0, 0, 0 )
+body_offset = Transform( 1, 0, 3.53915e-15, 3.90799e-13, 1, 3.69482e-13, 1.29713e-15, 4.12115e-13, 1, 0, 0, 0 )
 
 [node name="PhysicalBoneHandSlotRight" parent="Animations/Skeleton" index="12"]
-transform = Transform( -1, 1.08079e-07, 3.79506e-16, 5.66678e-17, -1.76167e-07, 1, 3.87134e-10, 1, 2.23518e-07, -0.4, 0.205887, 1.2314e-07 )
-body_offset = Transform( 1, 3.69482e-13, -3.79501e-16, 1.44329e-15, 1, 4.26326e-14, 5.6668e-17, -4.26326e-14, 1, 0, 0, 0 )
+transform = Transform( -1, 1.08079e-07, 3.79501e-16, 5.66678e-17, -1.76167e-07, 1, 3.87134e-10, 1, 2.23518e-07, -0.4, 0.205887, 1.2314e-07 )
+body_offset = Transform( 1, 3.90799e-13, -3.79496e-16, 1.52656e-15, 1, 4.26326e-14, 5.6668e-17, -4.26326e-14, 1, 0, 0, 0 )
 mass = 4.0
 weight = 39.2
 
@@ -406,10 +422,10 @@ weight = 39.2
 transform = Transform( 1, 4.26326e-14, -3.79571e-16, 1.66533e-16, 1, 8.52651e-14, 5.66679e-17, -8.52651e-14, 1, -0.00480282, 0.45754, 4.47035e-08 )
 shape = SubResource( 9 )
 
-[node name="HeadHurtbox" parent="." index="1"]
+[node name="HeadHurtbox" parent="." index="2"]
 collision_layer = 8
 
-[node name="BodyHurtbox" parent="." index="2"]
+[node name="BodyHurtbox" parent="." index="3"]
 collision_layer = 8
 
 [editable path="Animations"]

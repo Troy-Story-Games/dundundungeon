@@ -23,7 +23,7 @@ func load_enemy_dir(path: String):
     var check = dir.get_next()
     while check != "":
         if check.ends_with(".tscn"):
-            var asset_path = path + check
+            var asset_path = path + "/" + check
             enemies.append(load(asset_path))
         check = dir.get_next()
 
@@ -33,14 +33,15 @@ func load_enemies():
     if len(enemies) > 0:
         return
 
-    var base = "res://game/characters/enemies"
+    var base = "res://game/characters/enemies/"
     var dir = Directory.new()
     dir.open(base)
     dir.list_dir_begin(true, true)
     var check = dir.get_next()
     while check != "":
+        var full_path = base + check
         if dir.current_is_dir():
-            load_enemy_dir(base + check)
+            load_enemy_dir(full_path)
         check = dir.get_next()
 
 

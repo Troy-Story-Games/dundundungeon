@@ -1,14 +1,19 @@
-extends Spatial
+extends KinematicBody
 class_name Enemy
 
 const PoofParticles = preload("res://game/fx/poof/PoofCPUParticles.tscn")
 
 export(int) var MAX_HEALTH = 1
+export(float) var SPEED = 1.0
 
+var speed: float = 0.0
+var velocity: Vector3 = Vector3.ZERO
+var direction: Vector3 = Vector3.ZERO
 var ragdoll: bool = false
 var health: int setget set_health
 var meshes: Array = []
 var deferred_impulses: Array = []
+var player_camera: ARVRCamera = null setget set_player_camera,get_player_camera
 
 onready var bodyBones = $Animations/Skeleton/PhysicalBoneBody
 onready var characterAnimationPlayer = $Animations/AnimationPlayer
@@ -18,24 +23,39 @@ onready var deathTimer = $DeathTimer
 
 func _ready():
     self.health = MAX_HEALTH
+    speed = SPEED
 
 
-func _process(delta):
+func set_player_camera(value: ARVRCamera):
+    player_camera = value
+
+
+func get_player_camera():
+    if player_camera:
+        return player_camera
+    player_camera = get_tree().current_scene.find_node("ARVRCamera")
+    return player_camera
+
+
+func _process(_delta):
     if ragdoll:
         return
     if not characterAnimationPlayer.is_playing():
         characterAnimationPlayer.play("Dance")
 
-    var player: VRPlayer = get_tree().current_scene.find_node("VRPlayer")
-    var direction = global_transform.origin.direction_to(player.global_transform.origin).normalized()
-    global_transform.origin = global_transform.origin + ((direction) * delta)
 
-
-func _physics_process(_delta):
+func _physics_process(delta):
     if ragdoll and len(deferred_impulses) > 0:
         for impulse in deferred_impulses:
             impulse[0].apply_impulse(impulse[1], impulse[2])
         deferred_impulses.clear()
+
+    if not self.player_camera:
+        return
+
+    direction = global_transform.origin.direction_to(player_camera.global_transform.origin).normalized()
+    velocity = (direction * speed) * delta
+    move_and_collide(velocity, false)
 
 
 func set_health(value: int):

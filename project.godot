@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game/projectiles/CrossbowBolt.gd"
 }, {
-"base": "Spatial",
+"base": "KinematicBody",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://game/characters/enemies/Enemy.gd"
@@ -115,6 +115,7 @@ common/drop_mouse_on_gui_input_disabled=true
 3d_physics/layer_3="player_hurtbox"
 3d_physics/layer_4="enemy_hurtbox"
 3d_physics/layer_5="projectile"
+3d_physics/layer_6="enemy"
 3d_physics/layer_16="enemy_inner_collider"
 
 [physics]
