@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://game/rooms/Room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/prototype_textures/prototype.tres" type="Material" id=2]
 [ext_resource path="res://game/objects/weapons/StaffRare.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/objects/weapons/SpellBook.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/environment/door/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/environment/door/Door2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/objects/weapons/Arrow.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/objects/torch/TorchWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/characters/enemies/skeleton_warrior/SkeletonWarrior.tscn" type="PackedScene" id=8]
@@ -23,34 +22,21 @@
 [ext_resource path="res://game/objects/target/HangingTarget.tscn" type="PackedScene" id=21]
 [ext_resource path="res://game/characters/enemies/EnemySpawner.tscn" type="PackedScene" id=22]
 
-[sub_resource type="GIProbeData" id=7]
+[sub_resource type="GIProbeData" id=1]
 bounds = AABB( -10.1415, -3.69411, -14.1477, 20.283, 7.38822, 28.2954 )
 cell_size = 0.442116
 to_cell_xform = Transform( 2.26185, 0, 0, 0, 2.26185, 0, 0, 0, 2.26185, 22.9386, 8.35553, 32 )
-dynamic_data = PoolIntArray( 0, 7, 64, 32, 64, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 7, 64, 32, 64, 1, 0, 0, 0, 1094713344, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
 propagation = 0.7
 
-[sub_resource type="ViewportTexture" id=6]
-viewport_path = NodePath("Viewport")
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 9.11927, 0.554472, 15.4993 )
 
-[sub_resource type="SpatialMaterial" id=2]
-resource_local_to_scene = true
-albedo_texture = SubResource( 6 )
-
-[sub_resource type="PlaneMesh" id=3]
-material = SubResource( 2 )
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0, 0, 0, 1 )
-metallic = 1.0
-roughness = 0.41
-
-[sub_resource type="CubeMesh" id=5]
-material = SubResource( 4 )
-size = Vector3( 2.1, 0.1, 2.1 )
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.678689, 2.07103, 11.8018 )
 
 [node name="StartRoom" instance=ExtResource( 1 )]
 
@@ -58,55 +44,102 @@ size = Vector3( 2.1, 0.1, 2.1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.79535, 1.8601 )
 subdiv = 0
 extents = Vector3( 10.1415, 3.69411, 14.1477 )
-data = SubResource( 7 )
+data = SubResource( 1 )
 
-[node name="Spawners" type="Spatial" parent="." index="2"]
+[node name="Border" type="Spatial" parent="." index="2"]
+
+[node name="Floor" type="StaticBody" parent="Border" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Border/Floor" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.29173, 0 )
+shape = SubResource( 2 )
+
+[node name="Wall" type="StaticBody" parent="Border" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2415, -1.73543, 1.53432 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Border/Wall" index="0"]
+shape = SubResource( 3 )
+
+[node name="Wall2" type="StaticBody" parent="Border" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75507, -1.73543, 1.53432 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Border/Wall2" index="0"]
+shape = SubResource( 3 )
+
+[node name="Wall3" type="StaticBody" parent="Border" index="3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.22822, -1.73543, -10.0957 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Border/Wall3" index="0"]
+shape = SubResource( 3 )
+
+[node name="Wall4" type="StaticBody" parent="Border" index="4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.22822, -1.73543, 13.9642 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Border/Wall4" index="0"]
+shape = SubResource( 3 )
+
+[node name="Spawners" type="Spatial" parent="." index="3"]
 
 [node name="EnemySpawner" parent="Spawners" index="0" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.27877, 11.5877 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -3.46732, 11.5877 )
 
-[node name="Enemies" type="Spatial" parent="." index="3"]
+[node name="EnemySpawner2" parent="Spawners" index="1" instance=ExtResource( 22 )]
+transform = Transform( -0.901281, 0, -0.433234, 0, 1, 0, 0.433234, 0, -0.901281, 4.50096, -3.48488, 11.5877 )
+
+[node name="EnemySpawner3" parent="Spawners" index="2" instance=ExtResource( 22 )]
+transform = Transform( -0.912242, 0, 0.409652, 0, 1, 0, -0.409652, 0, -0.912242, -4.05843, -3.44562, 9.89888 )
+
+[node name="Enemies" type="Spatial" parent="." index="4"]
 
 [node name="SwordSkeleton" parent="Enemies" index="0" instance=ExtResource( 8 )]
-transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, -3.51285, 8.08052 )
+transform = Transform( -0.999916, 0, 0.0129675, 0, 1, 0, -0.0129675, 0, -0.999916, 1.04524, -3.51285, 8.08052 )
 
 [node name="SwordSkeleton2" parent="Enemies" index="1" instance=ExtResource( 8 )]
-transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -2.56861, -3.51285, 8.33022 )
+transform = Transform( -0.822482, 0, 0.568792, 0, 1, 0, -0.568792, 0, -0.822482, -4.24129, -3.51285, 7.58615 )
 
 [node name="SwordSkeleton3" parent="Enemies" index="2" instance=ExtResource( 8 )]
-transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 2.64135, -3.51285, 7.33022 )
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 4.90284, -3.61964, 7.33022 )
 
-[node name="VRPlayer" parent="." index="4"]
+[node name="VRPlayer" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.63336, 0 )
 
-[node name="targetStand" parent="." index="5" instance=ExtResource( 18 )]
+[node name="targetStand" parent="." index="6" instance=ExtResource( 18 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5297, -3.79298, 12.5583 )
 
-[node name="targetStand4" parent="." index="6" instance=ExtResource( 18 )]
+[node name="targetStand4" parent="." index="7" instance=ExtResource( 18 )]
 transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 6.64175, -3.79298, 11.1747 )
 
-[node name="targetStand5" parent="." index="7" instance=ExtResource( 18 )]
+[node name="targetStand5" parent="." index="8" instance=ExtResource( 18 )]
 transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6.1155, -3.79298, 11.1747 )
 
-[node name="targetStand2" parent="." index="8" instance=ExtResource( 18 )]
+[node name="targetStand2" parent="." index="9" instance=ExtResource( 18 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.31879, -3.79298, 12.5583 )
 
-[node name="Crate" parent="." index="9" instance=ExtResource( 19 )]
+[node name="Crate" parent="." index="10" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -3.14277, -8.41599 )
 
-[node name="Crate5" parent="." index="10" instance=ExtResource( 19 )]
+[node name="Crate5" parent="." index="11" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43571, -3.14277, 6.81541 )
 
-[node name="Crate2" parent="." index="11" instance=ExtResource( 19 )]
+[node name="Crate6" parent="." index="12" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80913, -3.14277, 6.81541 )
+
+[node name="Crate7" parent="." index="13" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80913, -2.03952, 6.81541 )
+
+[node name="Crate8" parent="." index="14" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45338, -2.03952, 6.81541 )
+
+[node name="Crate2" parent="." index="15" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -3.14277, -8.41599 )
 
-[node name="Crate3" parent="." index="12" instance=ExtResource( 19 )]
+[node name="Crate3" parent="." index="16" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -2.04277, -8.41599 )
 
-[node name="Crate4" parent="." index="13" instance=ExtResource( 19 )]
+[node name="Crate4" parent="." index="17" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -2.04277, -8.41599 )
 
-[node name="Environment" type="Spatial" parent="." index="14"]
+[node name="Environment" type="Spatial" parent="." index="18"]
 
 [node name="FloorPieces" type="Spatial" parent="Environment" index="0"]
 
@@ -250,7 +283,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.0215
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.37185, 0 )
 omni_range = 10.3995
 
-[node name="Weapons" type="Spatial" parent="." index="15"]
+[node name="Weapons" type="Spatial" parent="." index="19"]
 
 [node name="tableLarge" parent="Weapons" index="0" instance=ExtResource( 20 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.34032, -3.85057, 0 )
@@ -279,49 +312,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77894, -2.96648, -0.393639 )
 [node name="shield" parent="Weapons" index="8" instance=ExtResource( 12 )]
 transform = Transform( 4.37114e-08, 1, 4.37114e-08, -8.74228e-08, -4.37114e-08, 1, 1, -4.37114e-08, 8.74228e-08, 7.7981, -2.86753, 0.390311 )
 
-[node name="door" parent="." index="16" instance=ExtResource( 5 )]
+[node name="door" parent="." index="20" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772459, -3.40948, -10.0196 )
 
-[node name="CSGBox" type="CSGBox" parent="." index="17"]
-transform = Transform( 1.10035, 0, 0, 0, 1, 0, 0, 0, 1.18251, 0.315884, -2.73583, 1.92153 )
-use_collision = true
-collision_mask = 0
-width = 16.4737
-height = 7.60384
-depth = 19.0277
-material = ExtResource( 2 )
+[node name="HangingTarget" parent="." index="21" instance=ExtResource( 21 )]
+transform = Transform( -0.871008, 0, -0.491269, 0, 1, 0, 0.491269, 0, -0.871008, 6.74896, -0.581487, 8.1811 )
 
-[node name="CSGCombiner" type="CSGCombiner" parent="CSGBox" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.862315, 0, 0, 0 )
-operation = 2
+[node name="HangingTarget2" parent="." index="22" instance=ExtResource( 21 )]
+transform = Transform( -0.871008, 0, 0.491268, 0, 1, 0, -0.491268, 0, -0.871008, -6.7965, -0.581487, 8.1811 )
 
-[node name="CSGBox2" type="CSGBox" parent="CSGBox/CSGCombiner" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.21107, 0 )
-width = 15.0
-height = 8.4
-depth = 21.8
-material = ExtResource( 2 )
-
-[node name="Mirror" type="MeshInstance" parent="." index="18"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 8.51211, -1.75747, -0.0293289 )
-visible = false
-mesh = SubResource( 3 )
-
-[node name="Viewport" type="Viewport" parent="Mirror" index="0"]
-size = Vector2( 1200, 1200 )
-
-[node name="Camera" type="Camera" parent="Mirror/Viewport" index="0"]
-transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 8.22058, -1.64488, -0.0538942 )
-current = true
-fov = 50.0
-
-[node name="TVMirrorBorder" type="MeshInstance" parent="Mirror" index="1"]
-transform = Transform( 1, -2.13163e-14, 0, 0, 1, 0, 0, 0, 1, 0, -0.0758743, 0 )
-mesh = SubResource( 5 )
-
-[node name="HangingTarget" parent="." index="19" instance=ExtResource( 21 )]
-transform = Transform( -0.871008, 0, -0.491269, 0, 1, 0, 0.491269, 0, -0.871008, 6.25182, -1.38432, 7.29586 )
-
-[node name="OmniLight" type="OmniLight" parent="." index="20"]
+[node name="OmniLight" type="OmniLight" parent="." index="23"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.963672, 0.556818, 5.36627 )
 omni_range = 10.0897

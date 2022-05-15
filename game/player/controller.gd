@@ -49,7 +49,9 @@ func _ready():
     assert(pickup_area != null)
     assert(grab_position != null)
 
+    # warning-ignore:return_value_discarded
     connect("button_pressed", self, "_on_button_pressed")
+    # warning-ignore:return_value_discarded
     connect("button_release", self, "_on_button_release")
 
 

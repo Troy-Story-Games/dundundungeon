@@ -340,14 +340,6 @@ extents = Vector3( 0.0457547, 0.630293, 0.106219 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.860341, 0 )
 shape = SubResource( 10 )
 
-[node name="Skeleton" parent="Animations" index="0"]
-bones/0/bound_children = [  ]
-bones/1/bound_children = [  ]
-bones/2/bound_children = [  ]
-bones/3/bound_children = [  ]
-bones/4/bound_children = [  ]
-bones/5/bound_children = [  ]
-
 [node name="character_skeleton_warrior_head" type="MeshInstance" parent="Animations/Skeleton/Head" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00706196, 0 )
 mesh = SubResource( 4 )
@@ -381,6 +373,12 @@ transform = Transform( -3.87132e-10, -2.53319e-07, -1, -0.471936, -0.881633, 2.5
 mesh = SubResource( 3 )
 skeleton = NodePath("../../Body/character_skeleton_warrior_body")
 
+[node name="HandSlotLeft" parent="Animations/Skeleton" index="5"]
+transform = Transform( -1, 2.92556e-08, 0, 0, 1.04171e-07, 1, -1.04757e-07, 1, -7.80337e-08, 0.4, 0.205887, -1.3956e-07 )
+
+[node name="HandSlotRight" parent="Animations/Skeleton" index="6"]
+transform = Transform( -1, 1.0808e-07, 0, 0, -1.76167e-07, 1, 3.87132e-10, 1, 2.23518e-07, -0.4, 0.205887, 1.2314e-07 )
+
 [node name="sword_common" type="MeshInstance" parent="Animations/Skeleton/HandSlotRight" index="0"]
 transform = Transform( 7.35137e-08, 6.43683e-08, -1, -1.93715e-07, 1, -4.33243e-08, 1, 1.46365e-07, 7.35136e-08, 0.00224257, -1.37298e-07, -0.0016464 )
 mesh = SubResource( 8 )
@@ -392,15 +390,15 @@ weight = 196.0
 
 [node name="PhysicalBoneArmLeft" parent="Animations/Skeleton" index="8"]
 transform = Transform( -1.19209e-07, -0.881633, -0.471936, 2.5332e-07, -0.471936, 0.881633, -1, -1.19208e-07, 2.53318e-07, 0.27, 0.448743, -6.97797e-08 )
-joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69152e-13, -1.64187e-08, 0.275461 )
-body_offset = Transform( 1, -7.88702e-13, 1.9611e-12, 0, 5.96047e-08, -1, -3.55271e-15, 1, 5.96046e-08, -7.10543e-14, 0.275461, 0 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16126e-13, -1.64188e-08, 0.275461 )
+body_offset = Transform( 1, -8.31335e-13, 2.13163e-12, 0, 5.96047e-08, -1, -3.55271e-15, 1, 5.96046e-08, -7.10543e-14, 0.275461, 0 )
 mass = 3.0
 weight = 29.4
 
 [node name="PhysicalBoneArmRight" parent="Animations/Skeleton" index="9"]
-transform = Transform( -1.19209e-07, -0.881633, 0.471936, -2.23518e-07, 0.471936, 0.881633, -1, -1.19208e-07, -2.23517e-07, -0.27, 0.448743, 6.15695e-08 )
-joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01266e-13, -6.7814e-08, 0.275461 )
-body_offset = Transform( 1, -5.25802e-13, -8.52651e-14, -1.42109e-13, 2.98023e-08, -1, -1.77719e-13, 1, 2.98023e-08, 7.24754e-13, 0.275461, 5.96046e-08 )
+transform = Transform( -1.19209e-07, -0.881633, 0.471936, -2.23518e-07, 0.471936, 0.881633, -1, -1.19208e-07, -2.23517e-07, -0.27, 0.448743, 6.15694e-08 )
+joint_offset = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.43899e-13, -6.7814e-08, 0.275461 )
+body_offset = Transform( 1, -5.68434e-13, -8.52651e-14, -1.42109e-13, 2.98023e-08, -1, -1.77719e-13, 1, 2.98023e-08, 7.67386e-13, 0.275461, 5.96046e-08 )
 mass = 3.0
 weight = 29.4
 
@@ -409,12 +407,12 @@ mass = 8.0
 weight = 78.4
 
 [node name="PhysicalBoneHandSlotLeft" parent="Animations/Skeleton" index="11"]
-transform = Transform( -1, 2.92556e-08, -3.53914e-15, 1.29717e-15, 1.04171e-07, 1, -1.04756e-07, 1, -7.80334e-08, 0.4, 0.205887, -1.3956e-07 )
-body_offset = Transform( 1, 0, 3.53915e-15, 3.90799e-13, 1, 3.69482e-13, 1.29713e-15, 4.12115e-13, 1, 0, 0, 0 )
+transform = Transform( -1, 2.92556e-08, -3.53914e-15, 1.29717e-15, 1.04172e-07, 1, -1.04756e-07, 1, -7.80333e-08, 0.4, 0.205887, -1.3956e-07 )
+body_offset = Transform( 1, 0, 3.53915e-15, 4.33431e-13, 1, 4.12115e-13, 1.29713e-15, 4.54747e-13, 1, 0, 0, 0 )
 
 [node name="PhysicalBoneHandSlotRight" parent="Animations/Skeleton" index="12"]
-transform = Transform( -1, 1.08079e-07, 3.79501e-16, 5.66678e-17, -1.76167e-07, 1, 3.87134e-10, 1, 2.23518e-07, -0.4, 0.205887, 1.2314e-07 )
-body_offset = Transform( 1, 3.90799e-13, -3.79496e-16, 1.52656e-15, 1, 4.26326e-14, 5.6668e-17, -4.26326e-14, 1, 0, 0, 0 )
+transform = Transform( -1, 1.08079e-07, 3.79489e-16, 5.66677e-17, -1.76167e-07, 1, 3.87134e-10, 1, 2.23518e-07, -0.4, 0.205887, 1.2314e-07 )
+body_offset = Transform( 1, 4.33431e-13, -3.79484e-16, 1.69309e-15, 1, 4.26326e-14, 5.6668e-17, -4.26326e-14, 1, 0, 0, 0 )
 mass = 4.0
 weight = 39.2
 

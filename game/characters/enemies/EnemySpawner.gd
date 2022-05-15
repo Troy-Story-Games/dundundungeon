@@ -1,10 +1,17 @@
 extends Spatial
 class_name EnemySpawner
 
+export(float) var SPAWN_INTERVAL = 5.0
+
+onready var spawnTimer = $SpawnTimer
+onready var pointer = $Pointer
+onready var dummy = $DummyEnemy
 
 func _ready():
-    if len(Utils.enemies) == 0:
-        Utils.load_enemies()
+    spawnTimer.wait_time = SPAWN_INTERVAL
+    pointer.visible = false
+    dummy.visible = false
+    spawnTimer.start()
 
 
 func _on_Timer_timeout():

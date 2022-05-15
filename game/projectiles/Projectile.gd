@@ -1,7 +1,7 @@
 extends KinematicBody
 class_name Projectile
 
-export(float) var GRAVITY = 0
+export(float) var GRAVITY = 0.0
 export(float) var SPEED = 75.0
 
 var velocity: Vector3 = Vector3.ZERO
@@ -34,7 +34,7 @@ func _physics_process(delta):
         handle_collision(collision)
 
 
-func handle_collision(collision: KinematicCollision):
+func handle_collision(_collision: KinematicCollision):
     speed = 0.0
     velocity = Vector3.ZERO
     direction = Vector3.ZERO
