@@ -48,20 +48,24 @@ func _process(_delta):
 
 
 func _physics_process(delta):
-    if ragdoll and len(deferred_impulses) > 0:
-        for impulse in deferred_impulses:
-            impulse[0].apply_impulse(impulse[1], impulse[2])
-        deferred_impulses.clear()
+    #if ragdoll and len(deferred_impulses) > 0:
+    #    for impulse in deferred_impulses:
+    #        impulse[0].apply_impulse(impulse[1], impulse[2])
+    #    deferred_impulses.clear()
+
+    if ragdoll:
         return  # Don't need to move if we're ragdoll
 
     if not self.player_camera:
         return
 
-    direction = global_transform.origin.direction_to(player_camera.global_transform.origin).normalized()
-    direction.y = 0  # Only need the x,z direction
-    velocity = (direction * speed) * delta
+    #direction = global_transform.origin.direction_to(player_camera.global_transform.origin).normalized()
+    #direction.y = 0  # Only need the x,z direction
+    #velocity = (direction * speed) * delta
+    #look_at(global_transform.origin - direction, Vector3.UP)
+
     # warning-ignore:return_value_discarded
-    move_and_collide(velocity, false)
+    #move_and_collide(velocity, false)
 
 
 func set_health(value: int):
@@ -69,9 +73,9 @@ func set_health(value: int):
     health = clamp(value, 0, MAX_HEALTH)
     if health == 0:
         ragdoll = true
-        headHurtbox.disabled = true
-        bodyHurtbox.disabled = true
-        collider.disabled = true
+        #headHurtbox.disabled = true
+        #bodyHurtbox.disabled = true
+        #collider.disabled = true
         skeleton.physical_bones_start_simulation()
         deathTimer.start()
 

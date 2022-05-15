@@ -34,7 +34,7 @@ func _physics_process(delta):
         handle_collision(collision)
 
 
-func handle_collision(_collision: KinematicCollision):
+func handle_collision(collision: KinematicCollision):
     speed = 0.0
     velocity = Vector3.ZERO
     direction = Vector3.ZERO

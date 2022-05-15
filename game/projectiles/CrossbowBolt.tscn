@@ -53,6 +53,7 @@ height = 0.337909
 radius = 0.0767717
 
 [node name="CrossbowBolt" instance=ExtResource( 1 )]
+collision_mask = 65
 script = ExtResource( 5 )
 IMPULSE = 5.0
 

@@ -47,6 +47,6 @@ func load_enemies():
 
 func get_random_enemy() -> PackedScene:
     if len(enemies) == 0:
-        return null
+        load_enemies()
     enemies.shuffle()
     return enemies[0]
