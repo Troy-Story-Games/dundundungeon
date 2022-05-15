@@ -141,6 +141,7 @@ refresh_rate = 0.0
 current = true
 
 [node name="PlayerHead" type="KinematicBody" parent="FPController/ARVRCamera" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.390475, 0.356442 )
 collision_layer = 2
 
 [node name="character_scrapbot_head" type="MeshInstance" parent="FPController/ARVRCamera/PlayerHead"]

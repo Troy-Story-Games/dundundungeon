@@ -27,7 +27,7 @@
 bounds = AABB( -10.1415, -3.69411, -14.1477, 20.283, 7.38822, 28.2954 )
 cell_size = 0.442116
 to_cell_xform = Transform( 2.26185, 0, 0, 0, 2.26185, 0, 0, 0, 2.26185, 22.9386, 8.35553, 32 )
-dynamic_data = PoolIntArray( 0, 7, 64, 32, 64, 1, 0, 0, 0, -1018691584, 0, 0, 7, 0, 9, 2119, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 7, 64, 32, 64, 1, 0, 0, 0, 0, 0, 0, 7, 0, 9, 2123, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -47,105 +47,76 @@ subdiv = 0
 extents = Vector3( 10.1415, 3.69411, 14.1477 )
 data = SubResource( 1 )
 
-[node name="Border" type="Spatial" parent="." index="2"]
+[node name="Enemies" type="Spatial" parent="." index="2"]
 
-[node name="Floor" type="StaticBody" parent="Border" index="0"]
+[node name="Spawners" type="Spatial" parent="Enemies" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Border/Floor" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.29173, 0 )
-shape = SubResource( 2 )
-
-[node name="Wall" type="StaticBody" parent="Border" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2415, -1.73543, 1.53432 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Border/Wall" index="0"]
-shape = SubResource( 3 )
-
-[node name="Wall2" type="StaticBody" parent="Border" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75507, -1.73543, 1.53432 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Border/Wall2" index="0"]
-shape = SubResource( 3 )
-
-[node name="Wall3" type="StaticBody" parent="Border" index="3"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.22822, -1.73543, -10.0957 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Border/Wall3" index="0"]
-shape = SubResource( 3 )
-
-[node name="Wall4" type="StaticBody" parent="Border" index="4"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.22822, -1.73543, 13.9642 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Border/Wall4" index="0"]
-shape = SubResource( 3 )
-
-[node name="Spawners" type="Spatial" parent="." index="3"]
-
-[node name="EnemySpawner" parent="Spawners" index="0" instance=ExtResource( 22 )]
+[node name="EnemySpawner" parent="Enemies/Spawners" index="0" instance=ExtResource( 22 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -3.46732, 11.5877 )
 ENABLED = false
 
-[node name="EnemySpawner2" parent="Spawners" index="1" instance=ExtResource( 22 )]
+[node name="EnemySpawner2" parent="Enemies/Spawners" index="1" instance=ExtResource( 22 )]
 transform = Transform( -0.901281, 0, -0.433234, 0, 1, 0, 0.433234, 0, -0.901281, 4.50096, -3.48488, 11.5877 )
 ENABLED = false
 
-[node name="EnemySpawner3" parent="Spawners" index="2" instance=ExtResource( 22 )]
+[node name="EnemySpawner3" parent="Enemies/Spawners" index="2" instance=ExtResource( 22 )]
 transform = Transform( -0.912242, 0, 0.409652, 0, 1, 0, -0.409652, 0, -0.912242, -4.05843, -3.44562, 9.89888 )
 ENABLED = false
 
-[node name="Enemies" type="Spatial" parent="." index="4"]
-
-[node name="SwordSkeleton" parent="Enemies" index="0" instance=ExtResource( 8 )]
+[node name="SwordSkeleton" parent="Enemies" index="1" instance=ExtResource( 8 )]
 transform = Transform( -0.999916, 0, 0.0129675, 0, 1, 0, -0.0129675, 0, -0.999916, 1.04524, -3.51285, 8.08052 )
 SPEED = 0.0
 
-[node name="SwordSkeleton2" parent="Enemies" index="1" instance=ExtResource( 8 )]
+[node name="SwordSkeleton2" parent="Enemies" index="2" instance=ExtResource( 8 )]
 transform = Transform( -0.822482, 0, 0.568792, 0, 1, 0, -0.568792, 0, -0.822482, -4.24129, -3.51285, 7.58615 )
 SPEED = 0.0
 
-[node name="SwordSkeleton3" parent="Enemies" index="2" instance=ExtResource( 8 )]
+[node name="SwordSkeleton3" parent="Enemies" index="3" instance=ExtResource( 8 )]
 transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 4.90284, -3.61964, 7.33022 )
 SPEED = 0.0
 
-[node name="VRPlayer" parent="." index="5"]
+[node name="VRPlayer" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.63336, 0 )
 
-[node name="targetStand" parent="." index="6" instance=ExtResource( 18 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5297, -3.79298, 12.5583 )
+[node name="Environment" type="Spatial" parent="." index="4"]
 
-[node name="targetStand4" parent="." index="7" instance=ExtResource( 18 )]
-transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 6.64175, -3.79298, 11.1747 )
+[node name="OmniLight" type="OmniLight" parent="Environment" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.963672, 0.556818, 0.783566 )
+omni_range = 11.5087
 
-[node name="targetStand5" parent="." index="8" instance=ExtResource( 18 )]
-transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6.1155, -3.79298, 11.1747 )
+[node name="WallBorder" type="Spatial" parent="Environment" index="1"]
 
-[node name="Crate" parent="." index="9" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -3.14277, -8.41599 )
+[node name="Floor" type="StaticBody" parent="Environment/WallBorder" index="0"]
 
-[node name="Crate5" parent="." index="10" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43571, -3.14277, 6.81541 )
+[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Floor" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.29173, 0 )
+shape = SubResource( 2 )
 
-[node name="Crate6" parent="." index="11" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80913, -3.14277, 6.81541 )
+[node name="Wall" type="StaticBody" parent="Environment/WallBorder" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2415, -1.73543, 1.53432 )
 
-[node name="Crate7" parent="." index="12" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80913, -2.03952, 6.81541 )
+[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Wall" index="0"]
+shape = SubResource( 3 )
 
-[node name="Crate8" parent="." index="13" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45338, -2.03952, 6.81541 )
+[node name="Wall2" type="StaticBody" parent="Environment/WallBorder" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75507, -1.73543, 1.53432 )
 
-[node name="Crate2" parent="." index="14" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -3.14277, -8.41599 )
+[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Wall2" index="0"]
+shape = SubResource( 3 )
 
-[node name="Crate3" parent="." index="15" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -2.04277, -8.41599 )
+[node name="Wall3" type="StaticBody" parent="Environment/WallBorder" index="3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.22822, -1.73543, -10.0957 )
 
-[node name="Crate4" parent="." index="16" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -2.04277, -8.41599 )
+[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Wall3" index="0"]
+shape = SubResource( 3 )
 
-[node name="Environment" type="Spatial" parent="." index="17"]
+[node name="Wall4" type="StaticBody" parent="Environment/WallBorder" index="4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.22822, -1.73543, 13.9642 )
 
-[node name="FloorPieces" type="Spatial" parent="Environment" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Wall4" index="0"]
+shape = SubResource( 3 )
+
+[node name="FloorPieces" type="Spatial" parent="Environment" index="2"]
 
 [node name="tileBrickA_large" parent="Environment/FloorPieces" index="0" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, -7.92752 )
@@ -192,7 +163,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 15.5143 )
 [node name="tileBrickA_large15" parent="Environment/FloorPieces" index="14" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 15.5143 )
 
-[node name="WallPieces" type="Spatial" parent="Environment" index="1"]
+[node name="tileMedium_desert" parent="Environment/FloorPieces" index="15" instance=ExtResource( 2 )]
+transform = Transform( 10.0993, 0, 0, 0, 1, 0, 0, 0, 13.7245, 0.326314, -5.27553, 2.47268 )
+
+[node name="WallPieces" type="Spatial" parent="Environment" index="3"]
 
 [node name="wallNorth" parent="Environment/WallPieces" index="0" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75816, -3.75, -10.0708 )
@@ -257,7 +231,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.7532
 [node name="wallWest5" parent="Environment/WallPieces" index="20" instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, 9.89424 )
 
-[node name="DecorationPieces" type="Spatial" parent="Environment" index="2"]
+[node name="DecorationPieces" type="Spatial" parent="Environment" index="4"]
 
 [node name="TorchWall" parent="Environment/DecorationPieces" index="0" instance=ExtResource( 7 )]
 transform = Transform( 1, -0.000114173, 6.86585e-05, 0.000114173, 1, 4.17847e-05, -6.86585e-05, -4.17847e-05, 1, -4.6, -2.6, -9.39645 )
@@ -283,11 +257,51 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.0215
 [node name="TorchWall7" parent="Environment/DecorationPieces" index="7" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.02153, -2.6, -3.90606 )
 
-[node name="OmniLight" type="OmniLight" parent="Environment/DecorationPieces" index="8"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.37185, 0 )
-omni_range = 10.3995
+[node name="Crate" parent="Environment/DecorationPieces" index="8" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -3.14277, -8.41599 )
 
-[node name="Weapons" type="Spatial" parent="." index="18"]
+[node name="Crate5" parent="Environment/DecorationPieces" index="9" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43571, -3.14277, 6.81541 )
+
+[node name="Crate6" parent="Environment/DecorationPieces" index="10" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80913, -3.14277, 6.81541 )
+
+[node name="Crate7" parent="Environment/DecorationPieces" index="11" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80913, -2.03952, 6.81541 )
+
+[node name="Crate8" parent="Environment/DecorationPieces" index="12" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45338, -2.03952, 6.81541 )
+
+[node name="Crate2" parent="Environment/DecorationPieces" index="13" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -3.14277, -8.41599 )
+
+[node name="Crate3" parent="Environment/DecorationPieces" index="14" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -2.04277, -8.41599 )
+
+[node name="Crate4" parent="Environment/DecorationPieces" index="15" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -2.04277, -8.41599 )
+
+[node name="Targets" type="Spatial" parent="Environment" index="5"]
+
+[node name="targetStand" parent="Environment/Targets" index="0" instance=ExtResource( 18 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5297, -3.79298, 12.5583 )
+
+[node name="targetStand4" parent="Environment/Targets" index="1" instance=ExtResource( 18 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 6.64175, -3.79298, 11.1747 )
+
+[node name="targetStand5" parent="Environment/Targets" index="2" instance=ExtResource( 18 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6.1155, -3.79298, 11.1747 )
+
+[node name="HangingTarget" parent="Environment/Targets" index="3" instance=ExtResource( 21 )]
+transform = Transform( -0.871008, 0, -0.491269, 0, 1, 0, 0.491269, 0, -0.871008, 6.74896, -0.581487, 8.1811 )
+
+[node name="HangingTarget2" parent="Environment/Targets" index="4" instance=ExtResource( 21 )]
+transform = Transform( -0.871008, 0, 0.491268, 0, 1, 0, -0.491268, 0, -0.871008, -6.7965, -0.581487, 8.1811 )
+
+[node name="door" parent="Environment" index="6" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772459, -3.40948, -10.0196 )
+
+[node name="Weapons" type="Spatial" parent="." index="5"]
 
 [node name="tableLarge" parent="Weapons" index="0" instance=ExtResource( 20 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.34032, -3.85057, 0 )
@@ -315,19 +329,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77894, -2.96648, -0.393639 )
 
 [node name="shield" parent="Weapons" index="8" instance=ExtResource( 12 )]
 transform = Transform( 4.37114e-08, 1, 4.37114e-08, -8.74228e-08, -4.37114e-08, 1, 1, -4.37114e-08, 8.74228e-08, 7.7981, -2.86753, 0.390311 )
-
-[node name="door" parent="." index="19" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772459, -3.40948, -10.0196 )
-
-[node name="HangingTarget" parent="." index="20" instance=ExtResource( 21 )]
-transform = Transform( -0.871008, 0, -0.491269, 0, 1, 0, 0.491269, 0, -0.871008, 6.74896, -0.581487, 8.1811 )
-
-[node name="HangingTarget2" parent="." index="21" instance=ExtResource( 21 )]
-transform = Transform( -0.871008, 0, 0.491268, 0, 1, 0, -0.491268, 0, -0.871008, -6.7965, -0.581487, 8.1811 )
-
-[node name="OmniLight" type="OmniLight" parent="." index="22"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.963672, 0.556818, 5.36627 )
-omni_range = 10.0897
-
-[node name="tileMedium_desert" parent="." index="23" instance=ExtResource( 2 )]
-transform = Transform( 10.0993, 0, 0, 0, 1, 0, 0, 0, 13.7245, 0.326314, -5.27553, 2.47268 )
