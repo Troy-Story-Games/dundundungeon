@@ -10,11 +10,6 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Weapon",
-"class": "Bow",
-"language": "GDScript",
-"path": "res://game/player/weapons/bow/Bow.gd"
-}, {
-"base": "Weapon",
 "class": "Crossbow",
 "language": "GDScript",
 "path": "res://game/player/weapons/crossbow/Crossbow.gd"
@@ -50,9 +45,14 @@ _global_script_classes=[ {
 "path": "res://game/overlap/Hurtbox.gd"
 }, {
 "base": "Area",
-"class": "PickupArea",
+"class": "ObjectPickupArea",
 "language": "GDScript",
-"path": "res://game/player/PickupArea.gd"
+"path": "res://game/overlap/ObjectPickupArea.gd"
+}, {
+"base": "Area",
+"class": "PlayerPickupArea",
+"language": "GDScript",
+"path": "res://game/player/PlayerPickupArea.gd"
 }, {
 "base": "KinematicBody",
 "class": "Projectile",
@@ -70,7 +70,6 @@ _global_script_classes=[ {
 "path": "res://game/player/weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
-"Bow": "",
 "Crossbow": "",
 "CrossbowBolt": "",
 "Enemy": "",
@@ -78,7 +77,8 @@ _global_script_class_icons={
 "FireCPUParticles": "",
 "Hitbox": "",
 "Hurtbox": "",
-"PickupArea": "",
+"ObjectPickupArea": "",
+"PlayerPickupArea": "",
 "Projectile": "",
 "VRPlayer": "",
 "Weapon": ""
@@ -117,6 +117,7 @@ common/drop_mouse_on_gui_input_disabled=true
 3d_physics/layer_5="projectile"
 3d_physics/layer_6="enemy"
 3d_physics/layer_7="enemy_bones"
+3d_physics/layer_8="breakable_floor_hurtbox"
 3d_physics/layer_16="enemy_inner_collider"
 
 [physics]
@@ -126,4 +127,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"

@@ -31,7 +31,7 @@ var joystick_vector := Vector2.ZERO
 var joystick_x_axis := JOY_ANALOG_LX
 var joystick_y_axis := JOY_ANALOG_LY
 var just_rotated := false
-var pickup_area: PickupArea = null
+var pickup_area: PlayerPickupArea = null
 var grab_position: Position3D = null
 var held_object: Node = null
 var held_object_data := {"mode": RigidBody.MODE_RIGID, "layer": 1, "mask": 1}
@@ -40,7 +40,7 @@ var weapon_visible: bool = false
 
 func _ready():
     grab_position = find_node("GrabPosition") as Position3D
-    pickup_area = find_node("PickupArea") as Area
+    pickup_area = find_node("PlayerPickupArea") as Area
     origin_node = get_parent() as ARVROrigin
     vr_camera = origin_node.find_node("*Camera") as ARVRCamera
 
@@ -154,15 +154,21 @@ func handle_pickup():
     if held_object:
         return
 
-    var rigid_body : RigidBody = null
-    var bodies : Array = pickup_area.get_overlapping_bodies()
+    var rigid_body: RigidBody = null
+    var bodies: Array = pickup_area.get_overlapping_bodies()
     for body in bodies:
         if body is RigidBody and body.mode == RigidBody.MODE_RIGID:
             rigid_body = body
             break
 
     if not rigid_body:
-        return
+        var areas: Array = pickup_area.get_overlapping_areas()
+        for area in areas:
+            if area is ObjectPickupArea:
+                rigid_body = area.pickup_object
+
+        if not rigid_body:
+            return
 
     if rigid_body.has_method("interact"):
         # warning-ignore:unsafe_method_access

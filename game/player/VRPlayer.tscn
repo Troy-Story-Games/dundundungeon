@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/characters/player/scrapbot/Black.material" type="Material" id=6]
 [ext_resource path="res://assets/characters/player/scrapbot/Beige.material" type="Material" id=7]
 [ext_resource path="res://game/player/Hand.tscn" type="PackedScene" id=8]
-[ext_resource path="res://game/player/PickupArea.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/player/PlayerPickupArea.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/characters/player/scrapbot/Robot.material" type="Material" id=10]
 [ext_resource path="res://game/player/controller.gd" type="Script" id=11]
 [ext_resource path="res://game/player/VRPlayer.gd" type="Script" id=12]
@@ -131,7 +131,6 @@ radius = 1.91764
 script = ExtResource( 12 )
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.470908 )
 
 [node name="Configuration" parent="FPController" index="0"]
 color_space = 0
@@ -141,20 +140,23 @@ refresh_rate = 0.0
 current = true
 
 [node name="PlayerHead" type="KinematicBody" parent="FPController/ARVRCamera" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.390475, 0.356442 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 collision_layer = 2
 
 [node name="character_scrapbot_head" type="MeshInstance" parent="FPController/ARVRCamera/PlayerHead"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0194654, 0.0118374, 0.170908 )
+layers = 524288
 mesh = SubResource( 6 )
 skeleton = NodePath("../character_scrapbot_body")
 
 [node name="character_scrapbot_mouth" type="MeshInstance" parent="FPController/ARVRCamera/PlayerHead/character_scrapbot_head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194654, 0.246841, 0.0808422 )
+layers = 524288
 mesh = SubResource( 7 )
 
 [node name="strawhat" type="MeshInstance" parent="FPController/ARVRCamera/PlayerHead/character_scrapbot_head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194654, 0.788163, 0 )
+layers = 524288
 mesh = SubResource( 8 )
 skeleton = NodePath("../../../../..")
 
@@ -178,7 +180,7 @@ PICKUP_BUTTON = 15
 WEAPON_BUTTON = 2
 WEAPON_TOGGLE = false
 
-[node name="PickupArea" parent="FPController/LeftHandController" index="0" instance=ExtResource( 9 )]
+[node name="PlayerPickupArea" parent="FPController/LeftHandController" index="0" instance=ExtResource( 9 )]
 
 [node name="GrabPosition" type="Position3D" parent="FPController/LeftHandController" index="1"]
 
@@ -200,7 +202,7 @@ PICKUP_BUTTON = 15
 WEAPON_BUTTON = 2
 WEAPON_TOGGLE = false
 
-[node name="PickupArea" parent="FPController/RightHandController" index="0" instance=ExtResource( 9 )]
+[node name="PlayerPickupArea" parent="FPController/RightHandController" index="0" instance=ExtResource( 9 )]
 
 [node name="GrabPosition" type="Position3D" parent="FPController/RightHandController" index="1"]
 

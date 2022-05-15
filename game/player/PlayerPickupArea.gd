@@ -1,5 +1,5 @@
 extends Area
-class_name PickupArea
+class_name PlayerPickupArea
 
 var disabled: bool = false setget set_disabled
 
