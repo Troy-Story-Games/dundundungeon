@@ -4,7 +4,7 @@ class_name Enemy
 const PoofParticles = preload("res://game/fx/poof/PoofCPUParticles.tscn")
 
 export(int) var MAX_HEALTH = 1
-export(float) var SPEED = 1.0
+export(float) var SPEED = 2.0
 
 var speed: float = 0.0
 var velocity: Vector3 = Vector3.ZERO
