@@ -23,6 +23,13 @@ onready var collider = $CollisionShape
 onready var headHurtbox = $HeadHurtbox
 onready var bodyHurtbox = $BodyHurtbox
 
+onready var bodyRT = $Animations/Skeleton/Body/RemoteTransform
+onready var headRT = $Animations/Skeleton/Head/RemoteTransform
+onready var armLeftRT = $Animations/Skeleton/ArmLeft/RemoteTransform
+onready var armRightRT = $Animations/Skeleton/ArmRight/RemoteTransform
+onready var handLeftRT = $Animations/Skeleton/HandSlotLeft/RemoteTransform
+onready var handRightRT = $Animations/Skeleton/HandSlotRight/RemoteTransform
+
 
 func _ready():
     self.health = MAX_HEALTH
@@ -68,6 +75,12 @@ func _physics_process(delta):
     move_and_collide(velocity, false)
 
 
+func disconnect_remote_transform(remote_xform: RemoteTransform):
+    remote_xform.update_position = false
+    remote_xform.update_rotation = false
+    remote_xform.update_scale = false
+
+
 func set_health(value: int):
     # warning-ignore:narrowing_conversion
     health = clamp(value, 0, MAX_HEALTH)
@@ -76,6 +89,15 @@ func set_health(value: int):
         headHurtbox.disabled = true
         bodyHurtbox.disabled = true
         collider.disabled = true
+
+        # This is real dumb but ragdolls in godot are garbage
+        disconnect_remote_transform(headRT)
+        disconnect_remote_transform(bodyRT)
+        disconnect_remote_transform(armLeftRT)
+        disconnect_remote_transform(armRightRT)
+        disconnect_remote_transform(handLeftRT)
+        disconnect_remote_transform(handRightRT)
+
         skeleton.physical_bones_start_simulation()
         deathTimer.start()
 

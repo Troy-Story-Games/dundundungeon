@@ -154,7 +154,7 @@ tracks/3/keys = {
 }
 
 [node name="Sword" instance=ExtResource( 1 )]
-collision_mask = 1
+collision_mask = 65
 
 [node name="sword_rare" type="MeshInstance" parent="." index="0"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
