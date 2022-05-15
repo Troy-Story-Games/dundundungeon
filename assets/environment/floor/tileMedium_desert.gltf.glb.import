@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tableMedium.gltf.glb-ff030530409a156171b0589916bc2a25.scn"
+path="res://.import/tileMedium_desert.gltf.glb-cfae045cd46b059af29ff20996db149a.scn"
 
 [deps]
 
-source_file="res://assets/environment/Tables/tableMedium.gltf.glb"
-dest_files=[ "res://.import/tableMedium.gltf.glb-ff030530409a156171b0589916bc2a25.scn" ]
+source_file="res://assets/environment/floor/tileMedium_desert.gltf.glb"
+dest_files=[ "res://.import/tileMedium_desert.gltf.glb-cfae045cd46b059af29ff20996db149a.scn" ]
 
 [params]
 
