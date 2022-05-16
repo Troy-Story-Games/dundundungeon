@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn"
+path="res://.import/castle.gltf.glb-9466534070350e32f5a137589bae4909.scn"
 
 [deps]
 
-source_file="res://assets/environment/doors/door.gltf.glb"
-dest_files=[ "res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn" ]
+source_file="res://assets/environment/midevilPack/castle.gltf.glb"
+dest_files=[ "res://.import/castle.gltf.glb-9466534070350e32f5a137589bae4909.scn" ]
 
 [params]
 

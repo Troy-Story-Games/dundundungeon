@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn"
+path="res://.import/treeA_graveyard.gltf.glb-ccffd61f86e3a6ba5686122a87134d6e.scn"
 
 [deps]
 
-source_file="res://assets/environment/doors/door.gltf.glb"
-dest_files=[ "res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn" ]
+source_file="res://assets/environment/spookyKitAssets/treeA_graveyard.gltf.glb"
+dest_files=[ "res://.import/treeA_graveyard.gltf.glb-ccffd61f86e3a6ba5686122a87134d6e.scn" ]
 
 [params]
 

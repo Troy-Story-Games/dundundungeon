@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn"
+path="res://.import/watchtower.gltf.glb-3caa7e2da66bf3bfe6a5a444e5f44929.scn"
 
 [deps]
 
-source_file="res://assets/environment/doors/door.gltf.glb"
-dest_files=[ "res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn" ]
+source_file="res://assets/environment/midevilPack/watchtower.gltf.glb"
+dest_files=[ "res://.import/watchtower.gltf.glb-3caa7e2da66bf3bfe6a5a444e5f44929.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn"
+path="res://.import/candleSmall.gltf.glb-932eb07b01ad56c90a41be4a74ef7e7f.scn"
 
 [deps]
 
-source_file="res://assets/environment/doors/door.gltf.glb"
-dest_files=[ "res://.import/door.gltf.glb-0b600a4d17466d7f6de3864d6298ba5f.scn" ]
+source_file="res://assets/environment/spookyKitAssets/candleSmall.gltf.glb"
+dest_files=[ "res://.import/candleSmall.gltf.glb-932eb07b01ad56c90a41be4a74ef7e7f.scn" ]
 
 [params]
 
