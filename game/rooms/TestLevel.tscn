@@ -877,4 +877,220 @@ transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.
 [node name="wall_end_brokengltf8" parent="Environment" index="268" instance=ExtResource( 20 )]
 transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.374807, 2.77599, -7.75449, -33.8377 )
 
+[node name="VistaStuff" type="Spatial" parent="." index="7"]
+
+[node name="SpookyVistaCrypt" type="Spatial" parent="VistaStuff" index="0"]
+
+[node name="castlegltf4" parent="VistaStuff/SpookyVistaCrypt" index="0" instance=ExtResource( 13 )]
+transform = Transform( -19.233, 0, 1.54709, 0, 19.2952, 0, -1.54709, 0, -19.233, -83.2243, -5.78603, 479.425 )
+
+[node name="rock7" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="1"]
+transform = Transform( -4.58404, 0, -9.65351, 0, 10.6866, 0, 9.65351, 0, -4.58404, -0.128431, -2.95232, 0.341518 )
+mesh = ExtResource( 18 )
+skeleton = NodePath("../../../..")
+material/0 = SubResource( 1 )
+
+[node name="rock8" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="2"]
+transform = Transform( -35.9016, 0, -75.6049, 0, 83.6956, 0, 75.6049, 0, -35.9016, -0.12843, -28.2824, 0.341516 )
+mesh = ExtResource( 18 )
+skeleton = NodePath("../../../..")
+material/0 = SubResource( 1 )
+
+[node name="rock9" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="3"]
+transform = Transform( 80.6906, 0, -22.2274, 0, 83.6956, 0, 22.2274, 0, 80.6906, -22.5281, -28.9596, 2.14334 )
+mesh = ExtResource( 18 )
+skeleton = NodePath("../../../..")
+material/0 = SubResource( 1 )
+
+[node name="watchtowergltf" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="4" instance=ExtResource( 12 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="5" instance=ExtResource( 12 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="treeD_graveyardgltf97" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="6" instance=ExtResource( 16 )]
+transform = Transform( -0.337231, 0, -0.155016, 0, 0.371152, 0, 0.155016, 0, -0.337231, -0.764902, -0.237478, 2.12052 )
+
+[node name="treeD_graveyardgltf98" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="7" instance=ExtResource( 16 )]
+transform = Transform( -0.339418, 0, -0.150168, 0, 0.371152, 0, 0.150168, 0, -0.339418, -0.641294, 0.0652176, 0.788088 )
+
+[node name="treeD_graveyardgltf99" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="8" instance=ExtResource( 16 )]
+transform = Transform( -0.0993253, -0.129336, -0.333409, 0.0510612, 0.337354, -0.146078, 0.353952, -0.0849613, -0.0724872, -1.12603, -0.0195776, 1.45262 )
+
+[node name="treeD_graveyardgltf100" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="9" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.00153, 0.0652176, 1.83819 )
+
+[node name="treeD_graveyardgltf101" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="10" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.64909, 0.0652176, 0.231058 )
+
+[node name="treeD_graveyardgltf102" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="11" instance=ExtResource( 16 )]
+transform = Transform( 0.328863, 0, -0.172058, 0, 0.371152, 0, 0.172058, 0, 0.328863, 2.00024, 0.112148, 0.59313 )
+
+[node name="treeD_graveyardgltf103" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="12" instance=ExtResource( 16 )]
+transform = Transform( -0.363198, -0.0441316, 0.0624034, -0.0428865, 0.368502, 0.0109963, -0.0632653, 0.00354992, -0.365705, 1.63205, 0.0642034, 1.30437 )
+
+[node name="treeD_graveyardgltf104" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="13" instance=ExtResource( 16 )]
+transform = Transform( 0.344711, 0, -0.137582, 0, 0.371152, 0, 0.137582, 0, 0.344711, -1.19478, 0.0652176, -0.299988 )
+
+[node name="treeD_graveyardgltf105" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="14" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, -0.0976682, 0.0652176, -1.19146 )
+
+[node name="treeD_graveyardgltf106" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="15" instance=ExtResource( 16 )]
+transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.370462, -0.78125, 0.0652176, -1.13647 )
+
+[node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="16" instance=ExtResource( 16 )]
+transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
+
+[node name="SpookyVistaCrypt2" type="Spatial" parent="VistaStuff" index="1"]
+
+[node name="rock7" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt2" index="0"]
+transform = Transform( 103.1, 0, 178.574, 0, 206.2, 0, -178.574, 0, 103.1, -80.2258, -62.7518, 473.056 )
+mesh = ExtResource( 18 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 1 )
+
+[node name="castlegltf4" parent="VistaStuff/SpookyVistaCrypt2" index="1" instance=ExtResource( 13 )]
+transform = Transform( -19.233, 0, 1.54709, 0, 19.2952, 0, -1.54709, 0, -19.233, -83.2243, -5.78603, 479.425 )
+
+[node name="watchtowergltf" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="1" instance=ExtResource( 12 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="2" instance=ExtResource( 12 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="treeD_graveyardgltf97" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="3" instance=ExtResource( 16 )]
+transform = Transform( -0.337231, 0, -0.155016, 0, 0.371152, 0, 0.155016, 0, -0.337231, -0.764902, -0.237478, 2.12052 )
+
+[node name="treeD_graveyardgltf98" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="4" instance=ExtResource( 16 )]
+transform = Transform( -0.339418, 0, -0.150168, 0, 0.371152, 0, 0.150168, 0, -0.339418, -0.641294, 0.0652176, 0.788088 )
+
+[node name="treeD_graveyardgltf99" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="5" instance=ExtResource( 16 )]
+transform = Transform( -0.0993253, -0.129336, -0.333409, 0.0510612, 0.337354, -0.146078, 0.353952, -0.0849613, -0.0724872, -1.12603, -0.0195776, 1.45262 )
+
+[node name="treeD_graveyardgltf100" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="6" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.00153, 0.0652176, 1.83819 )
+
+[node name="treeD_graveyardgltf101" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="7" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.64909, 0.0652176, 0.231058 )
+
+[node name="treeD_graveyardgltf102" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="8" instance=ExtResource( 16 )]
+transform = Transform( 0.328863, 0, -0.172058, 0, 0.371152, 0, 0.172058, 0, 0.328863, 2.00024, 0.112148, 0.59313 )
+
+[node name="treeD_graveyardgltf103" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="9" instance=ExtResource( 16 )]
+transform = Transform( -0.363198, -0.0441316, 0.0624034, -0.0428865, 0.368502, 0.0109963, -0.0632653, 0.00354992, -0.365705, 1.63205, 0.0642034, 1.30437 )
+
+[node name="treeD_graveyardgltf104" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="10" instance=ExtResource( 16 )]
+transform = Transform( 0.344711, 0, -0.137582, 0, 0.371152, 0, 0.137582, 0, 0.344711, -1.19478, 0.0652176, -0.299988 )
+
+[node name="treeD_graveyardgltf105" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="11" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, -0.0976682, 0.0652176, -1.19146 )
+
+[node name="treeD_graveyardgltf106" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="12" instance=ExtResource( 16 )]
+transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.370462, -0.78125, 0.0652176, -1.13647 )
+
+[node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="13" instance=ExtResource( 16 )]
+transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
+
+[node name="SpookyVistaCrypt3" type="Spatial" parent="VistaStuff" index="2"]
+transform = Transform( 0.363369, 0, 0, 0, 0.363369, 0, 0, 0, 0.363369, 313.121, -2.9419, -1.11343 )
+
+[node name="rock7" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt3" index="0"]
+transform = Transform( 103.1, 0, 178.574, 0, 206.199, 0, -178.574, 0, 103.1, -80.2258, -99.1776, 473.056 )
+mesh = ExtResource( 18 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 1 )
+
+[node name="castlegltf4" parent="VistaStuff/SpookyVistaCrypt3" index="1" instance=ExtResource( 13 )]
+transform = Transform( -19.233, 0, 1.54709, 0, 19.2952, 0, -1.54709, 0, -19.233, -83.2243, -5.78603, 479.425 )
+
+[node name="watchtowergltf" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="1" instance=ExtResource( 12 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="2" instance=ExtResource( 12 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="treeD_graveyardgltf97" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="3" instance=ExtResource( 16 )]
+transform = Transform( -0.337231, 0, -0.155016, 0, 0.371152, 0, 0.155016, 0, -0.337231, -0.764902, -0.237478, 2.12052 )
+
+[node name="treeD_graveyardgltf98" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="4" instance=ExtResource( 16 )]
+transform = Transform( -0.339418, 0, -0.150168, 0, 0.371152, 0, 0.150168, 0, -0.339418, -0.641294, 0.0652176, 0.788088 )
+
+[node name="treeD_graveyardgltf99" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="5" instance=ExtResource( 16 )]
+transform = Transform( -0.0993253, -0.129336, -0.333409, 0.0510612, 0.337354, -0.146078, 0.353952, -0.0849613, -0.0724872, -1.12603, -0.0195776, 1.45262 )
+
+[node name="treeD_graveyardgltf100" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="6" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.00153, 0.0652176, 1.83819 )
+
+[node name="treeD_graveyardgltf101" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="7" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.64909, 0.0652176, 0.231058 )
+
+[node name="treeD_graveyardgltf102" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="8" instance=ExtResource( 16 )]
+transform = Transform( 0.328863, 0, -0.172058, 0, 0.371152, 0, 0.172058, 0, 0.328863, 2.00024, 0.112148, 0.59313 )
+
+[node name="treeD_graveyardgltf103" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="9" instance=ExtResource( 16 )]
+transform = Transform( -0.363198, -0.0441316, 0.0624034, -0.0428865, 0.368502, 0.0109963, -0.0632653, 0.00354992, -0.365705, 1.63205, 0.0642034, 1.30437 )
+
+[node name="treeD_graveyardgltf104" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="10" instance=ExtResource( 16 )]
+transform = Transform( 0.344711, 0, -0.137582, 0, 0.371152, 0, 0.137582, 0, 0.344711, -1.19478, 0.0652176, -0.299988 )
+
+[node name="treeD_graveyardgltf105" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="11" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, -0.0976682, 0.0652176, -1.19146 )
+
+[node name="treeD_graveyardgltf106" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="12" instance=ExtResource( 16 )]
+transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.370462, -0.78125, 0.0652176, -1.13647 )
+
+[node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="13" instance=ExtResource( 16 )]
+transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
+
+[node name="SpookyVistaCrypt4" type="Spatial" parent="VistaStuff" index="3"]
+transform = Transform( 0.311618, 0, -0.186899, 0, 0.363369, 0, 0.186899, 0, 0.311618, -210.207, -54.92, 308.732 )
+
+[node name="rock7" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt4" index="0"]
+transform = Transform( 103.1, 0, 178.574, 0, 206.2, 0, -178.574, 0, 103.1, -80.2258, -62.7518, 473.056 )
+mesh = ExtResource( 18 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 1 )
+
+[node name="castlegltf4" parent="VistaStuff/SpookyVistaCrypt4" index="1" instance=ExtResource( 13 )]
+transform = Transform( -19.233, 0, 1.54709, 0, 19.2952, 0, -1.54709, 0, -19.233, -83.2243, -5.78603, 479.425 )
+
+[node name="watchtowergltf" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="1" instance=ExtResource( 12 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="2" instance=ExtResource( 12 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="treeD_graveyardgltf97" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="3" instance=ExtResource( 16 )]
+transform = Transform( -0.337231, 0, -0.155016, 0, 0.371152, 0, 0.155016, 0, -0.337231, -0.764902, -0.237478, 2.12052 )
+
+[node name="treeD_graveyardgltf98" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="4" instance=ExtResource( 16 )]
+transform = Transform( -0.339418, 0, -0.150168, 0, 0.371152, 0, 0.150168, 0, -0.339418, -0.641294, 0.0652176, 0.788088 )
+
+[node name="treeD_graveyardgltf99" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="5" instance=ExtResource( 16 )]
+transform = Transform( -0.0993253, -0.129336, -0.333409, 0.0510612, 0.337354, -0.146078, 0.353952, -0.0849613, -0.0724872, -1.12603, -0.0195776, 1.45262 )
+
+[node name="treeD_graveyardgltf100" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="6" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.00153, 0.0652176, 1.83819 )
+
+[node name="treeD_graveyardgltf101" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="7" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.64909, 0.0652176, 0.231058 )
+
+[node name="treeD_graveyardgltf102" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="8" instance=ExtResource( 16 )]
+transform = Transform( 0.328863, 0, -0.172058, 0, 0.371152, 0, 0.172058, 0, 0.328863, 2.00024, 0.112148, 0.59313 )
+
+[node name="treeD_graveyardgltf103" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="9" instance=ExtResource( 16 )]
+transform = Transform( -0.363198, -0.0441316, 0.0624034, -0.0428865, 0.368502, 0.0109963, -0.0632653, 0.00354992, -0.365705, 1.63205, 0.0642034, 1.30437 )
+
+[node name="treeD_graveyardgltf104" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="10" instance=ExtResource( 16 )]
+transform = Transform( 0.344711, 0, -0.137582, 0, 0.371152, 0, 0.137582, 0, 0.344711, -1.19478, 0.0652176, -0.299988 )
+
+[node name="treeD_graveyardgltf105" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="11" instance=ExtResource( 16 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, -0.0976682, 0.0652176, -1.19146 )
+
+[node name="treeD_graveyardgltf106" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="12" instance=ExtResource( 16 )]
+transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.370462, -0.78125, 0.0652176, -1.13647 )
+
+[node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="13" instance=ExtResource( 16 )]
+transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
+
 [editable path="Environment/wall_doorgltf"]
