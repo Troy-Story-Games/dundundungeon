@@ -40,3 +40,8 @@ func handle_collision(collision: KinematicCollision):
     direction = Vector3.ZERO
     collider.disabled = true
 
+
+func _on_Lifespan_timeout():
+    if speed == 0.0 and collider.disabled:
+        return
+    queue_free()
