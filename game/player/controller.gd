@@ -149,26 +149,28 @@ func handle_directional_movement(delta):
         get_parent().translate(movement_right + movement_forward)
 
 
+func get_pickup_rigid_body() -> RigidBody:
+    var bodies: Array = pickup_area.get_overlapping_bodies()
+    for body in bodies:
+        if body is RigidBody and body.mode == RigidBody.MODE_RIGID:
+            return body
+
+    var areas: Array = pickup_area.get_overlapping_areas()
+    for area in areas:
+        if area is ObjectPickupArea:
+             return area.pickup_object
+
+    return null
+
+
 func handle_pickup():
     # Pick up RigidBody if we are not holding a object
     if held_object:
         return
 
-    var rigid_body: RigidBody = null
-    var bodies: Array = pickup_area.get_overlapping_bodies()
-    for body in bodies:
-        if body is RigidBody and body.mode == RigidBody.MODE_RIGID:
-            rigid_body = body
-            break
-
+    var rigid_body: RigidBody = get_pickup_rigid_body()
     if not rigid_body:
-        var areas: Array = pickup_area.get_overlapping_areas()
-        for area in areas:
-            if area is ObjectPickupArea:
-                rigid_body = area.pickup_object
-
-        if not rigid_body:
-            return
+        return
 
     if rigid_body.has_method("interact"):
         # warning-ignore:unsafe_method_access

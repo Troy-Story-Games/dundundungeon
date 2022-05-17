@@ -1,13 +1,43 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://game/overlap/Hitbox.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/objects/weapons/White.material" type="Material" id=2]
-[ext_resource path="res://assets/objects/weapons/Red.material" type="Material" id=3]
-[ext_resource path="res://assets/objects/weapons/Gold.material" type="Material" id=4]
+[ext_resource path="res://game/fx/dissolve/WeaponDissolveTexture.tres" type="Texture" id=2]
+[ext_resource path="res://game/fx/dissolve/DissolveShader.tres" type="Shader" id=3]
+[ext_resource path="res://game/player/weapons/hammer/FloorBreakHammer.gd" type="Script" id=4]
 [ext_resource path="res://game/overlap/ObjectPickupArea.tscn" type="PackedScene" id=5]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.420147, 0.222662, 0.220774 )
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_name = "BrownDark"
+shader = ExtResource( 3 )
+shader_param/albedo = Color( 0.607141, 0.351749, 0.27004, 1 )
+shader_param/emission_color = Color( 1, 1, 1, 1 )
+shader_param/emission_amount = null
+shader_param/burn_size = null
+shader_param/dissolve_amount = 0.15
+shader_param/dissolve_texture = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_name = "Gold"
+shader = ExtResource( 3 )
+shader_param/albedo = Color( 0.733293, 0.613273, 0.358939, 1 )
+shader_param/emission_color = Color( 1, 1, 1, 1 )
+shader_param/emission_amount = 0.0
+shader_param/burn_size = null
+shader_param/dissolve_amount = 0.15
+shader_param/dissolve_texture = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_name = "Red"
+shader = ExtResource( 3 )
+shader_param/albedo = Color( 1, 0.172044, 0.378086, 1 )
+shader_param/emission_color = Color( 0.894118, 0.0196078, 0.0196078, 1 )
+shader_param/emission_amount = 2.0
+shader_param/burn_size = null
+shader_param/dissolve_amount = 0.15
+shader_param/dissolve_texture = ExtResource( 2 )
 
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "hammer_rare_long_Cube4462"
@@ -18,7 +48,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 144,
-"material": ExtResource( 2 ),
+"material": SubResource( 5 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 39
@@ -30,7 +60,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 2850,
-"material": ExtResource( 4 ),
+"material": SubResource( 6 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1099
@@ -42,11 +72,28 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 834,
-"material": ExtResource( 3 ),
+"material": SubResource( 7 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 584
 }
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+params_diffuse_mode = 4
+emission_enabled = true
+emission = Color( 0.541176, 0.498039, 0.196078, 1 )
+emission_energy = 2.5
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="PrismMesh" id=12]
+material = SubResource( 11 )
+size = Vector3( 0.05, 0.05, 0.05 )
+
+[sub_resource type="Gradient" id=13]
+colors = PoolColorArray( 2, 0.9, 0, 1, 0, 0, 0, 0 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.455287, 0.170346, 0.220774 )
@@ -55,8 +102,94 @@ extents = Vector3( 0.455287, 0.170346, 0.220774 )
 height = 0.978931
 radius = 0.0517975
 
+[sub_resource type="Animation" id=8]
+resource_name = "Appear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("hammer_rare_long:mesh:surface_3/material:shader_param/dissolve_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.15 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hammer_rare_long:mesh:surface_2/material:shader_param/dissolve_amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.15 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hammer_rare_long:mesh:surface_1/material:shader_param/dissolve_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.15 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Hover"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("hammer_rare_long:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.444948, 0 ), Vector3( 0, -0.35, 0 ), Vector3( 0, -0.444948, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hammer_rare_long:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.444948, 0 ) ]
+}
+
 [node name="FloorBreakHammer" type="RigidBody"]
+mode = 3
 mass = 50.0
+script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
@@ -64,6 +197,17 @@ shape = SubResource( 1 )
 [node name="hammer_rare_long" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.444948, 0 )
 mesh = SubResource( 2 )
+
+[node name="CPUParticles" type="CPUParticles" parent="hammer_rare_long"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.793674, 0 )
+amount = 60
+lifetime = 10.0
+lifetime_randomness = 1.0
+mesh = SubResource( 12 )
+emission_shape = 1
+emission_sphere_radius = 0.05
+gravity = Vector3( 0, -0.1, 0 )
+color_initial_ramp = SubResource( 13 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 1 )]
 collision_mask = 128
@@ -78,6 +222,13 @@ collision_layer = 1
 [node name="CollisionShape" parent="ObjectPickupArea" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251547, 0 )
 shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Appear = SubResource( 8 )
+anims/Hover = SubResource( 9 )
+anims/RESET = SubResource( 10 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="Hitbox"]
 [editable path="ObjectPickupArea"]

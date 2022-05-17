@@ -1,382 +1,1101 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://game/rooms/Room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://game/rooms/BreakableFloor.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/objects/weapons/StaffRare.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/objects/weapons/SpellBook.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/environment/door/Door.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/objects/weapons/Arrow.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/objects/torch/TorchWall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://game/characters/enemies/skeleton_warrior/SkeletonWarrior.tscn" type="PackedScene" id=8]
-[ext_resource path="res://game/environment/walls/WallCorner.tscn" type="PackedScene" id=9]
-[ext_resource path="res://game/environment/walls/Wall.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/environment/walls/WallDoor.tscn" type="PackedScene" id=11]
-[ext_resource path="res://game/objects/weapons/Shield.tscn" type="PackedScene" id=12]
-[ext_resource path="res://game/objects/weapons/Hammer.tscn" type="PackedScene" id=13]
-[ext_resource path="res://game/objects/weapons/Axe.tscn" type="PackedScene" id=14]
-[ext_resource path="res://game/objects/weapons/SwordRare.tscn" type="PackedScene" id=15]
-[ext_resource path="res://game/objects/weapons/Crossbow.tscn" type="PackedScene" id=16]
-[ext_resource path="res://game/environment/floor/TileBrickALarge.tscn" type="PackedScene" id=17]
-[ext_resource path="res://game/objects/target/TargetStand.tscn" type="PackedScene" id=18]
-[ext_resource path="res://game/objects/crate/Crate.tscn" type="PackedScene" id=19]
-[ext_resource path="res://game/objects/tables/TableLarge.tscn" type="PackedScene" id=20]
-[ext_resource path="res://game/objects/target/HangingTarget.tscn" type="PackedScene" id=21]
-[ext_resource path="res://game/characters/enemies/EnemySpawner.tscn" type="PackedScene" id=22]
-[ext_resource path="res://game/objects/security_camera/SecurityCamera.tscn" type="PackedScene" id=23]
-[ext_resource path="res://game/player/weapons/hammer/FloorBreakHammer.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/environment/rock.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://game/environment/floor/TileBrickB_large.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/environment/SpookyKitAssets/treeD_graveyard.gltf.glb" type="PackedScene" id=5]
+[ext_resource path="res://assets/environment/SpookyKitAssets/gravestone.gltf.glb" type="PackedScene" id=6]
+[ext_resource path="res://assets/environment/SpookyKitAssets/fenceDouble.gltf.glb" type="PackedScene" id=7]
+[ext_resource path="res://assets/environment/SpookyKitAssets/coffinB_bottom.gltf.glb" type="PackedScene" id=8]
+[ext_resource path="res://assets/environment/wall/wallCorner.gltf.glb" type="PackedScene" id=9]
+[ext_resource path="res://assets/environment/SpookyKitAssets/coffinA_top.gltf.glb" type="PackedScene" id=10]
+[ext_resource path="res://assets/environment/stairs_wide.gltf.glb" type="PackedScene" id=11]
+[ext_resource path="res://assets/environment/SpookyKitAssets/candleSmall.gltf.glb" type="PackedScene" id=12]
+[ext_resource path="res://assets/environment/wall/wall_door.gltf.glb" type="PackedScene" id=13]
+[ext_resource path="res://assets/environment/wall/wall_end_broken.gltf.glb" type="PackedScene" id=14]
+[ext_resource path="res://assets/environment/midevilPack/mountain.gltf.glb" type="PackedScene" id=15]
+[ext_resource path="res://assets/environment/SpookyKitAssets/treeA_graveyard.gltf.glb" type="PackedScene" id=16]
+[ext_resource path="res://assets/environment/midevilPack/watchtower.gltf.glb" type="PackedScene" id=17]
+[ext_resource path="res://assets/environment/midevilPack/castle.gltf.glb" type="PackedScene" id=18]
+[ext_resource path="res://assets/environment/SpookyKitAssets/pathDirt.gltf.glb" type="PackedScene" id=19]
+[ext_resource path="res://assets/environment/wall/wall.gltf.glb" type="PackedScene" id=20]
 
-[sub_resource type="GIProbeData" id=1]
-bounds = AABB( -10.1415, -3.69411, -14.1477, 20.283, 7.38822, 28.2954 )
-cell_size = 0.442116
-to_cell_xform = Transform( 2.26185, 0, 0, 0, 2.26185, 0, 0, 0, 2.26185, 22.9386, 8.35553, 32 )
-dynamic_data = PoolIntArray( 0, 7, 64, 32, 64, 1, 0, 0, 0, 1092, 0, 0, 0, 0, 0, 1093, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
-dynamic_range = 4
-bias = 1.5
-normal_bias = 0.0
-propagation = 0.7
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0745098, 0.247059, 0.764706, 1 )
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 9.11927, 0.554472, 15.4993 )
-
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.678689, 2.07103, 11.8018 )
-
-[sub_resource type="ViewportTexture" id=20]
-flags = 64
-viewport_path = NodePath("Mirror/Viewport")
-
-[sub_resource type="SpatialMaterial" id=21]
-resource_local_to_scene = true
-flags_unshaded = true
-albedo_texture = SubResource( 20 )
-
-[sub_resource type="PlaneMesh" id=8]
-resource_local_to_scene = true
-material = SubResource( 21 )
-size = Vector2( 1.5, 1.5 )
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0, 0, 0, 1 )
-metallic = 1.0
-roughness = 0.0
-
-[sub_resource type="CubeMesh" id=7]
-material = SubResource( 6 )
-size = Vector3( 1.8, 1.8, 0.01 )
-
-[node name="StartRoom" instance=ExtResource( 1 )]
+[node name="Room" instance=ExtResource( 1 )]
 
 [node name="GIProbe" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.79535, 1.8601 )
-subdiv = 0
-extents = Vector3( 10.1415, 3.69411, 14.1477 )
-data = SubResource( 1 )
+visible = false
 
-[node name="Enemies" type="Spatial" parent="." index="2"]
+[node name="VRPlayer" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.218, 0, 16.0282 )
 
-[node name="Spawners" type="Spatial" parent="Enemies" index="0"]
+[node name="OmniLight" type="OmniLight" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.272, -9.20321 )
+omni_range = 21.168
 
-[node name="EnemySpawner" parent="Enemies/Spawners" index="0" instance=ExtResource( 22 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -3.46732, 11.5877 )
-ENABLED = false
+[node name="OmniLight2" type="OmniLight" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.6222, 25.3071 )
+omni_range = 47.5952
 
-[node name="EnemySpawner2" parent="Enemies/Spawners" index="1" instance=ExtResource( 22 )]
-transform = Transform( -0.901281, 0, -0.433234, 0, 1, 0, 0.433234, 0, -0.901281, 4.50096, -3.48488, 11.5877 )
-ENABLED = false
+[node name="OmniLight3" type="OmniLight" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.0284, 397.652 )
+visible = false
+omni_range = 672.855
 
-[node name="EnemySpawner3" parent="Enemies/Spawners" index="2" instance=ExtResource( 22 )]
-transform = Transform( -0.912242, 0, 0.409652, 0, 1, 0, -0.409652, 0, -0.912242, -4.05843, -3.44562, 9.89888 )
-ENABLED = false
+[node name="Environment" type="Spatial" parent="." index="6"]
+transform = Transform( -0.828741, 0, -2.36678, 0, 2.50768, 0, 2.36678, 0, -0.828741, -76.061, -0.510674, 37.4849 )
 
-[node name="SwordSkeleton" parent="Enemies" index="1" instance=ExtResource( 8 )]
-transform = Transform( -0.999916, 0, 0.0129675, 0, 1, 0, -0.0129675, 0, -0.999916, 1.04524, -3.51285, 8.08052 )
-SPEED = 0.0
+[node name="wallgltf" parent="Environment" index="0" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -22.0301, -0.102808, -20.0208 )
 
-[node name="SwordSkeleton2" parent="Enemies" index="2" instance=ExtResource( 8 )]
-transform = Transform( -0.822482, 0, 0.568792, 0, 1, 0, -0.568792, 0, -0.822482, -4.24129, -3.51285, 7.58615 )
-SPEED = 0.0
+[node name="wallgltf2" parent="Environment" index="1" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -25.0393, -0.102808, -18.967 )
 
-[node name="SwordSkeleton3" parent="Enemies" index="3" instance=ExtResource( 8 )]
-transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 4.90284, -3.61964, 7.33022 )
-SPEED = 0.0
+[node name="wallgltf3" parent="Environment" index="2" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -26.7697, -0.102808, -18.3163 )
 
-[node name="VRPlayer" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.63336, 0 )
+[node name="wallgltf4" parent="Environment" index="3" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -24.7879, -0.102808, -27.8968 )
 
-[node name="Environment" type="Spatial" parent="." index="4"]
+[node name="wallgltf5" parent="Environment" index="4" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -27.7972, -0.102808, -26.8431 )
 
-[node name="OmniLight" type="OmniLight" parent="Environment" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.963672, 1.48265, 2.06985 )
-omni_range = 14.3844
+[node name="wallgltf6" parent="Environment" index="5" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -29.5275, -0.102808, -26.1923 )
 
-[node name="WallBorder" type="Spatial" parent="Environment" index="1"]
+[node name="wallgltf7" parent="Environment" index="6" instance=ExtResource( 20 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -30.9296, -0.102808, -22.8538 )
 
-[node name="Floor" type="StaticBody" parent="Environment/WallBorder" index="0"]
+[node name="wallgltf8" parent="Environment" index="7" instance=ExtResource( 20 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -30.1339, -0.102808, -20.5389 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Floor" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.29173, 0 )
-shape = SubResource( 2 )
+[node name="TileBrickB_large2" parent="Environment" index="8" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -25.115, -0.491421, -25.8775 )
 
-[node name="Wall" type="StaticBody" parent="Environment/WallBorder" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2415, -1.73543, 1.53432 )
+[node name="TileBrickB_large3" parent="Environment" index="9" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -27.3598, -0.491421, -25.0915 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Wall" index="0"]
-shape = SubResource( 3 )
+[node name="TileBrickB_large5" parent="Environment" index="10" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -25.7786, -0.491421, -20.5758 )
 
-[node name="Wall2" type="StaticBody" parent="Environment/WallBorder" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75507, -1.73543, 1.53432 )
+[node name="TileBrickB_large6" parent="Environment" index="11" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -23.5373, -0.491421, -21.3606 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Wall2" index="0"]
-shape = SubResource( 3 )
+[node name="TileBrickB_large7" parent="Environment" index="12" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -21.2813, -0.491421, -22.1506 )
 
-[node name="Wall3" type="StaticBody" parent="Environment/WallBorder" index="3"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.22822, -1.73543, -10.0957 )
+[node name="TileBrickB_large8" parent="Environment" index="13" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.0738, -0.491421, -24.4139 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Wall3" index="0"]
-shape = SubResource( 3 )
+[node name="TileBrickB_large9" parent="Environment" index="14" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.0712, -0.491421, -24.4066 )
 
-[node name="Wall4" type="StaticBody" parent="Environment/WallBorder" index="4"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.22822, -1.73543, 13.9642 )
+[node name="TileBrickB_large10" parent="Environment" index="15" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.8625, -0.491421, -26.6663 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Environment/WallBorder/Wall4" index="0"]
-shape = SubResource( 3 )
+[node name="TileBrickB_large19" parent="Environment" index="16" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -28.0256, -0.491421, -19.7886 )
 
-[node name="FloorPieces" type="Spatial" parent="Environment" index="2"]
+[node name="TileBrickB_large20" parent="Environment" index="17" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -28.8157, -0.491421, -22.0452 )
 
-[node name="tileBrickA_large" parent="Environment/FloorPieces" index="0" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, -7.92752 )
+[node name="TileBrickB_large21" parent="Environment" index="18" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -29.6059, -0.491421, -24.3018 )
 
-[node name="tileBrickA_large3" parent="Environment/FloorPieces" index="1" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, -7.92752 )
+[node name="TileBrickB_large4" parent="Environment" index="19" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -25.115, 5.46002, -25.8775 )
 
-[node name="tileBrickA_large4" parent="Environment/FloorPieces" index="2" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, -2.10686 )
+[node name="TileBrickB_large11" parent="Environment" index="20" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -27.3598, 5.46002, -25.0915 )
 
-[node name="tileBrickA_large5" parent="Environment/FloorPieces" index="3" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, -2.10686 )
+[node name="TileBrickB_large12" parent="Environment" index="21" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -25.7786, 5.46002, -20.5758 )
 
-[node name="tileBrickA_large6" parent="Environment/FloorPieces" index="4" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, -2.10686 )
+[node name="TileBrickB_large13" parent="Environment" index="22" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -23.5373, 5.46002, -21.3606 )
 
-[node name="tileBrickA_large7" parent="Environment/FloorPieces" index="5" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 3.76034 )
+[node name="TileBrickB_large14" parent="Environment" index="23" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -21.2813, 5.46002, -22.1506 )
 
-[node name="tileBrickA_large8" parent="Environment/FloorPieces" index="6" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 3.76034 )
+[node name="TileBrickB_large15" parent="Environment" index="24" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.0738, 5.46002, -24.4139 )
 
-[node name="tileBrickA_large9" parent="Environment/FloorPieces" index="7" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 3.76034 )
+[node name="TileBrickB_large16" parent="Environment" index="25" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.0712, 5.46002, -24.4066 )
 
-[node name="tileBrickA_large10" parent="Environment/FloorPieces" index="8" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 9.57841 )
+[node name="TileBrickB_large18" parent="Environment" index="26" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -24.3149, 5.46002, -23.621 )
 
-[node name="tileBrickA_large11" parent="Environment/FloorPieces" index="9" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 9.57841 )
+[node name="TileBrickB_large25" parent="Environment" index="27" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -26.5718, 5.46002, -22.8307 )
 
-[node name="tileBrickA_large12" parent="Environment/FloorPieces" index="10" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 9.57841 )
+[node name="TileBrickB_large17" parent="Environment" index="28" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.8625, 5.46002, -26.6663 )
 
-[node name="tileBrickA_large13" parent="Environment/FloorPieces" index="11" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 15.5143 )
+[node name="TileBrickB_large22" parent="Environment" index="29" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -28.0256, 5.46002, -19.7886 )
 
-[node name="tileBrickA_large14" parent="Environment/FloorPieces" index="12" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 15.5143 )
+[node name="TileBrickB_large23" parent="Environment" index="30" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -28.8157, 5.46002, -22.0452 )
 
-[node name="tileBrickA_large15" parent="Environment/FloorPieces" index="13" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 15.5143 )
+[node name="TileBrickB_large24" parent="Environment" index="31" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -29.6059, 5.46002, -24.3018 )
 
-[node name="WallPieces" type="Spatial" parent="Environment" index="3"]
+[node name="TileBrickB_large" parent="Environment" index="32" instance=ExtResource( 4 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -24.3239, -0.491421, -23.6181 )
 
-[node name="wallNorth" parent="Environment/WallPieces" index="0" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75816, -3.75, -10.0708 )
+[node name="coffinA_topgltf" parent="Environment" index="33" instance=ExtResource( 10 )]
+transform = Transform( -0.543997, 1.497, 0.415492, 0, 0.440228, -1.58612, -1.55359, -0.524181, -0.145487, -29.497, 1.69361, -21.8556 )
 
-[node name="wallSouth" parent="Environment/WallPieces" index="1" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75816, -3.75, 13.8586 )
+[node name="candleSmallgltf" parent="Environment" index="34" instance=ExtResource( 12 )]
+transform = Transform( -0.412039, 0, 1.17673, 0, 1.24679, 0, -1.17673, 0, -0.412039, -29.8595, -0.0980998, -23.7692 )
 
-[node name="wallSouth2" parent="Environment/WallPieces" index="2" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.757391, -3.75, 13.8586 )
+[node name="candleSmallgltf3" parent="Environment" index="35" instance=ExtResource( 12 )]
+transform = Transform( -0.412039, 0, 1.17673, 0, 1.24679, 0, -1.17673, 0, -0.412039, -28.5449, -0.0980998, -20.0149 )
 
-[node name="wallSouth3" parent="Environment/WallPieces" index="3" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21253, -3.75, 13.8586 )
+[node name="fenceDoublegltf" parent="Environment" index="36" instance=ExtResource( 7 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.473266, 0, -0.376369, 0, -0.131788, -27.5416, -0.108791, -19.6649 )
 
-[node name="wallSouth4" parent="Environment/WallPieces" index="4" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.08677, -3.75, 13.8663 )
+[node name="fenceDoublegltf2" parent="Environment" index="37" instance=ExtResource( 7 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.473266, 0, -0.376369, 0, -0.131788, -28.068, -0.108791, -21.1682 )
 
-[node name="wallNorth2" parent="Environment/WallPieces" index="5" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25502, -3.75, -10.0708 )
+[node name="fenceDoublegltf3" parent="Environment" index="38" instance=ExtResource( 7 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.473266, 0, -0.376369, 0, -0.131788, -28.5912, -0.108791, -22.6624 )
 
-[node name="wallCorner" parent="Environment/WallPieces" index="6" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.24891, -3.75, -10.0704 )
+[node name="fenceDoublegltf4" parent="Environment" index="39" instance=ExtResource( 7 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.473266, 0, -0.376369, 0, -0.131788, -29.1193, -0.108791, -24.1708 )
 
-[node name="wallCorner2" parent="Environment/WallPieces" index="7" instance=ExtResource( 9 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.74648, -3.75, -10.0704 )
+[node name="fenceDoublegltf5" parent="Environment" index="40" instance=ExtResource( 7 )]
+transform = Transform( -0.0813003, 0, 0.376369, 0, 0.473266, 0, -0.232183, 0, -0.131788, -29.5491, -0.108791, -25.3981 )
 
-[node name="wallCorner3" parent="Environment/WallPieces" index="8" instance=ExtResource( 9 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.74648, -3.75, 13.8642 )
+[node name="fenceDoublegltf6" parent="Environment" index="41" instance=ExtResource( 7 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -15.5321, -0.108791, -20.0034 )
 
-[node name="wallCorner4" parent="Environment/WallPieces" index="9" instance=ExtResource( 9 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.23705, -3.75, 13.8642 )
+[node name="fenceDoublegltf7" parent="Environment" index="42" instance=ExtResource( 7 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -14.4768, -0.108791, -16.9894 )
 
-[node name="wall_door" parent="Environment/WallPieces" index="10" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234, -3.75, -10.0875 )
+[node name="fenceDoublegltf8" parent="Environment" index="43" instance=ExtResource( 7 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -13.4225, -0.108791, -13.9784 )
 
-[node name="wallEast" parent="Environment/WallPieces" index="11" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, -6.06905 )
+[node name="fenceDoublegltf9" parent="Environment" index="44" instance=ExtResource( 7 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -6.50347, -0.108791, -23.1648 )
 
-[node name="wallEast2" parent="Environment/WallPieces" index="12" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, -2.07345 )
+[node name="fenceDoublegltf16" parent="Environment" index="45" instance=ExtResource( 7 )]
+transform = Transform( -0.144058, 0, 0.752738, 0, 0.464138, 0, -0.411412, 0, -0.263575, -9.75725, -0.108791, -22.804 )
 
-[node name="wallEast3" parent="Environment/WallPieces" index="13" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, 1.92105 )
+[node name="fenceDoublegltf18" parent="Environment" index="46" instance=ExtResource( 7 )]
+transform = Transform( -0.144058, 0, 0.752738, 0, 0.464138, 0, -0.411412, 0, -0.263575, -12.7682, -0.108791, -21.7497 )
 
-[node name="wallEast4" parent="Environment/WallPieces" index="14" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, 5.91345 )
+[node name="fenceDoublegltf10" parent="Environment" index="47" instance=ExtResource( 7 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -5.44809, -0.108791, -20.1508 )
 
-[node name="wallEast5" parent="Environment/WallPieces" index="15" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.245, -3.75, 9.89424 )
+[node name="fenceDoublegltf11" parent="Environment" index="48" instance=ExtResource( 7 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -4.39379, -0.108791, -17.1398 )
 
-[node name="wallWest1" parent="Environment/WallPieces" index="16" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, -6.06905 )
+[node name="fenceDoublegltf12" parent="Environment" index="49" instance=ExtResource( 7 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -5.37065, -0.108791, -15.1004 )
 
-[node name="wallWest2" parent="Environment/WallPieces" index="17" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, -2.07345 )
+[node name="fenceDoublegltf13" parent="Environment" index="50" instance=ExtResource( 7 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -8.37855, -0.108791, -14.0472 )
 
-[node name="wallWest3" parent="Environment/WallPieces" index="18" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, 1.92105 )
+[node name="fenceDoublegltf14" parent="Environment" index="51" instance=ExtResource( 7 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -11.3892, -0.108791, -12.9929 )
 
-[node name="wallWest4" parent="Environment/WallPieces" index="19" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, 5.91345 )
+[node name="fenceDoublegltf15" parent="Environment" index="52" instance=ExtResource( 7 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -8.53465, -0.108791, -24.1364 )
 
-[node name="wallWest5" parent="Environment/WallPieces" index="20" instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.75326, -3.75, 9.89424 )
+[node name="fenceDoublegltf17" parent="Environment" index="53" instance=ExtResource( 7 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -14.5532, -0.108791, -22.0289 )
 
-[node name="DecorationPieces" type="Spatial" parent="Environment" index="4"]
+[node name="gravestonegltf" parent="Environment" index="54" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -20.7726, -0.0786707, -21.8916 )
 
-[node name="TorchWall" parent="Environment/DecorationPieces" index="0" instance=ExtResource( 7 )]
-transform = Transform( 1, -0.000114173, 6.86585e-05, 0.000114173, 1, 4.17847e-05, -6.86585e-05, -4.17847e-05, 1, -4.6, -2.6, -9.39645 )
+[node name="gravestonegltf2" parent="Environment" index="55" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -21.5296, -0.0786707, -21.6265 )
 
-[node name="TorchWall2" parent="Environment/DecorationPieces" index="1" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2.6, -9.39645 )
+[node name="gravestonegltf3" parent="Environment" index="56" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -22.2735, -0.0786707, -21.366 )
 
-[node name="TorchWall3" parent="Environment/DecorationPieces" index="2" instance=ExtResource( 7 )]
-transform = Transform( -1, 0.000114173, -6.87459e-05, 0.000114173, 1, 4.17847e-05, 6.87459e-05, 4.17847e-05, -1, 4, -2.6, 13.2072 )
+[node name="gravestonegltf4" parent="Environment" index="57" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -23.0305, -0.0786707, -21.101 )
 
-[node name="TorchWall4" parent="Environment/DecorationPieces" index="3" instance=ExtResource( 7 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.6, -2.6, 13.2072 )
+[node name="gravestonegltf5" parent="Environment" index="58" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -23.7612, -0.0786707, -20.8451 )
 
-[node name="TorchWall5" parent="Environment/DecorationPieces" index="4" instance=ExtResource( 7 )]
-transform = Transform( -3.94467e-08, 3.49066e-05, -1, 0.000122173, 1, 3.49066e-05, 1, -0.000122173, -4.37114e-08, 8.51362, -2.6, 4.54851 )
+[node name="gravestonegltf6" parent="Environment" index="59" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -24.505, -0.0786707, -20.5846 )
 
-[node name="TorchWall8" parent="Environment/DecorationPieces" index="5" instance=ExtResource( 7 )]
-transform = Transform( -3.94467e-08, 3.49066e-05, -1, 0.000122173, 1, 3.49066e-05, 1, -0.000122173, -4.37114e-08, 8.51362, -2.6, -4.83285 )
+[node name="gravestonegltf7" parent="Environment" index="60" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -25.2488, -0.0786707, -20.3242 )
 
-[node name="TorchWall6" parent="Environment/DecorationPieces" index="6" instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.02153, -2.6, 4.58056 )
+[node name="gravestonegltf8" parent="Environment" index="61" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -25.9993, -0.0786707, -20.0614 )
 
-[node name="TorchWall7" parent="Environment/DecorationPieces" index="7" instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.02153, -2.6, -3.90606 )
+[node name="gravestonegltf37" parent="Environment" index="62" instance=ExtResource( 6 )]
+transform = Transform( -0.372254, 0.0785843, -0.11947, -0.0086844, 0.320123, 0.237629, 0.142734, 0.224427, -0.297121, -5.19643, -0.0786703, -16.5067 )
 
-[node name="Crate" parent="Environment/DecorationPieces" index="8" instance=ExtResource( 19 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.98016, -3.14277, -5.73442 )
+[node name="gravestonegltf38" parent="Environment" index="63" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -5.94028, -0.133937, -16.2462 )
 
-[node name="Crate5" parent="Environment/DecorationPieces" index="9" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43571, -3.14277, 6.81541 )
+[node name="gravestonegltf39" parent="Environment" index="64" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -6.69727, -0.0786707, -15.9811 )
 
-[node name="Crate6" parent="Environment/DecorationPieces" index="10" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80913, -3.14277, 6.81541 )
+[node name="gravestonegltf40" parent="Environment" index="65" instance=ExtResource( 6 )]
+transform = Transform( -0.393561, -0.060975, 0.0203372, 0.0133111, 0.0461211, 0.395875, -0.0628838, 0.391377, -0.0434829, -7.37585, 0.00993986, -16.5579 )
 
-[node name="Crate7" parent="Environment/DecorationPieces" index="11" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80913, -2.03952, 6.81541 )
+[node name="gravestonegltf41" parent="Environment" index="66" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -10.858, -0.0786707, -14.5242 )
 
-[node name="Crate8" parent="Environment/DecorationPieces" index="12" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45338, -2.03952, 6.81541 )
+[node name="gravestonegltf42" parent="Environment" index="67" instance=ExtResource( 6 )]
+transform = Transform( -0.335273, -0.131783, 0.171017, -0.180115, -0.00344512, -0.355764, 0.119046, -0.376355, -0.0566258, -11.7647, -0.0786703, -14.3485 )
 
-[node name="Crate2" parent="Environment/DecorationPieces" index="13" instance=ExtResource( 19 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.98016, -3.14277, -6.83442 )
+[node name="gravestonegltf43" parent="Environment" index="68" instance=ExtResource( 6 )]
+transform = Transform( -0.322663, -0.0795124, 0.220426, 0.109696, 0.280222, 0.261657, -0.207067, 0.272351, -0.204865, -12.712, -0.0786703, -14.4742 )
 
-[node name="Crate3" parent="Environment/DecorationPieces" index="14" instance=ExtResource( 19 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.98016, -2.04277, -6.83442 )
+[node name="gravestonegltf44" parent="Environment" index="69" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -5.87865, -0.0786707, -18.455 )
 
-[node name="Crate4" parent="Environment/DecorationPieces" index="15" instance=ExtResource( 19 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.98016, -2.04277, -5.73442 )
+[node name="gravestonegltf45" parent="Environment" index="70" instance=ExtResource( 6 )]
+transform = Transform( -0.200748, 0, -0.34456, 0, 0.398775, 0, 0.34456, 0, -0.200748, -6.62251, -0.0786707, -18.1946 )
 
-[node name="Targets" type="Spatial" parent="Environment" index="5"]
+[node name="gravestonegltf46" parent="Environment" index="71" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -7.3795, -0.0786707, -17.9295 )
 
-[node name="targetStand" parent="Environment/Targets" index="0" instance=ExtResource( 18 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5297, -3.79298, 12.5583 )
+[node name="gravestonegltf47" parent="Environment" index="72" instance=ExtResource( 6 )]
+transform = Transform( -0.347459, 0, -0.195687, 0, 0.398775, 0, 0.195687, 0, -0.347459, -11.5403, -0.0786707, -16.4726 )
 
-[node name="targetStand4" parent="Environment/Targets" index="1" instance=ExtResource( 18 )]
-transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 6.64175, -3.79298, 11.1747 )
+[node name="gravestonegltf48" parent="Environment" index="73" instance=ExtResource( 6 )]
+transform = Transform( 0.037514, 0.390299, -0.0726691, -0.100973, 0.0799723, 0.377399, 0.383951, -0.0171029, 0.106349, -12.7463, 0.092513, -16.6326 )
 
-[node name="targetStand5" parent="Environment/Targets" index="2" instance=ExtResource( 18 )]
-transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6.1155, -3.79298, 11.1747 )
+[node name="gravestonegltf49" parent="Environment" index="74" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -13.256, -0.0786707, -15.8718 )
 
-[node name="HangingTarget" parent="Environment/Targets" index="3" instance=ExtResource( 21 )]
-transform = Transform( -0.871008, 0, -0.491269, 0, 1, 0, 0.491269, 0, -0.871008, 6.74896, -0.581487, 8.1811 )
+[node name="gravestonegltf50" parent="Environment" index="75" instance=ExtResource( 6 )]
+transform = Transform( -0.348852, 0.0801766, -0.175772, -0.122087, 0.189699, 0.328832, 0.14973, 0.341478, -0.141404, -6.53973, -0.0786703, -20.343 )
 
-[node name="HangingTarget2" parent="Environment/Targets" index="4" instance=ExtResource( 21 )]
-transform = Transform( -0.871008, 0, 0.491268, 0, 1, 0, -0.491268, 0, -0.871008, -6.7965, -0.581487, 8.1811 )
+[node name="gravestonegltf51" parent="Environment" index="76" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -7.28358, -0.0786707, -20.0825 )
 
-[node name="door" parent="Environment" index="6" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772459, -3.40948, -10.0196 )
+[node name="gravestonegltf52" parent="Environment" index="77" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, -0.0748821, -0.108447, 9.90433e-09, 0.328148, -0.226585, 0.131788, -0.213854, -0.30971, -8.31144, -0.237202, -19.7226 )
 
-[node name="Weapons" type="Spatial" parent="." index="5"]
+[node name="gravestonegltf53" parent="Environment" index="78" instance=ExtResource( 6 )]
+transform = Transform( -0.373624, -0.00375107, 0.139329, -0.00802228, 0.398548, -0.0107826, -0.139148, -0.0129054, -0.373487, -12.2013, -0.0786707, -18.3605 )
 
-[node name="tableLarge" parent="Weapons" index="0" instance=ExtResource( 20 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.34032, -3.85057, 0 )
+[node name="gravestonegltf54" parent="Environment" index="79" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -13.0152, -0.0786707, -18.0755 )
 
-[node name="hammer" parent="Weapons" index="1" instance=ExtResource( 13 )]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 6.95527, -2.91392, 1.1923 )
+[node name="gravestonegltf55" parent="Environment" index="80" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, -0.128227, 0.0304274, 1.69601e-08, -0.09207, -0.388001, 0.131788, -0.3662, 0.0868968, -13.6309, -0.0786707, -16.9563 )
 
-[node name="axe" parent="Weapons" index="2" instance=ExtResource( 14 )]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 6.93682, -2.92325, -1.09918 )
+[node name="gravestonegltf56" parent="Environment" index="81" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0.131538, 0.008112, -1.7398e-08, -0.0245461, 0.398019, 0.131788, 0.375655, 0.0231669, -7.1261, -0.0786703, -22.0176 )
 
-[node name="sword_rare" parent="Weapons" index="3" instance=ExtResource( 15 )]
-transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 6.89626, -3.05431, 0.606287 )
+[node name="gravestonegltf57" parent="Environment" index="82" instance=ExtResource( 6 )]
+transform = Transform( -0.114006, 0.381406, 0.0235216, -1.7398e-08, -0.0245461, 0.398019, 0.382131, 0.11379, 0.00701747, -7.5756, -0.0786703, -20.9165 )
 
-[node name="arrow" parent="Weapons" index="4" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06052, -2.94284, -1.0312 )
+[node name="gravestonegltf58" parent="Environment" index="83" instance=ExtResource( 6 )]
+transform = Transform( -0.333039, 0.218916, 0.0135007, -1.7398e-08, -0.0245461, 0.398019, 0.219332, 0.332407, 0.0204998, -8.62695, -0.0786703, -21.4921 )
 
-[node name="crossbow" parent="Weapons" index="5" instance=ExtResource( 16 )]
-transform = Transform( 0.743005, 0, -0.669286, 0, 1, 0, 0.669286, 0, 0.743005, 7.21931, -3.51407, 1.81933 )
+[node name="gravestonegltf59" parent="Environment" index="84" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0.131631, -0.00642403, 1.80473e-08, 0.0194383, 0.398301, 0.131788, 0.375921, -0.0183462, -13.1178, -0.0786703, -20.9779 )
 
-[node name="staff" parent="Weapons" index="6" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.19542, -3.08375, -1.64758 )
+[node name="gravestonegltf60" parent="Environment" index="85" instance=ExtResource( 6 )]
+transform = Transform( 0.157273, 0.365757, 0.0225564, -1.7398e-08, -0.0245461, 0.398019, 0.366452, -0.156975, -0.00968072, -12.7264, -0.0786703, -17.2507 )
 
-[node name="spellBook" parent="Weapons" index="7" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77894, -2.96648, -0.393639 )
+[node name="gravestonegltf62" parent="Environment" index="86" instance=ExtResource( 6 )]
+transform = Transform( 0.396785, -0.0397108, -0.00244895, -1.7398e-08, -0.0245461, 0.398019, -0.0397862, -0.396033, -0.0244236, -13.4541, -0.0786703, -19.329 )
 
-[node name="shield" parent="Weapons" index="8" instance=ExtResource( 12 )]
-transform = Transform( 4.37114e-08, 1, 4.37114e-08, -8.74228e-08, -4.37114e-08, 1, 1, -4.37114e-08, 8.74228e-08, 7.7981, -2.86753, 0.390311 )
+[node name="gravestonegltf61" parent="Environment" index="87" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0.131538, 0.008112, -1.7398e-08, -0.0245461, 0.398019, 0.131788, 0.375655, 0.0231669, -14.5035, -0.0786703, -19.4344 )
 
-[node name="Mirror" type="MeshInstance" parent="." index="6"]
-transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 8.44018, -1.9472, 0.0661032 )
-mesh = SubResource( 8 )
-skeleton = NodePath("")
+[node name="gravestonegltf9" parent="Environment" index="88" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.398775, 0, 0.131788, 0, -0.376369, -26.7365, -0.0786707, -19.8033 )
 
-[node name="Viewport" type="Viewport" parent="Mirror" index="0"]
-size = Vector2( 400, 400 )
-hdr = false
-keep_3d_linear = true
-usage = 3
-render_target_v_flip = true
-render_target_update_mode = 3
+[node name="gravestonegltf28" parent="Environment" index="89" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -21.0308, -0.0786707, -22.6288 )
 
-[node name="Camera" type="Camera" parent="Mirror/Viewport" index="0"]
-transform = Transform( -3.91609e-08, -0.44426, 0.895898, -1.94192e-08, 0.895898, 0.44426, -1, 0, -4.37114e-08, 8.03304, -0.90786, -0.0178395 )
-current = true
-fov = 50.0
+[node name="gravestonegltf29" parent="Environment" index="90" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -21.7878, -0.0786707, -22.3637 )
 
-[node name="Border" type="MeshInstance" parent="Mirror" index="1"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.0220327, 0 )
-mesh = SubResource( 7 )
+[node name="gravestonegltf30" parent="Environment" index="91" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -22.5316, -0.0786707, -22.1033 )
 
-[node name="SecurityCamera" parent="Mirror" index="2" instance=ExtResource( 23 )]
-transform = Transform( -1, 2.46761e-08, -1.15467e-07, 1.1263e-07, 0.492879, -0.870098, 3.54407e-08, -0.870098, -0.492879, -0.0944954, 0.198406, -1.15939 )
+[node name="gravestonegltf31" parent="Environment" index="92" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -23.2886, -0.0786707, -21.8382 )
 
-[node name="BreakableFloor" parent="." index="7" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0655341, -4.86147, -8.01177 )
+[node name="gravestonegltf32" parent="Environment" index="93" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -24.0193, -0.0786707, -21.5824 )
+
+[node name="gravestonegltf33" parent="Environment" index="94" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -24.7632, -0.0786707, -21.3219 )
+
+[node name="gravestonegltf34" parent="Environment" index="95" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -25.507, -0.0786707, -21.0614 )
+
+[node name="gravestonegltf35" parent="Environment" index="96" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -26.2574, -0.0786707, -20.7987 )
+
+[node name="gravestonegltf36" parent="Environment" index="97" instance=ExtResource( 6 )]
+transform = Transform( -0.376369, 0, -0.131788, 0, 0.273135, 0, 0.131788, 0, -0.376369, -26.9947, -0.0786707, -20.5405 )
+
+[node name="gravestonegltf10" parent="Environment" index="98" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -28.5892, -0.0786707, -25.0946 )
+
+[node name="gravestonegltf11" parent="Environment" index="99" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -27.83, -0.0786707, -25.3533 )
+
+[node name="gravestonegltf12" parent="Environment" index="100" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -27.084, -0.0786707, -25.6074 )
+
+[node name="gravestonegltf13" parent="Environment" index="101" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -26.3247, -0.0786707, -25.8661 )
+
+[node name="gravestonegltf14" parent="Environment" index="102" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -25.5919, -0.0786707, -26.1158 )
+
+[node name="gravestonegltf15" parent="Environment" index="103" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -24.8459, -0.0786707, -26.3699 )
+
+[node name="gravestonegltf16" parent="Environment" index="104" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -24.0999, -0.0786707, -26.6241 )
+
+[node name="gravestonegltf17" parent="Environment" index="105" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -23.3473, -0.0786707, -26.8805 )
+
+[node name="gravestonegltf18" parent="Environment" index="106" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.398775, 0, -0.128604, 0, 0.377468, -22.6079, -0.0786707, -27.1324 )
+
+[node name="gravestonegltf19" parent="Environment" index="107" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -28.3011, -0.0786707, -24.2718 )
+
+[node name="gravestonegltf20" parent="Environment" index="108" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -27.5418, -0.0786707, -24.5304 )
+
+[node name="gravestonegltf21" parent="Environment" index="109" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -26.7958, -0.0786707, -24.7846 )
+
+[node name="gravestonegltf22" parent="Environment" index="110" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -26.0366, -0.0786707, -25.0433 )
+
+[node name="gravestonegltf23" parent="Environment" index="111" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -25.3038, -0.0786707, -25.2929 )
+
+[node name="gravestonegltf24" parent="Environment" index="112" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -24.5578, -0.0786707, -25.5471 )
+
+[node name="gravestonegltf25" parent="Environment" index="113" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -23.8118, -0.0786707, -25.8013 )
+
+[node name="gravestonegltf26" parent="Environment" index="114" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -23.0592, -0.0786707, -26.0577 )
+
+[node name="gravestonegltf27" parent="Environment" index="115" instance=ExtResource( 6 )]
+transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -22.3198, -0.0786707, -26.3096 )
+
+[node name="wall_doorgltf" parent="Environment" index="116" instance=ExtResource( 13 )]
+transform = Transform( -0.28413, 0, 0.752738, 0, 0.79755, 0, -0.81144, 0, -0.263575, -20.4272, -0.101259, -25.0043 )
+
+[node name="wallCornergltf" parent="Environment" index="117" instance=ExtResource( 9 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -31.8264, -0.0956075, -25.4036 )
+
+[node name="wallCornergltf2" parent="Environment" index="118" instance=ExtResource( 9 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -29.0779, -0.0956075, -17.5542 )
+
+[node name="wallCornergltf3" parent="Environment" index="119" instance=ExtResource( 9 )]
+transform = Transform( 0.263575, 0, -0.752738, 0, 0.79755, 0, 0.752738, 0, 0.263575, -19.0115, -0.0956075, -21.079 )
+
+[node name="wallCornergltf4" parent="Environment" index="120" instance=ExtResource( 9 )]
+transform = Transform( 0.752738, 0, 0.263575, 0, 0.79755, 0, -0.263575, 0, 0.752738, -21.7976, -0.0956075, -28.9077 )
+
+[node name="wallgltf9" parent="Environment" index="121" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -22.0301, 2.69103, -20.0208 )
+
+[node name="wallgltf10" parent="Environment" index="122" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -25.0393, 2.69103, -18.967 )
+
+[node name="wallgltf11" parent="Environment" index="123" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -26.7697, 2.69103, -18.3163 )
+
+[node name="wallgltf12" parent="Environment" index="124" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -24.7879, 2.69103, -27.8968 )
+
+[node name="wallgltf13" parent="Environment" index="125" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -27.7972, 2.69103, -26.8431 )
+
+[node name="wallgltf14" parent="Environment" index="126" instance=ExtResource( 20 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -29.5275, 2.69103, -26.1923 )
+
+[node name="wallgltf15" parent="Environment" index="127" instance=ExtResource( 20 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -30.9296, 2.69103, -22.8538 )
+
+[node name="wallgltf16" parent="Environment" index="128" instance=ExtResource( 20 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -30.1339, 2.69103, -20.5389 )
+
+[node name="wallgltf17" parent="Environment" index="129" instance=ExtResource( 20 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -20.8499, 2.69103, -26.3833 )
+
+[node name="wallgltf18" parent="Environment" index="130" instance=ExtResource( 20 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -20.0543, 2.69103, -24.0684 )
+
+[node name="wallCornergltf5" parent="Environment" index="131" instance=ExtResource( 9 )]
+transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -31.8264, 2.69823, -25.4036 )
+
+[node name="wallCornergltf6" parent="Environment" index="132" instance=ExtResource( 9 )]
+transform = Transform( -0.752738, 0, -0.263575, 0, 0.79755, 0, 0.263575, 0, -0.752738, -29.0779, 2.69823, -17.5542 )
+
+[node name="wallCornergltf7" parent="Environment" index="133" instance=ExtResource( 9 )]
+transform = Transform( 0.263575, 0, -0.752738, 0, 0.79755, 0, 0.752738, 0, 0.263575, -19.0115, 2.69823, -21.079 )
+
+[node name="wallCornergltf8" parent="Environment" index="134" instance=ExtResource( 9 )]
+transform = Transform( 0.752738, 0, 0.263575, 0, 0.79755, 0, -0.263575, 0, 0.752738, -21.7976, 2.69823, -28.9077 )
+
+[node name="coffinB_bottomgltf" parent="Environment" index="135" instance=ExtResource( 8 )]
+transform = Transform( -0.376369, -0.126391, -0.0373261, 1.67172e-08, 0.112945, -0.382446, 0.131788, -0.360957, -0.106599, -9.10389, 0.334269, -15.5222 )
+
+[node name="castlegltf" parent="Environment" index="136" instance=ExtResource( 18 )]
+transform = Transform( -4.45504, 0, 12.723, 0, 13.4805, 0, -12.723, 0, -4.45504, -38.9414, -2.10368, -18.5376 )
+
+[node name="watchtowergltf" parent="Environment/castlegltf" index="1" instance=ExtResource( 17 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="Environment/castlegltf" index="2" instance=ExtResource( 17 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="castlegltf2" parent="Environment" index="137" instance=ExtResource( 18 )]
+transform = Transform( 4.45504, 0, -12.723, 0, 13.4805, 0, 12.723, 0, 4.45504, -49.0684, -2.10368, -31.8123 )
+
+[node name="castlegltf3" parent="Environment" index="138" instance=ExtResource( 18 )]
+transform = Transform( 4.45504, 0, -12.723, 0, 13.4805, 0, 12.723, 0, 4.45504, -38.3672, -2.10368, -1.25106 )
+
+[node name="mountaingltf" parent="Environment" index="139" instance=ExtResource( 15 )]
+transform = Transform( -1.70475, 0, 4.86856, 0, 5.15839, 0, -4.86856, 0, -1.70475, -28.7691, -0.269251, -31.0484 )
+
+[node name="mountaingltf2" parent="Environment" index="140" instance=ExtResource( 15 )]
+transform = Transform( -4.59309, 0, 2.34787, 0, 5.15839, 0, -2.34787, 0, -4.59309, -29.9339, -1.52782, -34.1719 )
+
+[node name="mountaingltf3" parent="Environment" index="141" instance=ExtResource( 15 )]
+transform = Transform( 2.50367, 0, -4.51005, 0, 5.15839, 0, 4.51005, 0, 2.50367, -24.3553, -1.09199, -14.8063 )
+
+[node name="mountaingltf4" parent="Environment" index="142" instance=ExtResource( 15 )]
+transform = Transform( 4.92403, 0, -1.53716, 0, 5.15839, 0, 1.53716, 0, 4.92403, -23.0547, -1.15827, -12.998 )
+
+[node name="treeD_graveyardgltf" parent="Environment" index="143" instance=ExtResource( 5 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -17.4498, 0, -22.546 )
+
+[node name="treeD_graveyardgltf2" parent="Environment" index="144" instance=ExtResource( 5 )]
+transform = Transform( -0.470872, 0, 1.34475, 0, 1.42481, 0, -1.34475, 0, -0.470872, -17.3936, 0, -20.9159 )
+
+[node name="treeD_graveyardgltf3" parent="Environment" index="145" instance=ExtResource( 5 )]
+transform = Transform( -0.470872, 0, 1.34475, 0, 1.42481, 0, -1.34475, 0, -0.470872, -15.2026, 0, -14.6588 )
+
+[node name="treeD_graveyardgltf4" parent="Environment" index="146" instance=ExtResource( 5 )]
+transform = Transform( -0.470872, 0, 1.34475, 0, 1.42481, 0, -1.34475, 0, -0.470872, -15.4161, 0, -13.0408 )
+
+[node name="treeD_graveyardgltf5" parent="Environment" index="147" instance=ExtResource( 5 )]
+transform = Transform( 1.09764, 0, 0.908432, 0, 1.42481, 0, -0.908432, 0, 1.09764, -16.3528, 0, -15.7158 )
+
+[node name="treeD_graveyardgltf6" parent="Environment" index="148" instance=ExtResource( 5 )]
+transform = Transform( 0.274779, 0, 1.84941, 0, 1.86971, 0, -1.84941, 0, 0.274779, -16.783, 0, -16.9444 )
+
+[node name="treeD_graveyardgltf7" parent="Environment" index="149" instance=ExtResource( 5 )]
+transform = Transform( -0.575567, 0, 1.77891, 0, 1.86971, 0, -1.77891, 0, -0.575567, -17.216, 0, -14.0084 )
+
+[node name="treeD_graveyardgltf8" parent="Environment" index="150" instance=ExtResource( 5 )]
+transform = Transform( -0.145323, 0, -0.989384, 0, 1, 0, 0.989384, 0, -0.145323, -17.1768, 0, -12.0997 )
+
+[node name="treeD_graveyardgltf9" parent="Environment" index="151" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -21.822, 0, 0.317392 )
+
+[node name="treeD_graveyardgltf10" parent="Environment" index="152" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -20.19, 0, 0.293451 )
+
+[node name="treeD_graveyardgltf11" parent="Environment" index="153" instance=ExtResource( 5 )]
+transform = Transform( -1.0583, 0, 0.953971, 0, 1.42481, 0, -0.953971, 0, -1.0583, -22.7005, 0, 1.60893 )
+
+[node name="treeD_graveyardgltf12" parent="Environment" index="154" instance=ExtResource( 5 )]
+transform = Transform( -1.8697, 0, 0.00310081, 0, 1.86971, 0, -0.00310081, 0, -1.8697, -23.8536, 0, 2.21313 )
+
+[node name="treeD_graveyardgltf13" parent="Environment" index="155" instance=ExtResource( 5 )]
+transform = Transform( -1.67638, 0, -0.827974, 0, 1.86971, 0, 0.827974, 0, -1.67638, -20.8858, 0, 2.2149 )
+
+[node name="treeD_graveyardgltf14" parent="Environment" index="156" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -19.0031, 0, 1.89872 )
+
+[node name="treeD_graveyardgltf15" parent="Environment" index="157" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -15.0854, 0, -0.793045 )
+
+[node name="treeD_graveyardgltf16" parent="Environment" index="158" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -13.4535, 0, -0.816982 )
+
+[node name="treeD_graveyardgltf17" parent="Environment" index="159" instance=ExtResource( 5 )]
+transform = Transform( -1.0583, 0, 0.953971, 0, 1.42481, 0, -0.953971, 0, -1.0583, -15.964, 0, 0.498508 )
+
+[node name="treeD_graveyardgltf18" parent="Environment" index="160" instance=ExtResource( 5 )]
+transform = Transform( -1.8697, 0, 0.00310081, 0, 1.86971, 0, -0.00310081, 0, -1.8697, -17.1171, 0, 1.1027 )
+
+[node name="treeD_graveyardgltf19" parent="Environment" index="161" instance=ExtResource( 5 )]
+transform = Transform( -1.67638, 0, -0.827974, 0, 1.86971, 0, 0.827974, 0, -1.67638, -14.1493, 0, 1.10447 )
+
+[node name="treeD_graveyardgltf20" parent="Environment" index="162" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -12.2665, 0, 0.78829 )
+
+[node name="treeD_graveyardgltf21" parent="Environment" index="163" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -8.54078, 0, -3.08469 )
+
+[node name="treeD_graveyardgltf22" parent="Environment" index="164" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -6.90883, 0, -3.10863 )
+
+[node name="treeD_graveyardgltf23" parent="Environment" index="165" instance=ExtResource( 5 )]
+transform = Transform( -1.0583, 0, 0.953971, 0, 1.42481, 0, -0.953971, 0, -1.0583, -9.41933, 0, -1.79314 )
+
+[node name="treeD_graveyardgltf24" parent="Environment" index="166" instance=ExtResource( 5 )]
+transform = Transform( -1.8697, 0, 0.00310081, 0, 1.86971, 0, -0.00310081, 0, -1.8697, -10.5724, 0, -1.18893 )
+
+[node name="treeD_graveyardgltf25" parent="Environment" index="167" instance=ExtResource( 5 )]
+transform = Transform( -1.67638, 0, -0.827974, 0, 1.86971, 0, 0.827974, 0, -1.67638, -7.60464, 0, -1.18718 )
+
+[node name="treeD_graveyardgltf26" parent="Environment" index="168" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -5.72188, 0, -1.50336 )
+
+[node name="treeD_graveyardgltf27" parent="Environment" index="169" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -2.50717, 0, -5.19739 )
+
+[node name="treeD_graveyardgltf28" parent="Environment" index="170" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -0.875263, 0, -5.22131 )
+
+[node name="treeD_graveyardgltf29" parent="Environment" index="171" instance=ExtResource( 5 )]
+transform = Transform( -1.0583, 0, 0.953971, 0, 1.42481, 0, -0.953971, 0, -1.0583, -3.38577, 0, -3.90583 )
+
+[node name="treeD_graveyardgltf30" parent="Environment" index="172" instance=ExtResource( 5 )]
+transform = Transform( -1.8697, 0, 0.00310081, 0, 1.86971, 0, -0.00310081, 0, -1.8697, -4.53884, 0, -3.30164 )
+
+[node name="treeD_graveyardgltf31" parent="Environment" index="173" instance=ExtResource( 5 )]
+transform = Transform( -1.67638, 0, -0.827974, 0, 1.86971, 0, 0.827974, 0, -1.67638, -1.57107, 0, -3.29987 )
+
+[node name="treeD_graveyardgltf32" parent="Environment" index="174" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.311687, 0, -3.61604 )
+
+[node name="treeD_graveyardgltf33" parent="Environment" index="175" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -2.50717, 0, -5.19739 )
+
+[node name="treeD_graveyardgltf34" parent="Environment" index="176" instance=ExtResource( 5 )]
+transform = Transform( -1.26205, 0, -0.661297, 0, 1.42481, 0, 0.661297, 0, -1.26205, -0.875263, 0, -5.22131 )
+
+[node name="treeD_graveyardgltf35" parent="Environment" index="177" instance=ExtResource( 5 )]
+transform = Transform( -1.0583, 0, 0.953971, 0, 1.42481, 0, -0.953971, 0, -1.0583, -3.38577, 0, -3.90583 )
+
+[node name="treeD_graveyardgltf36" parent="Environment" index="178" instance=ExtResource( 5 )]
+transform = Transform( -1.8697, 0, 0.00310081, 0, 1.86971, 0, -0.00310081, 0, -1.8697, -4.53884, 0, -3.30164 )
+
+[node name="treeD_graveyardgltf37" parent="Environment" index="179" instance=ExtResource( 5 )]
+transform = Transform( -1.67638, 0, -0.827974, 0, 1.86971, 0, 0.827974, 0, -1.67638, -1.57107, 0, -3.29987 )
+
+[node name="treeD_graveyardgltf38" parent="Environment" index="180" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+
+[node name="treeD_graveyardgltf39" parent="Environment" index="181" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, -28.8983, 0, 6.52173 )
+
+[node name="treeD_graveyardgltf40" parent="Environment" index="182" instance=ExtResource( 5 )]
+transform = Transform( -1.61646, 0, 1.45711, 0, 2.17626, 0, -1.45711, 0, -1.61646, -32.7328, 0, 8.53103 )
+
+[node name="treeD_graveyardgltf41" parent="Environment" index="183" instance=ExtResource( 5 )]
+transform = Transform( -2.8558, 0, 0.00473624, 0, 2.85581, 0, -0.00473624, 0, -2.8558, -34.4941, 0, 9.4539 )
+
+[node name="treeD_graveyardgltf42" parent="Environment" index="184" instance=ExtResource( 5 )]
+transform = Transform( -2.56052, 0, -1.26465, 0, 2.85581, 0, 1.26465, 0, -2.56052, -29.961, 0, 9.45659 )
+
+[node name="treeD_graveyardgltf43" parent="Environment" index="185" instance=ExtResource( 5 )]
+transform = Transform( 1.52741, 0, -1.46031e-06, 0, 1.52741, 0, 1.46031e-06, 0, 1.52741, -27.0853, 0, 8.97364 )
+
+[node name="treeD_graveyardgltf44" parent="Environment" index="186" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, -21.1015, 0, 4.86221 )
+
+[node name="treeD_graveyardgltf45" parent="Environment" index="187" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, -18.6088, 0, 4.82567 )
+
+[node name="treeD_graveyardgltf46" parent="Environment" index="188" instance=ExtResource( 5 )]
+transform = Transform( -1.61646, 0, 1.45711, 0, 2.17626, 0, -1.45711, 0, -1.61646, -22.4434, 0, 6.83495 )
+
+[node name="treeD_graveyardgltf47" parent="Environment" index="189" instance=ExtResource( 5 )]
+transform = Transform( -2.8558, 0, 0.00473624, 0, 2.85581, 0, -0.00473624, 0, -2.8558, -24.2046, 0, 7.7578 )
+
+[node name="treeD_graveyardgltf48" parent="Environment" index="190" instance=ExtResource( 5 )]
+transform = Transform( -2.56052, 0, -1.26465, 0, 2.85581, 0, 1.26465, 0, -2.56052, -19.6716, 0, 7.76049 )
+
+[node name="treeD_graveyardgltf49" parent="Environment" index="191" instance=ExtResource( 5 )]
+transform = Transform( 1.52741, 0, -1.46031e-06, 0, 1.52741, 0, 1.46031e-06, 0, 1.52741, -16.7959, 0, 7.27755 )
+
+[node name="treeD_graveyardgltf50" parent="Environment" index="192" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, -11.1051, 0, 1.36193 )
+
+[node name="treeD_graveyardgltf51" parent="Environment" index="193" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, -8.61247, 0, 1.32541 )
+
+[node name="treeD_graveyardgltf52" parent="Environment" index="194" instance=ExtResource( 5 )]
+transform = Transform( -1.61646, 0, 1.45711, 0, 2.17626, 0, -1.45711, 0, -1.61646, -12.4471, 0, 3.33467 )
+
+[node name="treeD_graveyardgltf53" parent="Environment" index="195" instance=ExtResource( 5 )]
+transform = Transform( -2.8558, 0, 0.00473624, 0, 2.85581, 0, -0.00473624, 0, -2.8558, -14.2083, 0, 4.25752 )
+
+[node name="treeD_graveyardgltf54" parent="Environment" index="196" instance=ExtResource( 5 )]
+transform = Transform( -2.56052, 0, -1.26465, 0, 2.85581, 0, 1.26465, 0, -2.56052, -9.67526, 0, 4.26023 )
+
+[node name="treeD_graveyardgltf55" parent="Environment" index="197" instance=ExtResource( 5 )]
+transform = Transform( 1.52741, 0, -1.46031e-06, 0, 1.52741, 0, 1.46031e-06, 0, 1.52741, -6.79951, 0, 3.77727 )
+
+[node name="treeD_graveyardgltf56" parent="Environment" index="198" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, -1.88938, 0, -1.86501 )
+
+[node name="treeD_graveyardgltf57" parent="Environment" index="199" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, 0.603298, 0, -1.90155 )
+
+[node name="treeD_graveyardgltf58" parent="Environment" index="200" instance=ExtResource( 5 )]
+transform = Transform( -1.61646, 0, 1.45711, 0, 2.17626, 0, -1.45711, 0, -1.61646, -3.2313, 0, 0.107718 )
+
+[node name="treeD_graveyardgltf59" parent="Environment" index="201" instance=ExtResource( 5 )]
+transform = Transform( -2.8558, 0, 0.00473624, 0, 2.85581, 0, -0.00473624, 0, -2.8558, -4.99254, 0, 1.03058 )
+
+[node name="treeD_graveyardgltf60" parent="Environment" index="202" instance=ExtResource( 5 )]
+transform = Transform( -2.56052, 0, -1.26465, 0, 2.85581, 0, 1.26465, 0, -2.56052, -1.54637, 0, 3.6261 )
+
+[node name="treeD_graveyardgltf61" parent="Environment" index="203" instance=ExtResource( 5 )]
+transform = Transform( 1.52741, 0, -1.46031e-06, 0, 1.52741, 0, 1.46031e-06, 0, 1.52741, -3.26836, 0, 2.54082 )
+
+[node name="treeD_graveyardgltf62" parent="Environment" index="204" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, -1.88938, 0, -1.86501 )
+
+[node name="treeD_graveyardgltf63" parent="Environment" index="205" instance=ExtResource( 5 )]
+transform = Transform( -1.92766, 0, -1.01007, 0, 2.17626, 0, 1.01007, 0, -1.92766, 0.603298, 0, -1.90155 )
+
+[node name="treeD_graveyardgltf64" parent="Environment" index="206" instance=ExtResource( 5 )]
+transform = Transform( -1.61646, 0, 1.45711, 0, 2.17626, 0, -1.45711, 0, -1.61646, -2.63877, 0, 1.7999 )
+
+[node name="treeD_graveyardgltf65" parent="Environment" index="207" instance=ExtResource( 5 )]
+transform = Transform( -2.8558, 0, 0.00473624, 0, 2.85581, 0, -0.00473624, 0, -2.8558, -4.99254, 0, 1.03058 )
+
+[node name="treeD_graveyardgltf66" parent="Environment" index="208" instance=ExtResource( 5 )]
+transform = Transform( -2.56052, 0, -1.26465, 0, 2.85581, 0, 1.26465, 0, -2.56052, -0.459496, 0, 1.03328 )
+
+[node name="treeD_graveyardgltf67" parent="Environment" index="209" instance=ExtResource( 5 )]
+transform = Transform( 1.52741, 0, -1.46031e-06, 0, 1.52741, 0, 1.46031e-06, 0, 1.52741, 1.13479, 0, 0.999031 )
+
+[node name="treeD_graveyardgltf68" parent="Environment" index="210" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -33.0472, 0, -9.91259 )
+
+[node name="treeD_graveyardgltf69" parent="Environment" index="211" instance=ExtResource( 5 )]
+transform = Transform( -1.19456, 0, 1.8191, 0, 2.17626, 0, -1.8191, 0, -1.19456, -37.2657, 0, -8.94035 )
+
+[node name="treeD_graveyardgltf70" parent="Environment" index="212" instance=ExtResource( 5 )]
+transform = Transform( -2.76143, 0, 0.728108, 0, 2.85581, 0, -0.728108, 0, -2.76143, -39.2033, 0, -8.49381 )
+
+[node name="treeD_graveyardgltf71" parent="Environment" index="213" instance=ExtResource( 5 )]
+transform = Transform( -2.79739, 0, -0.574678, 0, 2.85581, 0, 0.574678, 0, -2.79739, -34.8189, 0, -7.34274 )
+
+[node name="treeD_graveyardgltf72" parent="Environment" index="214" instance=ExtResource( 5 )]
+transform = Transform( 1.47757, 0, -0.386975, 0, 1.52741, 0, 0.386975, 0, 1.47757, -31.9146, 0, -7.08137 )
+
+[node name="treeD_graveyardgltf73" parent="Environment" index="215" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -25.0843, 0, -9.54262 )
+
+[node name="treeD_graveyardgltf74" parent="Environment" index="216" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -22.6637, 0, -8.94646 )
+
+[node name="treeD_graveyardgltf75" parent="Environment" index="217" instance=ExtResource( 5 )]
+transform = Transform( -1.19456, 0, 1.8191, 0, 2.17626, 0, -1.8191, 0, -1.19456, -26.8823, 0, -7.97426 )
+
+[node name="treeD_graveyardgltf76" parent="Environment" index="218" instance=ExtResource( 5 )]
+transform = Transform( -2.76143, 0, 0.728108, 0, 2.85581, 0, -0.728108, 0, -2.76143, -28.8199, 0, -7.52772 )
+
+[node name="treeD_graveyardgltf77" parent="Environment" index="219" instance=ExtResource( 5 )]
+transform = Transform( -2.79739, 0, -0.574678, 0, 2.85581, 0, 0.574678, 0, -2.79739, -24.4354, 0, -6.37662 )
+
+[node name="treeD_graveyardgltf78" parent="Environment" index="220" instance=ExtResource( 5 )]
+transform = Transform( 1.47757, 0, -0.386975, 0, 1.52741, 0, 0.386975, 0, 1.47757, -21.5311, 0, -6.11529 )
+
+[node name="treeD_graveyardgltf79" parent="Environment" index="221" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -14.5273, 0, -10.3961 )
+
+[node name="treeD_graveyardgltf80" parent="Environment" index="222" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -12.1067, 0, -9.79995 )
+
+[node name="treeD_graveyardgltf81" parent="Environment" index="223" instance=ExtResource( 5 )]
+transform = Transform( -1.19456, 0, 1.8191, 0, 2.17626, 0, -1.8191, 0, -1.19456, -16.3253, 0, -8.82771 )
+
+[node name="treeD_graveyardgltf82" parent="Environment" index="224" instance=ExtResource( 5 )]
+transform = Transform( -2.76143, 0, 0.728108, 0, 2.85581, 0, -0.728108, 0, -2.76143, -18.2628, 0, -8.38118 )
+
+[node name="treeD_graveyardgltf83" parent="Environment" index="225" instance=ExtResource( 5 )]
+transform = Transform( -2.79739, 0, -0.574678, 0, 2.85581, 0, 0.574678, 0, -2.79739, -13.8784, 0, -7.23012 )
+
+[node name="treeD_graveyardgltf84" parent="Environment" index="226" instance=ExtResource( 5 )]
+transform = Transform( 1.47757, 0, -0.386975, 0, 1.52741, 0, 0.386975, 0, 1.47757, -10.9741, 0, -6.96873 )
+
+[node name="treeD_graveyardgltf85" parent="Environment" index="227" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -4.79469, 0, -11.1829 )
+
+[node name="treeD_graveyardgltf86" parent="Environment" index="228" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -2.37412, 0, -10.5868 )
+
+[node name="treeD_graveyardgltf87" parent="Environment" index="229" instance=ExtResource( 5 )]
+transform = Transform( -1.19456, 0, 1.8191, 0, 2.17626, 0, -1.8191, 0, -1.19456, -6.59263, 0, -9.61453 )
+
+[node name="treeD_graveyardgltf88" parent="Environment" index="230" instance=ExtResource( 5 )]
+transform = Transform( -2.76143, 0, 0.728108, 0, 2.85581, 0, -0.728108, 0, -2.76143, -8.53021, 0, -9.168 )
+
+[node name="treeD_graveyardgltf89" parent="Environment" index="231" instance=ExtResource( 5 )]
+transform = Transform( -2.79739, 0, -0.574678, 0, 2.85581, 0, 0.574678, 0, -2.79739, -4.14576, 0, -8.01693 )
+
+[node name="treeD_graveyardgltf90" parent="Environment" index="232" instance=ExtResource( 5 )]
+transform = Transform( 1.47757, 0, -0.386975, 0, 1.52741, 0, 0.386975, 0, 1.47757, -1.24147, 0, -7.75556 )
+
+[node name="treeD_graveyardgltf91" parent="Environment" index="233" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -4.79469, 0, -11.1829 )
+
+[node name="treeD_graveyardgltf92" parent="Environment" index="234" instance=ExtResource( 5 )]
+transform = Transform( -2.12067, 0, -0.488738, 0, 2.17626, 0, 0.488738, 0, -2.12067, -2.37412, 0, -10.5868 )
+
+[node name="treeD_graveyardgltf93" parent="Environment" index="235" instance=ExtResource( 5 )]
+transform = Transform( -1.19456, 0, 1.8191, 0, 2.17626, 0, -1.8191, 0, -1.19456, -6.59263, 0, -9.61453 )
+
+[node name="treeD_graveyardgltf94" parent="Environment" index="236" instance=ExtResource( 5 )]
+transform = Transform( -2.76143, 0, 0.728108, 0, 2.85581, 0, -0.728108, 0, -2.76143, -8.53021, 0, -9.168 )
+
+[node name="treeD_graveyardgltf95" parent="Environment" index="237" instance=ExtResource( 5 )]
+transform = Transform( -2.79739, 0, -0.574678, 0, 2.85581, 0, 0.574678, 0, -2.79739, -4.14576, 0, -8.01693 )
+
+[node name="treeD_graveyardgltf96" parent="Environment" index="238" instance=ExtResource( 5 )]
+transform = Transform( 1.47757, 0, -0.386975, 0, 1.52741, 0, 0.386975, 0, 1.47757, -1.24147, 0, -7.75556 )
+
+[node name="treeA_graveyardgltf" parent="Environment" index="239" instance=ExtResource( 16 )]
+transform = Transform( -1.01078, 0, -0.240707, 0, 1.03904, 0, 0.240707, 0, -1.01078, -9.02893, -0.107294, -15.2467 )
+
+[node name="treeA_graveyardgltf2" parent="Environment" index="240" instance=ExtResource( 16 )]
+transform = Transform( 0.976544, 0, 0.354931, 0, 1.03904, 0, -0.354931, 0, 0.976544, -5.61547, -0.107294, -16.7648 )
+
+[node name="treeA_graveyardgltf3" parent="Environment" index="241" instance=ExtResource( 16 )]
+transform = Transform( -1.03198, 0, 0.12092, 0, 1.03904, 0, -0.12092, 0, -1.03198, -11.9378, -0.107294, -13.3242 )
+
+[node name="pathDirtgltf" parent="Environment" index="242" instance=ExtResource( 19 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -10.5497, -11.5071, -19.9367 )
+
+[node name="rock" type="MeshInstance" parent="Environment" index="243"]
+transform = Transform( -80.797, 0, 15.2697, 0, 82.2272, 0, -15.2697, 0, -80.797, -17.4501, -24.8202, -23.4078 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="rock2" type="MeshInstance" parent="Environment" index="244"]
+transform = Transform( -80.797, 0, 15.2697, 0, 82.2272, 0, -15.2697, 0, -80.797, -35.2514, -27.4569, -32.2443 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="rock3" type="MeshInstance" parent="Environment" index="245"]
+transform = Transform( -80.797, 0, 15.2697, 0, 82.2272, 0, -15.2697, 0, -80.797, -71.8316, -24.8202, -39.3405 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="rock4" type="MeshInstance" parent="Environment" index="246"]
+transform = Transform( -80.797, 0, 15.2697, 0, 82.2272, 0, -15.2697, 0, -80.797, -63.659, -24.8202, -16.0006 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="rock5" type="MeshInstance" parent="Environment" index="247"]
+transform = Transform( -80.797, 0, 15.2697, 0, 82.2272, 0, -15.2697, 0, -80.797, -53.9766, -24.8202, 11.6511 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="rock6" type="MeshInstance" parent="Environment" index="248"]
+transform = Transform( -80.797, 0, 15.2697, 0, 82.2272, 0, -15.2697, 0, -80.797, -14.7208, -24.8202, -2.09452 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 1 )
+
+[node name="stairs_widegltf4" parent="Environment" index="249" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 3.74318, -7.74309, -33.4881 )
+
+[node name="stairs_widegltf5" parent="Environment" index="250" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 5.97265, -9.6, -34.2688 )
+
+[node name="stairs_widegltf6" parent="Environment" index="251" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 8.2379, -11.078, -35.062 )
+
+[node name="stairs_widegltf7" parent="Environment" index="252" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 10.4793, -12.9728, -35.8468 )
+
+[node name="stairs_widegltf8" parent="Environment" index="253" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 12.7088, -14.8297, -36.6275 )
+
+[node name="stairs_widegltf9" parent="Environment" index="254" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 14.8437, -16.3855, -37.375 )
+
+[node name="stairs_widegltf10" parent="Environment" index="255" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 17.0851, -18.2803, -38.1599 )
+
+[node name="stairs_widegltf11" parent="Environment" index="256" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 19.3146, -20.1372, -38.9405 )
+
+[node name="stairs_widegltf12" parent="Environment" index="257" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 21.5798, -21.6152, -39.7337 )
+
+[node name="stairs_widegltf13" parent="Environment" index="258" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 23.8212, -23.51, -40.5186 )
+
+[node name="stairs_widegltf14" parent="Environment" index="259" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, 26.0507, -25.3669, -41.2992 )
+
+[node name="stairs_widegltf2" parent="Environment" index="260" instance=ExtResource( 11 )]
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -3.01582, -2.10868, -31.1214 )
+
+[node name="wall_end_brokengltf" parent="Environment" index="261" instance=ExtResource( 14 )]
+transform = Transform( 0.376369, 0, 0.131788, 0, 0.398775, 0, -0.131788, 0, 0.376369, -2.54223, -3.55621, -31.9755 )
+
+[node name="wall_end_brokengltf2" parent="Environment" index="262" instance=ExtResource( 14 )]
+transform = Transform( 0.376369, 0, 0.131788, 0, 0.398775, 0, -0.131788, 0, 0.376369, -2.39653, -3.55621, -31.5594 )
+
+[node name="wall_end_brokengltf3" parent="Environment" index="263" instance=ExtResource( 14 )]
+transform = Transform( 0.376369, 0, 0.131788, 0, 0.398775, 0, -0.131788, 0, 0.376369, -2.24721, -3.55621, -31.133 )
+
+[node name="wall_end_brokengltf4" parent="Environment" index="264" instance=ExtResource( 14 )]
+transform = Transform( 0.376369, 0, 0.131788, 0, 0.398775, 0, -0.131788, 0, 0.376369, -2.1, -3.55621, -30.7126 )
+
+[node name="wall_end_brokengltf5" parent="Environment" index="265" instance=ExtResource( 14 )]
+transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.374807, 3.23291, -7.75449, -32.58 )
+
+[node name="wall_end_brokengltf6" parent="Environment" index="266" instance=ExtResource( 14 )]
+transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.374807, 3.08237, -7.75449, -32.9943 )
+
+[node name="wall_end_brokengltf7" parent="Environment" index="267" instance=ExtResource( 14 )]
+transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.374807, 2.92809, -7.75449, -33.419 )
+
+[node name="wall_end_brokengltf8" parent="Environment" index="268" instance=ExtResource( 14 )]
+transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.374807, 2.77599, -7.75449, -33.8377 )
+
+[node name="VistaStuff" type="Spatial" parent="." index="7"]
+
+[node name="SpookyVistaCrypt" type="Spatial" parent="VistaStuff" index="0"]
+
+[node name="castlegltf4" parent="VistaStuff/SpookyVistaCrypt" index="0" instance=ExtResource( 18 )]
+transform = Transform( -19.233, 0, 1.54709, 0, 19.2952, 0, -1.54709, 0, -19.233, -83.2243, -5.78603, 479.425 )
+
+[node name="rock7" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="1"]
+transform = Transform( -4.58404, 0, -9.65351, 0, 10.6866, 0, 9.65351, 0, -4.58404, -0.128431, -2.95232, 0.341518 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../../../..")
+material/0 = SubResource( 1 )
+
+[node name="rock8" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="2"]
+transform = Transform( -35.9016, 0, -75.6049, 0, 83.6956, 0, 75.6049, 0, -35.9016, -0.12843, -28.2824, 0.341516 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../../../..")
+material/0 = SubResource( 1 )
+
+[node name="rock9" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="3"]
+transform = Transform( 80.6906, 0, -22.2274, 0, 83.6956, 0, 22.2274, 0, 80.6906, -22.5281, -28.9596, 2.14334 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../../../..")
+material/0 = SubResource( 1 )
+
+[node name="watchtowergltf" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="4" instance=ExtResource( 17 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="5" instance=ExtResource( 17 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="treeD_graveyardgltf97" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="6" instance=ExtResource( 5 )]
+transform = Transform( -0.337231, 0, -0.155016, 0, 0.371152, 0, 0.155016, 0, -0.337231, -0.764902, -0.237478, 2.12052 )
+
+[node name="treeD_graveyardgltf98" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="7" instance=ExtResource( 5 )]
+transform = Transform( -0.339418, 0, -0.150168, 0, 0.371152, 0, 0.150168, 0, -0.339418, -0.641294, 0.0652176, 0.788088 )
+
+[node name="treeD_graveyardgltf99" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="8" instance=ExtResource( 5 )]
+transform = Transform( -0.0993253, -0.129336, -0.333409, 0.0510612, 0.337354, -0.146078, 0.353952, -0.0849613, -0.0724872, -1.12603, -0.0195776, 1.45262 )
+
+[node name="treeD_graveyardgltf100" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="9" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.00153, 0.0652176, 1.83819 )
+
+[node name="treeD_graveyardgltf101" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="10" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.64909, 0.0652176, 0.231058 )
+
+[node name="treeD_graveyardgltf102" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="11" instance=ExtResource( 5 )]
+transform = Transform( 0.328863, 0, -0.172058, 0, 0.371152, 0, 0.172058, 0, 0.328863, 2.00024, 0.112148, 0.59313 )
+
+[node name="treeD_graveyardgltf103" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="12" instance=ExtResource( 5 )]
+transform = Transform( -0.363198, -0.0441316, 0.0624034, -0.0428865, 0.368502, 0.0109963, -0.0632653, 0.00354992, -0.365705, 1.63205, 0.0642034, 1.30437 )
+
+[node name="treeD_graveyardgltf104" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="13" instance=ExtResource( 5 )]
+transform = Transform( 0.344711, 0, -0.137582, 0, 0.371152, 0, 0.137582, 0, 0.344711, -1.19478, 0.0652176, -0.299988 )
+
+[node name="treeD_graveyardgltf105" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="14" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, -0.0976682, 0.0652176, -1.19146 )
+
+[node name="treeD_graveyardgltf106" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="15" instance=ExtResource( 5 )]
+transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.370462, -0.78125, 0.0652176, -1.13647 )
+
+[node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt/castlegltf4" index="16" instance=ExtResource( 5 )]
+transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
+
+[node name="SpookyVistaCrypt2" type="Spatial" parent="VistaStuff" index="1"]
+
+[node name="rock7" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt2" index="0"]
+transform = Transform( 103.1, 0, 178.574, 0, 206.2, 0, -178.574, 0, 103.1, -80.2258, -62.7518, 473.056 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 1 )
+
+[node name="castlegltf4" parent="VistaStuff/SpookyVistaCrypt2" index="1" instance=ExtResource( 18 )]
+transform = Transform( -19.233, 0, 1.54709, 0, 19.2952, 0, -1.54709, 0, -19.233, -83.2243, -5.78603, 479.425 )
+
+[node name="watchtowergltf" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="1" instance=ExtResource( 17 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="2" instance=ExtResource( 17 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="treeD_graveyardgltf97" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="3" instance=ExtResource( 5 )]
+transform = Transform( -0.337231, 0, -0.155016, 0, 0.371152, 0, 0.155016, 0, -0.337231, -0.764902, -0.237478, 2.12052 )
+
+[node name="treeD_graveyardgltf98" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="4" instance=ExtResource( 5 )]
+transform = Transform( -0.339418, 0, -0.150168, 0, 0.371152, 0, 0.150168, 0, -0.339418, -0.641294, 0.0652176, 0.788088 )
+
+[node name="treeD_graveyardgltf99" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="5" instance=ExtResource( 5 )]
+transform = Transform( -0.0993253, -0.129336, -0.333409, 0.0510612, 0.337354, -0.146078, 0.353952, -0.0849613, -0.0724872, -1.12603, -0.0195776, 1.45262 )
+
+[node name="treeD_graveyardgltf100" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="6" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.00153, 0.0652176, 1.83819 )
+
+[node name="treeD_graveyardgltf101" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="7" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.64909, 0.0652176, 0.231058 )
+
+[node name="treeD_graveyardgltf102" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="8" instance=ExtResource( 5 )]
+transform = Transform( 0.328863, 0, -0.172058, 0, 0.371152, 0, 0.172058, 0, 0.328863, 2.00024, 0.112148, 0.59313 )
+
+[node name="treeD_graveyardgltf103" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="9" instance=ExtResource( 5 )]
+transform = Transform( -0.363198, -0.0441316, 0.0624034, -0.0428865, 0.368502, 0.0109963, -0.0632653, 0.00354992, -0.365705, 1.63205, 0.0642034, 1.30437 )
+
+[node name="treeD_graveyardgltf104" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="10" instance=ExtResource( 5 )]
+transform = Transform( 0.344711, 0, -0.137582, 0, 0.371152, 0, 0.137582, 0, 0.344711, -1.19478, 0.0652176, -0.299988 )
+
+[node name="treeD_graveyardgltf105" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="11" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, -0.0976682, 0.0652176, -1.19146 )
+
+[node name="treeD_graveyardgltf106" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="12" instance=ExtResource( 5 )]
+transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.370462, -0.78125, 0.0652176, -1.13647 )
+
+[node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt2/castlegltf4" index="13" instance=ExtResource( 5 )]
+transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
+
+[node name="SpookyVistaCrypt3" type="Spatial" parent="VistaStuff" index="2"]
+transform = Transform( 0.363369, 0, 0, 0, 0.363369, 0, 0, 0, 0.363369, 313.121, -2.9419, -1.11343 )
+
+[node name="rock7" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt3" index="0"]
+transform = Transform( 103.1, 0, 178.574, 0, 206.199, 0, -178.574, 0, 103.1, -80.2258, -99.1776, 473.056 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 1 )
+
+[node name="castlegltf4" parent="VistaStuff/SpookyVistaCrypt3" index="1" instance=ExtResource( 18 )]
+transform = Transform( -19.233, 0, 1.54709, 0, 19.2952, 0, -1.54709, 0, -19.233, -83.2243, -39.9882, 479.425 )
+
+[node name="watchtowergltf" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="1" instance=ExtResource( 17 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="2" instance=ExtResource( 17 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="treeD_graveyardgltf97" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="3" instance=ExtResource( 5 )]
+transform = Transform( -0.337231, 0, -0.155016, 0, 0.371152, 0, 0.155016, 0, -0.337231, -0.764902, -0.237478, 2.12052 )
+
+[node name="treeD_graveyardgltf98" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="4" instance=ExtResource( 5 )]
+transform = Transform( -0.339418, 0, -0.150168, 0, 0.371152, 0, 0.150168, 0, -0.339418, -0.641294, 0.0652176, 0.788088 )
+
+[node name="treeD_graveyardgltf99" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="5" instance=ExtResource( 5 )]
+transform = Transform( -0.0993253, -0.129336, -0.333409, 0.0510612, 0.337354, -0.146078, 0.353952, -0.0849613, -0.0724872, -1.12603, -0.0195776, 1.45262 )
+
+[node name="treeD_graveyardgltf100" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="6" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.00153, 0.0652176, 1.83819 )
+
+[node name="treeD_graveyardgltf101" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="7" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.64909, 0.0652176, 0.231058 )
+
+[node name="treeD_graveyardgltf102" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="8" instance=ExtResource( 5 )]
+transform = Transform( 0.328863, 0, -0.172058, 0, 0.371152, 0, 0.172058, 0, 0.328863, 2.00024, 0.112148, 0.59313 )
+
+[node name="treeD_graveyardgltf103" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="9" instance=ExtResource( 5 )]
+transform = Transform( -0.363198, -0.0441316, 0.0624034, -0.0428865, 0.368502, 0.0109963, -0.0632653, 0.00354992, -0.365705, 1.63205, 0.0642034, 1.30437 )
+
+[node name="treeD_graveyardgltf104" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="10" instance=ExtResource( 5 )]
+transform = Transform( 0.344711, 0, -0.137582, 0, 0.371152, 0, 0.137582, 0, 0.344711, -1.19478, 0.0652176, -0.299988 )
+
+[node name="treeD_graveyardgltf105" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="11" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, -0.0976682, 0.0652176, -1.19146 )
+
+[node name="treeD_graveyardgltf106" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="12" instance=ExtResource( 5 )]
+transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.370462, -0.78125, 0.0652176, -1.13647 )
+
+[node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt3/castlegltf4" index="13" instance=ExtResource( 5 )]
+transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
+
+[node name="SpookyVistaCrypt4" type="Spatial" parent="VistaStuff" index="3"]
+transform = Transform( 0.311618, 0, -0.186899, 0, 0.363369, 0, 0.186899, 0, 0.311618, -210.207, -54.92, 308.732 )
+
+[node name="rock7" type="MeshInstance" parent="VistaStuff/SpookyVistaCrypt4" index="0"]
+transform = Transform( 103.1, 0, 178.574, 0, 206.2, 0, -178.574, 0, 103.1, -80.2258, -62.7518, 473.056 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 1 )
+
+[node name="castlegltf4" parent="VistaStuff/SpookyVistaCrypt4" index="1" instance=ExtResource( 18 )]
+transform = Transform( -19.233, 0, 1.54709, 0, 19.2952, 0, -1.54709, 0, -19.233, -83.2243, -5.78603, 479.425 )
+
+[node name="watchtowergltf" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="1" instance=ExtResource( 17 )]
+transform = Transform( -0.902367, 0, 0.430968, 0, 1, 0, -0.430968, 0, -0.902367, -0.654206, -0.478481, 0.0940118 )
+
+[node name="watchtowergltf2" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="2" instance=ExtResource( 17 )]
+transform = Transform( -0.999969, 0, -0.00783641, 0, 1, 0, 0.00783641, 0, -0.999969, 0.94518, -0.478481, 0.0447215 )
+
+[node name="treeD_graveyardgltf97" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="3" instance=ExtResource( 5 )]
+transform = Transform( -0.337231, 0, -0.155016, 0, 0.371152, 0, 0.155016, 0, -0.337231, -0.764902, -0.237478, 2.12052 )
+
+[node name="treeD_graveyardgltf98" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="4" instance=ExtResource( 5 )]
+transform = Transform( -0.339418, 0, -0.150168, 0, 0.371152, 0, 0.150168, 0, -0.339418, -0.641294, 0.0652176, 0.788088 )
+
+[node name="treeD_graveyardgltf99" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="5" instance=ExtResource( 5 )]
+transform = Transform( -0.0993253, -0.129336, -0.333409, 0.0510612, 0.337354, -0.146078, 0.353952, -0.0849613, -0.0724872, -1.12603, -0.0195776, 1.45262 )
+
+[node name="treeD_graveyardgltf100" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="6" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.00153, 0.0652176, 1.83819 )
+
+[node name="treeD_graveyardgltf101" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="7" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, 1.64909, 0.0652176, 0.231058 )
+
+[node name="treeD_graveyardgltf102" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="8" instance=ExtResource( 5 )]
+transform = Transform( 0.328863, 0, -0.172058, 0, 0.371152, 0, 0.172058, 0, 0.328863, 2.00024, 0.112148, 0.59313 )
+
+[node name="treeD_graveyardgltf103" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="9" instance=ExtResource( 5 )]
+transform = Transform( -0.363198, -0.0441316, 0.0624034, -0.0428865, 0.368502, 0.0109963, -0.0632653, 0.00354992, -0.365705, 1.63205, 0.0642034, 1.30437 )
+
+[node name="treeD_graveyardgltf104" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="10" instance=ExtResource( 5 )]
+transform = Transform( 0.344711, 0, -0.137582, 0, 0.371152, 0, 0.137582, 0, 0.344711, -1.19478, 0.0652176, -0.299988 )
+
+[node name="treeD_graveyardgltf105" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="11" instance=ExtResource( 5 )]
+transform = Transform( 0.145849, 0, -0.341296, 0, 0.371152, 0, 0.341296, 0, 0.145849, -0.0976682, 0.0652176, -1.19146 )
+
+[node name="treeD_graveyardgltf106" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="12" instance=ExtResource( 5 )]
+transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.370462, -0.78125, 0.0652176, -1.13647 )
+
+[node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="13" instance=ExtResource( 5 )]
+transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
+
+[node name="BreakableFloor" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029183, -1.83538, -6.39871 )
 START_ENABLED = true
 
-[node name="FloorBreakHammer" parent="." index="8" instance=ExtResource( 24 )]
-transform = Transform( -4.37114e-08, 0.0243101, 0.999704, -1, -1.06263e-09, -4.36985e-08, 0, -0.999704, 0.0243101, 3.5493, -3.24518, -6.47499 )
+[editable path="Environment/wall_doorgltf"]
