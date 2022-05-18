@@ -10,6 +10,7 @@ onready var particles = $hammer_rare_long/CPUParticles
 
 
 func _ready():
+    particles.emitting = false
     pickupArea.disabled = true
     collider.disabled = true
 

@@ -375,4 +375,4 @@ mesh = SubResource( 7 )
 transform = Transform( -1, 2.46761e-08, -1.15467e-07, 1.1263e-07, 0.492879, -0.870098, 3.54407e-08, -0.870098, -0.492879, -0.0944954, 0.198406, -1.15939 )
 
 [node name="BreakableFloor" parent="." index="7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.731859, -4.87251, -7.92928 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.78863, -7.6105 )
