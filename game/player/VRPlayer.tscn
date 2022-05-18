@@ -131,7 +131,6 @@ radius = 1.91764
 script = ExtResource( 12 )
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
-auto_initialise = false
 
 [node name="Configuration" parent="FPController" index="0"]
 color_space = 0

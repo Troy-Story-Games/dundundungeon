@@ -39,7 +39,7 @@ func handle_collision(collision: KinematicCollision):
     velocity = Vector3.ZERO
     direction = Vector3.ZERO
     collider.disabled = true
-    
+
 
 
 func _on_Lifespan_timeout():
