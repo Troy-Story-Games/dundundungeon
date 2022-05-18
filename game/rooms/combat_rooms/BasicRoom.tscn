@@ -374,8 +374,5 @@ mesh = SubResource( 7 )
 [node name="SecurityCamera" parent="Mirror" index="2" instance=ExtResource( 23 )]
 transform = Transform( -1, 2.46761e-08, -1.15467e-07, 1.1263e-07, 0.492879, -0.870098, 3.54407e-08, -0.870098, -0.492879, -0.0944954, 0.198406, -1.15939 )
 
-[node name="FloorBreakHammer" parent="." index="7"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.92642, -3.45141, -6.47765 )
-
-[node name="BreakableFloor" parent="." index="8"]
+[node name="BreakableFloor" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.731859, -4.87251, -7.92928 )

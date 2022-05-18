@@ -22,3 +22,4 @@ func _on_Timer_timeout():
         return
     # warning-ignore:return_value_discarded
     Utils.instance_scene_on_main(enemy, global_transform)
+    SoundFx.play_3d("EnemyAppear2", global_transform.origin)

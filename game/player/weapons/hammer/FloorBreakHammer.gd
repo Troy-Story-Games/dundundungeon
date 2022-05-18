@@ -16,6 +16,7 @@ func _ready():
 
 func appear():
     animationPlayer.play("Appear")
+    SoundFx.play_3d("HammerAppear", global_transform.origin)
     pickupArea.disabled = false
     collider.disabled = false
 

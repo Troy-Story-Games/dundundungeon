@@ -17,6 +17,7 @@ func _ready():
 func break_floor():
     collider.disabled = true
     animationPlayer.play("Break")
+    SoundFx.play_3d("FloorBreak3", global_transform.origin)
 
 
 func set_enabled(value: bool):

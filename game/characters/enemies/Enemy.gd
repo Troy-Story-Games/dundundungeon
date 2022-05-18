@@ -108,17 +108,20 @@ func defer_impulse(bone: PhysicalBone, position: Vector3, impulse: Vector3):
 
 func take_damage(damage):
     self.health -= damage
-
+    SoundFx.play_3d("EnemyTakeDamage3", global_transform.origin)
 
 func _on_BodyHurtbox_take_damage(damage, _area):
+    SoundFx.play_3d("SwordHitEnemy5", global_transform.origin)
     take_damage(damage)
 
 
 func _on_HeadHurtbox_take_damage(damage, _area):
+    SoundFx.play_3d("ArrowHitEnemy3", global_transform.origin)
     take_damage(damage)
 
 
 func _on_DeathTimer_timeout():
     var particles : CPUParticles = Utils.instance_scene_on_main(PoofParticles, bodyBones.global_transform) as CPUParticles
     particles.emitting = true
+    SoundFx.play_3d("EnemyDisappear", global_transform.origin)
     queue_free()

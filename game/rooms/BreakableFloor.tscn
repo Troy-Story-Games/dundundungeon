@@ -104,7 +104,7 @@ color_ramp = SubResource( 6 )
 anims/Break = SubResource( 8 )
 
 [node name="FloorBreakHammer" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, -1, 0.707107, 0.707107, -3.09086e-08, 0.707107, -0.707107, -3.09086e-08, 0, 3.10302, 2.95011 )
+transform = Transform( -4.37114e-08, 0, -1, 0.707107, 0.707107, -3.09086e-08, 0.707107, -0.707107, -3.09086e-08, 0, 0, 0 )
 
 [connection signal="take_damage" from="Hurtbox" to="." method="_on_Hurtbox_take_damage"]
 

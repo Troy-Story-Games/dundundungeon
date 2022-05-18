@@ -23,6 +23,8 @@ func handle_collision(collision: KinematicCollision):
         if collider is PhysicalBone:
             var enemy = collider.get_parent().get_parent().get_parent()
             if enemy is Enemy:
+                SoundFx.play_3d("ArrowHitEnemy3", global_transform.origin)
                 enemy.defer_impulse(collider, collision.position, impulse)
         else:
             collider.apply_impulse(collision.position, impulse)
+            SoundFx.play_3d("ArrowHitObject", global_transform.origin)
