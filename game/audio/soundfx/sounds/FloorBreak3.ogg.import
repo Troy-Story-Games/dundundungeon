@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FloorBreak3.ogg-2e499d0e876516f693995e85664e13b2.oggstr"
+
+[deps]
+
+source_file="res://game/audio/soundfx/sounds/FloorBreak3.ogg"
+dest_files=[ "res://.import/FloorBreak3.ogg-2e499d0e876516f693995e85664e13b2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

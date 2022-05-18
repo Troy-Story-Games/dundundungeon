@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HammerAppear.ogg-b551135d9798b1d5d3b684d7658d2687.oggstr"
+
+[deps]
+
+source_file="res://game/audio/soundfx/sounds/HammerAppear.ogg"
+dest_files=[ "res://.import/HammerAppear.ogg-b551135d9798b1d5d3b684d7658d2687.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

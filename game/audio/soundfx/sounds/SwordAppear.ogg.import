@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SwordAppear.ogg-71c081f26de3bde644f79361658198cc.oggstr"
+
+[deps]
+
+source_file="res://game/audio/soundfx/sounds/SwordAppear.ogg"
+dest_files=[ "res://.import/SwordAppear.ogg-71c081f26de3bde644f79361658198cc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

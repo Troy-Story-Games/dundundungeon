@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CrossbowFire3.ogg-a7b8409a46620bdac314a74d9e8da49b.oggstr"
+
+[deps]
+
+source_file="res://game/audio/soundfx/sounds/CrossbowFire3.ogg"
+dest_files=[ "res://.import/CrossbowFire3.ogg-a7b8409a46620bdac314a74d9e8da49b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

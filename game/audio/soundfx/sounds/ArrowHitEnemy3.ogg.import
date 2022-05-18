@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ArrowHitEnemy3.ogg-7efe2b6ade7d96e30acee75bf356f9dc.oggstr"
+
+[deps]
+
+source_file="res://game/audio/soundfx/sounds/ArrowHitEnemy3.ogg"
+dest_files=[ "res://.import/ArrowHitEnemy3.ogg-7efe2b6ade7d96e30acee75bf356f9dc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

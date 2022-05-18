@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CrossbowAppear2.ogg-1cdcf866be9a8574c509d69530238e94.oggstr"
+
+[deps]
+
+source_file="res://game/audio/soundfx/sounds/CrossbowAppear2.ogg"
+dest_files=[ "res://.import/CrossbowAppear2.ogg-1cdcf866be9a8574c509d69530238e94.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
