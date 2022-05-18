@@ -101,6 +101,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Utils="*res://utils/Utils.gd"
+SoundFx="*res://game/audio/soundfx/SoundFX.tscn"
 
 [editor_plugins]
 
@@ -113,6 +114,13 @@ singletons=[ "res://addons/godot-openxr/config/godot_openxr.gdnlib" ]
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
 
 [layer_names]
 

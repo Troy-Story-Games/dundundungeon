@@ -29,7 +29,6 @@ func load_enemy_dir(path: String):
 
 
 func load_enemies():
-    # Load the kenney assets
     if len(enemies) > 0:
         return
 
