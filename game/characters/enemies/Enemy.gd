@@ -110,6 +110,7 @@ func take_damage(damage):
     self.health -= damage
     SoundFx.play_3d("EnemyTakeDamage3", global_transform.origin)
 
+
 func _on_BodyHurtbox_take_damage(damage, _area):
     SoundFx.play_3d("SwordHitEnemy5", global_transform.origin)
     take_damage(damage)

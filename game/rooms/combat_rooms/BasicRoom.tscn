@@ -376,3 +376,9 @@ transform = Transform( -1, 2.46761e-08, -1.15467e-07, 1.1263e-07, 0.492879, -0.8
 
 [node name="BreakableFloor" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.78863, -7.6105 )
+
+[node name="NextRoomSpawn" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0324795, -4.86848, -7.34078 )
+
+[node name="PrevRoomSpawn" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0324795, 0.831996, -7.34078 )

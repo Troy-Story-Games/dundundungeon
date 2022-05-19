@@ -7,12 +7,14 @@ onready var animationPlayer = $AnimationPlayer
 onready var collider = $CollisionShape
 onready var pickupArea = $ObjectPickupArea
 onready var particles = $hammer_rare_long/CPUParticles
+onready var hitbox = $Hitbox
 
 
 func _ready():
     particles.emitting = false
     pickupArea.disabled = true
     collider.disabled = true
+    hitbox.disabled = true
 
 
 func appear():
@@ -20,6 +22,7 @@ func appear():
     SoundFx.play_3d("HammerAppear", global_transform.origin)
     pickupArea.disabled = false
     collider.disabled = false
+    hitbox.disabled = false
 
 
 func interact(controller: ARVRController):

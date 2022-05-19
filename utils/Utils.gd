@@ -1,6 +1,7 @@
 extends Node
 
 var enemies: Array = []
+var rooms: Array = []
 
 
 func instance_scene_on_main(packed_scene: PackedScene, position) -> Node:
@@ -42,6 +43,28 @@ func load_enemies():
         if dir.current_is_dir():
             load_enemy_dir(full_path)
         check = dir.get_next()
+
+
+func load_rooms():
+    if len(rooms) > 0:
+        return
+
+    var base = "res://game/rooms/combat_rooms/"
+    var dir = Directory.new()
+    dir.open(base)
+    var check = dir.get_next()
+    while check != "":
+        var full_path = base + check
+        if check.ends_with(".tscn"):
+            rooms.append(load(full_path))
+        check = dir.get_next()
+
+
+func get_random_room() -> PackedScene:
+    if len(rooms) == 0:
+        load_rooms()
+    rooms.shuffle()
+    return rooms[0]
 
 
 func get_random_enemy() -> PackedScene:
