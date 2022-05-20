@@ -8,6 +8,7 @@ onready var hurtbox: Hurtbox = $Hurtbox
 onready var animationPlayer = $AnimationPlayer
 onready var collider = $CollisionShape
 onready var floorBreakHammer = $FloorBreakHammer
+onready var enableCheck = $EnableCheck
 
 
 func _ready():
@@ -32,3 +33,9 @@ func _on_Hurtbox_take_damage(_damage, _area):
     hurtbox.disabled = true
     enabled = false
     break_floor()
+
+
+func _on_EnableCheck_timeout():
+    if len(get_tree().get_nodes_in_group("Enemy")) == 0:
+        self.enabled = true
+        enableCheck.stop()

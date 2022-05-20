@@ -17,7 +17,6 @@ func appear():
         return
 
     animationPlayer.play_backwards("Dissolve")
-    SoundFx.play_3d("SwordAppear", global_transform.origin)
     collider.disabled = false
     hitbox.disabled = false
 

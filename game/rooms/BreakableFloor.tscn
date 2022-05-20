@@ -106,6 +106,10 @@ anims/Break = SubResource( 8 )
 [node name="FloorBreakHammer" parent="." instance=ExtResource( 4 )]
 transform = Transform( -3.09086e-08, 3.09086e-08, -1, 0.707107, 0.707107, 0, 0.707107, -0.707107, -4.37114e-08, 0, 2.8, 3.6 )
 
+[node name="EnableCheck" type="Timer" parent="."]
+autostart = true
+
 [connection signal="take_damage" from="Hurtbox" to="." method="_on_Hurtbox_take_damage"]
+[connection signal="timeout" from="EnableCheck" to="." method="_on_EnableCheck_timeout"]
 
 [editable path="Hurtbox"]

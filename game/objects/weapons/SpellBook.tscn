@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/objects/weapons/Metal.material" type="Material" id=1]
 [ext_resource path="res://assets/objects/weapons/White.material" type="Material" id=2]
 [ext_resource path="res://assets/objects/weapons/BrownDark.material" type="Material" id=3]
-[ext_resource path="res://assets/objects/weapons/Red.material" type="Material" id=4]
+[ext_resource path="res://assets/objects/weapons/GlowingRed.material" type="Material" id=4]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "spellBook_Cube4505"

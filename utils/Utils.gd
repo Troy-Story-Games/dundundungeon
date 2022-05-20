@@ -26,6 +26,7 @@ func load_enemy_dir(path: String):
         if check.ends_with(".tscn"):
             var asset_path = path + "/" + check
             enemies.append(load(asset_path))
+            print("Loaded enemy: ", asset_path)
         check = dir.get_next()
 
 
@@ -52,11 +53,13 @@ func load_rooms():
     var base = "res://game/rooms/combat_rooms/"
     var dir = Directory.new()
     dir.open(base)
+    dir.list_dir_begin(true, true)
     var check = dir.get_next()
     while check != "":
         var full_path = base + check
         if check.ends_with(".tscn"):
             rooms.append(load(full_path))
+            print("Loaded combat room: ", full_path)
         check = dir.get_next()
 
 

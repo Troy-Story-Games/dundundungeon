@@ -16,7 +16,6 @@ func handle_collision(collision: KinematicCollision):
     # Make sure we're at the right spot
     global_transform = old_transform
 
-    print("Collided with: ", collider)
     if collider.has_method("apply_impulse"):
         var impulse_direction = global_transform.origin.direction_to(collider.global_transform.origin).normalized()
         var impulse = impulse_direction * IMPULSE

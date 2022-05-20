@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game/projectiles/Projectile.gd"
 }, {
+"base": "Weapon",
+"class": "Sword",
+"language": "GDScript",
+"path": "res://game/player/weapons/sword/Sword.gd"
+}, {
 "base": "Spatial",
 "class": "VRPlayer",
 "language": "GDScript",
@@ -86,6 +91,7 @@ _global_script_class_icons={
 "ObjectPickupArea": "",
 "PlayerPickupArea": "",
 "Projectile": "",
+"Sword": "",
 "VRPlayer": "",
 "Weapon": ""
 }

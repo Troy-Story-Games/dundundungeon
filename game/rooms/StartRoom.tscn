@@ -785,6 +785,9 @@ transform = Transform( 1.47757, 0, -0.386975, 0, 1.52741, 0, 0.386975, 0, 1.4775
 [node name="treeA_graveyardgltf" parent="Environment" index="239" instance=ExtResource( 16 )]
 transform = Transform( -1.01078, 0, -0.240707, 0, 1.03904, 0, 0.240707, 0, -1.01078, -9.02893, -0.107294, -15.2467 )
 
+[node name="treeA_graveyard" parent="Environment/treeA_graveyardgltf" index="0"]
+transform = Transform( 1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0, 0 )
+
 [node name="treeA_graveyardgltf2" parent="Environment" index="240" instance=ExtResource( 16 )]
 transform = Transform( 0.976544, 0, 0.354931, 0, 1.03904, 0, -0.354931, 0, 0.976544, -5.61547, -0.107294, -16.7648 )
 
@@ -1114,3 +1117,6 @@ START_ENABLED = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.81397, -6.34954 )
 
 [editable path="Environment/wall_doorgltf"]
+[editable path="Environment/mountaingltf"]
+[editable path="Environment/treeD_graveyardgltf2"]
+[editable path="Environment/treeA_graveyardgltf"]

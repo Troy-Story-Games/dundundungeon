@@ -1,12 +1,15 @@
 extends RigidBody
 class_name FloorBreakHammer
 
+const GlowingRed = preload("res://assets/objects/weapons/GlowingRed.material")
+
 var controller: ARVRController = null
 
 onready var animationPlayer = $AnimationPlayer
 onready var collider = $CollisionShape
 onready var pickupArea = $ObjectPickupArea
 onready var particles = $hammer_rare_long/CPUParticles
+onready var hammer = $hammer_rare_long
 onready var hitbox = $Hitbox
 
 
@@ -38,3 +41,4 @@ func dropped():
 func _on_AnimationPlayer_animation_finished(anim_name):
     if anim_name == "Appear":
         animationPlayer.play("Hover")
+        hammer.set_surface_material(3, GlowingRed)

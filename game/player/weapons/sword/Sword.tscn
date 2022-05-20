@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://game/player/weapons/Weapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/fx/dissolve/WeaponDissolveTexture.tres" type="Texture" id=2]
+[ext_resource path="res://game/player/weapons/sword/Sword.gd" type="Script" id=3]
 [ext_resource path="res://game/fx/dissolve/DissolveShader.tres" type="Shader" id=6]
 
 [sub_resource type="ShaderMaterial" id=8]
@@ -155,6 +156,7 @@ tracks/3/keys = {
 
 [node name="Sword" instance=ExtResource( 1 )]
 collision_mask = 65
+script = ExtResource( 3 )
 
 [node name="sword_rare" type="MeshInstance" parent="." index="0"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
