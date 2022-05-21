@@ -1,10 +1,16 @@
-extends "res://game/rooms/Room.gd"
-
+extends GameRoom
+class_name StartRoom
 
 onready var animationPlayer = $AnimationPlayer
+onready var door = $Door
+onready var ground = $PlayerArea/StartAreaEnvironment/Ground
 
 
-func _on_DoorCloseArea_body_entered(body):
+func _on_Area_body_entered(_body):
+    SoundFx.play_3d("DoorClose09", door.global_transform.origin)
     animationPlayer.play("DoorClose")
-    # TODO: Play door close noise
 
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+    if anim_name == "DoorClose":
+        ground.visible = false

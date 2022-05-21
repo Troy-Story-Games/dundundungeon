@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/objects/weapons/Metal.material" type="Material" id=1]
 [ext_resource path="res://assets/objects/weapons/White.material" type="Material" id=2]
 [ext_resource path="res://assets/objects/weapons/Gold.material" type="Material" id=3]
 [ext_resource path="res://assets/objects/weapons/GlowingRed.material" type="Material" id=4]
+[ext_resource path="res://game/overlap/ObjectPickupArea.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "sword_rare_Cube4513"
@@ -57,13 +58,26 @@ surfaces/3 = {
 }
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.380575, 1, 0.0824282 )
+extents = Vector3( 0.114082, 0.696635, 0.0374539 )
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.070065
+height = 0.294172
 
 [node name="SwordRare" type="RigidBody"]
+mass = 40.0
 
 [node name="sword_rare" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.742301, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.902991, 0 )
 shape = SubResource( 2 )
+
+[node name="ObjectPickupArea" parent="." instance=ExtResource( 5 )]
+
+[node name="CollisionShape" parent="ObjectPickupArea" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[editable path="ObjectPickupArea"]

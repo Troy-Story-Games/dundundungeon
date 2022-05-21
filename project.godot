@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game/player/weapons/hammer/FloorBreakHammer.gd"
 }, {
+"base": "Spatial",
+"class": "GameRoom",
+"language": "GDScript",
+"path": "res://game/rooms/GameRoom.gd"
+}, {
 "base": "Area",
 "class": "Hitbox",
 "language": "GDScript",
@@ -69,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game/projectiles/Projectile.gd"
 }, {
+"base": "GameRoom",
+"class": "StartRoom",
+"language": "GDScript",
+"path": "res://game/rooms/StartRoom.gd"
+}, {
 "base": "Weapon",
 "class": "Sword",
 "language": "GDScript",
@@ -91,12 +101,14 @@ _global_script_class_icons={
 "EnemySpawner": "",
 "FireCPUParticles": "",
 "FloorBreakHammer": "",
+"GameRoom": "",
 "Hitbox": "",
 "Hurtbox": "",
 "ObjectPickupArea": "",
 "PlayerPickupArea": "",
 "PlayerStats": "",
 "Projectile": "",
+"StartRoom": "",
 "Sword": "",
 "VRPlayer": "",
 "Weapon": ""
@@ -105,7 +117,7 @@ _global_script_class_icons={
 [application]
 
 config/name="dundundungeon"
-run/main_scene="res://game/rooms/combat_rooms/BasicRoom.tscn"
+run/main_scene="res://game/Game.tscn"
 boot_splash/image="res://logo.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"

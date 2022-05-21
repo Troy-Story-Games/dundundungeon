@@ -44,9 +44,10 @@ surfaces/2 = {
 }
 
 [sub_resource type="CapsuleShape" id=2]
-radius = 0.0729861
+radius = 0.0543753
 
 [node name="StaffRare" type="RigidBody"]
+mass = 20.0
 
 [node name="staff_rare" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )

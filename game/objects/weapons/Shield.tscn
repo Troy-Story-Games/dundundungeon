@@ -31,7 +31,7 @@ surfaces/1 = {
 }
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.388882, 0.440755, 0.113388 )
+extents = Vector3( 0.31082, 0.368498, 0.0670356 )
 
 [node name="Shield" type="RigidBody"]
 
@@ -39,5 +39,5 @@ extents = Vector3( 0.388882, 0.440755, 0.113388 )
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04308, -0.0107447 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04308, -0.0444832 )
 shape = SubResource( 2 )

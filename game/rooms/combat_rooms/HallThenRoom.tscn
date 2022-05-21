@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://game/rooms/Room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/rooms/GameRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/environment/walls/WallCorner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/environment/walls/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/environment/floor/TileBrickALarge.tscn" type="PackedScene" id=5]

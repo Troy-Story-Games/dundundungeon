@@ -589,7 +589,7 @@ transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.110
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, -3.62103 )
 
 [node name="BreakableFloor" parent="PlayerArea/DungeonHouse/Floor" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83321, 1.92845 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.920195, 1.92845 )
 
 [node name="Cieling" type="Spatial" parent="PlayerArea/DungeonHouse"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.6864, 0 )
@@ -1218,13 +1218,14 @@ transform = Transform( 182.113, 0, 0, 0, 182.113, 0, 0, 0, 182.113, -414.311, -1
 transform = Transform( 57.2658, 0, 0, 0, 57.2658, 0, 0, 0, 57.2658, -162.847, -53.5697, -200.989 )
 
 [node name="VRPlayer" parent="." instance=ExtResource( 5 )]
-transform = Transform( 2.32966, 0, 0, 0, 2.32625, 0, 0, 0, 1.51509, -0.0359176, -1.08832, 11.8381 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0359176, 1.95621, 11.8381 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 20 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 151.564, -217.225, 358.528 )
+visible = false
 extents = Vector3( 1364.83, 429.465, 1251.73 )
 data = SubResource( 15 )
 

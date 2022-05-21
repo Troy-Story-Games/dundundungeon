@@ -60,6 +60,7 @@ surfaces/3 = {
 extents = Vector3( 0.407252, 0.124518, 0.240958 )
 
 [node name="SpellBook" type="RigidBody"]
+mass = 3.0
 
 [node name="spellBook" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )

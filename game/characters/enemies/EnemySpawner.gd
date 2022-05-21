@@ -5,11 +5,11 @@ const PoofParticles = preload("res://game/fx/poof/PoofCPUParticles.tscn")
 const DamageParticles = preload("res://game/fx/poof/DamageCPUParticles.tscn")
 
 export(int) var MAX_HEALTH = 5
-export(bool) var ENABLED = true
 export(float) var SPAWN_INTERVAL_MIN = 5.0
 export(float) var SPAWN_INTERVAL_MAX = 10.0
 
 var health := 0 setget set_health
+var enabled: bool = false setget set_enabled
 
 onready var spawnTimer = $SpawnTimer
 onready var pointer = $Pointer
@@ -22,7 +22,11 @@ func _ready():
     self.health = MAX_HEALTH
     pointer.visible = false
     dummy.visible = false
-    if ENABLED:
+
+
+func set_enabled(value: bool):
+    enabled = value
+    if enabled:
         spawnTimer.start(rand_range(SPAWN_INTERVAL_MIN, SPAWN_INTERVAL_MAX))
 
 
