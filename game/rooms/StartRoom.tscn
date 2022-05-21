@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://game/rooms/Room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/fx/water/stylized_water_shader.gdshader" type="Shader" id=2]
 [ext_resource path="res://assets/environment/rock.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://game/environment/floor/TileBrickB_large.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/environment/SpookyKitAssets/treeD_graveyard.gltf.glb" type="PackedScene" id=5]
@@ -21,14 +22,52 @@
 [ext_resource path="res://assets/environment/wall/wall.gltf.glb" type="PackedScene" id=20]
 
 [sub_resource type="GIProbeData" id=2]
-bounds = AABB( -168.047, -93.4421, -134.008, 336.094, 186.884, 268.016 )
-cell_size = 2.62574
-to_cell_xform = Transform( 0.380846, 0, 0, 0, 0.380846, 0, 0, 0, 0.380846, 64, 35.587, 51.0363 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 0, 1098907648, 1098907648, 0, 226120528, 652, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -1364.83, -429.465, -1251.73, 2729.67, 858.931, 2503.46 )
+cell_size = 21.3255
+to_cell_xform = Transform( 0.0468922, 0, 0, 0, 0.0468922, 0, 0, 0, 0.0468922, 64, 20.1386, 58.6963 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, 0, 0, 0, 7, 0, 9, 4468, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
 propagation = 0.7
+
+[sub_resource type="OpenSimplexNoise" id=6]
+
+[sub_resource type="NoiseTexture" id=7]
+seamless = true
+noise = SubResource( 6 )
+
+[sub_resource type="OpenSimplexNoise" id=8]
+
+[sub_resource type="NoiseTexture" id=9]
+seamless = true
+noise = SubResource( 8 )
+
+[sub_resource type="OpenSimplexNoise" id=10]
+
+[sub_resource type="NoiseTexture" id=11]
+seamless = true
+as_normalmap = true
+noise = SubResource( 10 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 2 )
+shader_param/speed = 0.002
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/edge_color = Color( 0, 0.0117647, 0.309804, 1 )
+shader_param/edge_scale = 0.1
+shader_param/near = 0.1
+shader_param/far = 1.0
+shader_param/wave_strengh = Vector2( 0.5, 0.25 )
+shader_param/wave_frequency = Vector2( 12, 12 )
+shader_param/time_factor = Vector2( 1, 2 )
+shader_param/noise1 = SubResource( 7 )
+shader_param/noise2 = SubResource( 9 )
+shader_param/normalmap = SubResource( 11 )
+
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 1024, 1024 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.0745098, 0.247059, 0.764706, 1 )
@@ -36,27 +75,31 @@ albedo_color = Color( 0.0745098, 0.247059, 0.764706, 1 )
 [node name="StartRoom" instance=ExtResource( 1 )]
 
 [node name="GIProbe" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4998, 0, -21.6626 )
-extents = Vector3( 168.047, 93.4421, 134.008 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 151.564, -217.225, 358.528 )
+extents = Vector3( 1364.83, 429.465, 1251.73 )
 data = SubResource( 2 )
 
 [node name="VRPlayer" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.218, 0, 16.0282 )
 
-[node name="OmniLight" type="OmniLight" parent="." index="3"]
+[node name="Water" type="MeshInstance" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.2957, -55.5643, 212.926 )
+mesh = SubResource( 5 )
+
+[node name="OmniLight" type="OmniLight" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.272, -9.20321 )
 omni_range = 21.168
 
-[node name="OmniLight2" type="OmniLight" parent="." index="4"]
+[node name="OmniLight2" type="OmniLight" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.6222, 25.3071 )
-omni_range = 47.5952
+omni_range = 25.195
 
-[node name="OmniLight3" type="OmniLight" parent="." index="5"]
+[node name="OmniLight3" type="OmniLight" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.0284, 397.652 )
 visible = false
 omni_range = 672.855
 
-[node name="Environment" type="Spatial" parent="." index="6"]
+[node name="Environment" type="Spatial" parent="." index="7"]
 transform = Transform( -0.828741, 0, -2.36678, 0, 2.50768, 0, 2.36678, 0, -0.828741, -76.061, -0.510674, 37.4849 )
 
 [node name="wallgltf" parent="Environment" index="0" instance=ExtResource( 20 )]
@@ -893,7 +936,7 @@ transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.
 [node name="wall_end_brokengltf8" parent="Environment" index="268" instance=ExtResource( 14 )]
 transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.374807, 2.77599, -7.75449, -33.8377 )
 
-[node name="VistaStuff" type="Spatial" parent="." index="7"]
+[node name="VistaStuff" type="Spatial" parent="." index="8"]
 
 [node name="SpookyVistaCrypt" type="Spatial" parent="VistaStuff" index="0"]
 
@@ -1109,11 +1152,11 @@ transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.
 [node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="13" instance=ExtResource( 5 )]
 transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
 
-[node name="BreakableFloor" parent="." index="8"]
+[node name="BreakableFloor" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029183, -1.83538, -6.39871 )
 START_ENABLED = true
 
-[node name="NextRoomSpawn" parent="." index="9"]
+[node name="NextRoomSpawn" parent="." index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.81397, -6.34954 )
 
 [editable path="Environment/wall_doorgltf"]
