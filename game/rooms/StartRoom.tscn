@@ -33,26 +33,26 @@ bias = 1.5
 normal_bias = 0.0
 propagation = 0.7
 
-[sub_resource type="OpenSimplexNoise" id=6]
+[sub_resource type="OpenSimplexNoise" id=15]
 
 [sub_resource type="NoiseTexture" id=7]
 seamless = true
-noise = SubResource( 6 )
+noise = SubResource( 15 )
 
-[sub_resource type="OpenSimplexNoise" id=8]
+[sub_resource type="OpenSimplexNoise" id=16]
 
 [sub_resource type="NoiseTexture" id=9]
 seamless = true
-noise = SubResource( 8 )
+noise = SubResource( 16 )
 
-[sub_resource type="OpenSimplexNoise" id=10]
+[sub_resource type="OpenSimplexNoise" id=17]
 
 [sub_resource type="NoiseTexture" id=11]
 seamless = true
 as_normalmap = true
-noise = SubResource( 10 )
+noise = SubResource( 17 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=18]
 shader = ExtResource( 2 )
 shader_param/speed = 0.002
 shader_param/color = Color( 1, 1, 1, 1 )
@@ -68,7 +68,7 @@ shader_param/noise2 = SubResource( 9 )
 shader_param/normalmap = SubResource( 11 )
 
 [sub_resource type="PlaneMesh" id=5]
-material = SubResource( 4 )
+material = SubResource( 18 )
 size = Vector2( 1024, 1024 )
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -102,7 +102,7 @@ extents = Vector3( 1364.83, 429.465, 1251.73 )
 data = SubResource( 2 )
 
 [node name="VRPlayer" parent="." index="2"]
-transform = Transform( -0.469302, 0, 0.883038, 0, 1, 0, -0.883038, 0, -0.469302, -2.54696, 0, 25.9143 )
+transform = Transform( 0.999822, 0, -0.0188836, 0, 1, 0, 0.0188836, 0, 0.999822, -9.06203, -1.70682, 16.6868 )
 
 [node name="Water" type="MeshInstance" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.2957, -55.5643, 212.926 )
@@ -162,7 +162,7 @@ transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.
 transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.0738, -0.491421, -24.4139 )
 
 [node name="TileBrickB_large9" parent="Environment" index="14" instance=ExtResource( 4 )]
-transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.0712, -0.491421, -24.4066 )
+transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -20.9867, -0.346599, -24.7863 )
 
 [node name="TileBrickB_large10" parent="Environment" index="15" instance=ExtResource( 4 )]
 transform = Transform( -0.131788, 0, 0.376369, 0, 0.398775, 0, -0.376369, 0, -0.131788, -22.8625, -0.491421, -26.6663 )
@@ -469,6 +469,9 @@ transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377
 
 [node name="wall_doorgltf" parent="Environment" index="116" instance=ExtResource( 13 )]
 transform = Transform( -0.28413, 0, 0.752738, 0, 0.79755, 0, -0.81144, 0, -0.263575, -20.4245, -0.0964459, -25.0043 )
+
+[node name="wall_door" parent="Environment/wall_doorgltf" index="0"]
+transform = Transform( 1, 0, 2.27374e-13, 0, 1, 0, -1.13687e-13, 0, 1, 0, 0, 0 )
 
 [node name="wallCornergltf" parent="Environment" index="117" instance=ExtResource( 9 )]
 transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -31.8264, -0.0956075, -25.4036 )
