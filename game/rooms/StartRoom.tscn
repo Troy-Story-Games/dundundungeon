@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://game/rooms/Room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/fx/water/stylized_water_shader.gdshader" type="Shader" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://assets/environment/midevilPack/castle.gltf.glb" type="PackedScene" id=18]
 [ext_resource path="res://assets/environment/SpookyKitAssets/pathDirt.gltf.glb" type="PackedScene" id=19]
 [ext_resource path="res://assets/environment/wall/wall.gltf.glb" type="PackedScene" id=20]
+[ext_resource path="res://game/environment/door/Door.tscn" type="PackedScene" id=21]
+[ext_resource path="res://game/rooms/StartRoom.gd" type="Script" id=22]
 
 [sub_resource type="GIProbeData" id=2]
 bounds = AABB( -1364.83, -429.465, -1251.73, 2729.67, 858.931, 2503.46 )
@@ -72,7 +74,27 @@ size = Vector2( 1024, 1024 )
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.0745098, 0.247059, 0.764706, 1 )
 
+[sub_resource type="Animation" id=12]
+resource_name = "DoorClose"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -2.44585, -6.67482, 9.28342 ), Vector3( -2.44585, -0.823059, 9.28342 ) ]
+}
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 6.14895, 5.41137, 1.87446 )
+
 [node name="StartRoom" instance=ExtResource( 1 )]
+script = ExtResource( 22 )
 
 [node name="GIProbe" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 151.564, -217.225, 358.528 )
@@ -80,7 +102,7 @@ extents = Vector3( 1364.83, 429.465, 1251.73 )
 data = SubResource( 2 )
 
 [node name="VRPlayer" parent="." index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.218, 0, 16.0282 )
+transform = Transform( -0.469302, 0, 0.883038, 0, 1, 0, -0.883038, 0, -0.469302, -2.54696, 0, 25.9143 )
 
 [node name="Water" type="MeshInstance" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.2957, -55.5643, 212.926 )
@@ -94,12 +116,7 @@ omni_range = 21.168
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.6222, 25.3071 )
 omni_range = 25.195
 
-[node name="OmniLight3" type="OmniLight" parent="." index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.0284, 397.652 )
-visible = false
-omni_range = 672.855
-
-[node name="Environment" type="Spatial" parent="." index="7"]
+[node name="Environment" type="Spatial" parent="." index="6"]
 transform = Transform( -0.828741, 0, -2.36678, 0, 2.50768, 0, 2.36678, 0, -0.828741, -76.061, -0.510674, 37.4849 )
 
 [node name="wallgltf" parent="Environment" index="0" instance=ExtResource( 20 )]
@@ -451,7 +468,7 @@ transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377
 transform = Transform( 0.377468, 0, 0.128604, 0, 0.29819, 0, -0.128604, 0, 0.377468, -22.3198, -0.0786707, -26.3096 )
 
 [node name="wall_doorgltf" parent="Environment" index="116" instance=ExtResource( 13 )]
-transform = Transform( -0.28413, 0, 0.752738, 0, 0.79755, 0, -0.81144, 0, -0.263575, -20.4272, -0.101259, -25.0043 )
+transform = Transform( -0.28413, 0, 0.752738, 0, 0.79755, 0, -0.81144, 0, -0.263575, -20.4245, -0.0964459, -25.0043 )
 
 [node name="wallCornergltf" parent="Environment" index="117" instance=ExtResource( 9 )]
 transform = Transform( -0.263575, 0, 0.752738, 0, 0.79755, 0, -0.752738, 0, -0.263575, -31.8264, -0.0956075, -25.4036 )
@@ -936,7 +953,7 @@ transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.
 [node name="wall_end_brokengltf8" parent="Environment" index="268" instance=ExtResource( 14 )]
 transform = Transform( -0.374807, 0, -0.136166, 0, 0.398775, 0, 0.136166, 0, -0.374807, 2.77599, -7.75449, -33.8377 )
 
-[node name="VistaStuff" type="Spatial" parent="." index="8"]
+[node name="VistaStuff" type="Spatial" parent="." index="7"]
 
 [node name="SpookyVistaCrypt" type="Spatial" parent="VistaStuff" index="0"]
 
@@ -1152,12 +1169,28 @@ transform = Transform( 0.370462, 0, 0.0226449, 0, 0.371152, 0, -0.0226449, 0, 0.
 [node name="treeD_graveyardgltf107" parent="VistaStuff/SpookyVistaCrypt4/castlegltf4" index="13" instance=ExtResource( 5 )]
 transform = Transform( 0.330199, 0, 0.16948, 0, 0.371152, 0, -0.16948, 0, 0.330199, 0.650229, 0.0652176, -1.25162 )
 
-[node name="BreakableFloor" parent="." index="9"]
+[node name="BreakableFloor" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029183, -1.83538, -6.39871 )
 START_ENABLED = true
 
-[node name="NextRoomSpawn" parent="." index="10"]
+[node name="NextRoomSpawn" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.81397, -6.34954 )
+
+[node name="Door" parent="." index="11" instance=ExtResource( 21 )]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -2.44585, -6.67482, 9.28342 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="12"]
+anims/DoorClose = SubResource( 12 )
+
+[node name="DoorCloseArea" type="Area" parent="." index="13"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="DoorCloseArea" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.00217 )
+shape = SubResource( 14 )
+
+[connection signal="body_entered" from="DoorCloseArea" to="." method="_on_DoorCloseArea_body_entered"]
 
 [editable path="Environment/wall_doorgltf"]
 [editable path="Environment/mountaingltf"]
