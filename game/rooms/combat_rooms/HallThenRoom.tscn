@@ -38,37 +38,28 @@ data = SubResource( 1 )
 [node name="Spawners" type="Spatial" parent="Enemies" index="0"]
 
 [node name="EnemySpawner3" parent="Enemies/Spawners" index="0" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16668, -3.44562, -6.85162 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16668, -3.67851, -6.85162 )
 
 [node name="EnemySpawner4" parent="Enemies/Spawners" index="1" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12715, -3.44562, -6.85162 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12715, -3.67851, -6.85162 )
 
 [node name="EnemySpawner5" parent="Enemies/Spawners" index="2" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12715, -3.44562, -2.78777 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12715, -3.67851, -2.78777 )
 
 [node name="EnemySpawner6" parent="Enemies/Spawners" index="3" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95425, -3.44562, -2.78777 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95425, -3.67851, -2.78777 )
 
 [node name="EnemySpawner7" parent="Enemies/Spawners" index="4" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101391, -3.44562, -2.44138 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101391, -3.67851, -2.44138 )
 
 [node name="EnemySpawner8" parent="Enemies/Spawners" index="5" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12715, -3.44562, 1.84624 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12715, -3.67851, 1.84624 )
 
 [node name="EnemySpawner9" parent="Enemies/Spawners" index="6" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95425, -3.44562, 1.84624 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95425, -3.67851, 1.84624 )
 
 [node name="EnemySpawner10" parent="Enemies/Spawners" index="7" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101391, -3.44562, 2.19263 )
-
-[node name="EnemySpawner11" parent="Enemies/Spawners" index="8" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12715, -3.44562, 1.84624 )
-
-[node name="EnemySpawner12" parent="Enemies/Spawners" index="9" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95425, -3.44562, 1.84624 )
-
-[node name="EnemySpawner13" parent="Enemies/Spawners" index="10" instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101391, -3.44562, 2.19263 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101391, -3.67851, 2.19263 )
 
 [node name="VRPlayer" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0618494, -3.63336, 30.2857 )

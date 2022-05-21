@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game/player/PlayerPickupArea.gd"
 }, {
+"base": "Resource",
+"class": "PlayerStats",
+"language": "GDScript",
+"path": "res://game/player/PlayerStats.gd"
+}, {
 "base": "KinematicBody",
 "class": "Projectile",
 "language": "GDScript",
@@ -90,6 +95,7 @@ _global_script_class_icons={
 "Hurtbox": "",
 "ObjectPickupArea": "",
 "PlayerPickupArea": "",
+"PlayerStats": "",
 "Projectile": "",
 "Sword": "",
 "VRPlayer": "",
@@ -99,7 +105,7 @@ _global_script_class_icons={
 [application]
 
 config/name="dundundungeon"
-run/main_scene="res://game/rooms/combat_rooms/BasicRoom.tscn"
+run/main_scene="res://game/rooms/StartRoom.tscn"
 boot_splash/image="res://logo.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"

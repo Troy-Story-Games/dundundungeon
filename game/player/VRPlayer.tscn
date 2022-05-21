@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/characters/player/scrapbot/Copper.material" type="Material" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://game/player/VRPlayer.gd" type="Script" id=12]
 [ext_resource path="res://game/player/weapons/crossbow/Crossbow.tscn" type="PackedScene" id=13]
 [ext_resource path="res://game/player/weapons/sword/Sword.tscn" type="PackedScene" id=14]
+[ext_resource path="res://game/overlap/Hurtbox.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ArrayMesh" id=6]
 resource_name = "character_scrapbot_Cube524"
@@ -127,6 +128,10 @@ height = 0.002
 [sub_resource type="SphereShape" id=14]
 radius = 1.91764
 
+[sub_resource type="CapsuleShape" id=15]
+radius = 0.575161
+height = 1.46247
+
 [node name="VRPlayer" type="Spatial"]
 script = ExtResource( 12 )
 
@@ -168,6 +173,12 @@ shape = SubResource( 13 )
 
 [node name="CollisionShape" type="CollisionShape" parent="FPController/ARVRCamera/SleepArea"]
 shape = SubResource( 14 )
+
+[node name="RemoteTransform" type="RemoteTransform" parent="FPController/ARVRCamera" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.957239, 0.191375 )
+remote_path = NodePath("../../../Hurtbox")
+update_rotation = false
+update_scale = false
 
 [node name="LeftHandController" parent="FPController" index="2"]
 visible = true
@@ -213,9 +224,19 @@ visible = true
 
 [node name="Sword" parent="FPController/RightHandController" index="3" instance=ExtResource( 14 )]
 
+[node name="Hurtbox" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842761, 0.191375 )
+collision_layer = 4
+
+[node name="CollisionShape" parent="Hurtbox" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0991428, 0 )
+shape = SubResource( 15 )
+
 [connection signal="body_entered" from="FPController/ARVRCamera/SleepArea" to="." method="_on_SleepArea_body_entered"]
 [connection signal="body_exited" from="FPController/ARVRCamera/SleepArea" to="." method="_on_SleepArea_body_exited"]
+[connection signal="take_damage" from="Hurtbox" to="." method="_on_Hurtbox_take_damage"]
 
 [editable path="FPController"]
 [editable path="FPController/LeftHandController/LeftHand"]
 [editable path="FPController/RightHandController/RightHand"]
+[editable path="Hurtbox"]

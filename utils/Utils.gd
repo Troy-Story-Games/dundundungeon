@@ -63,6 +63,10 @@ func load_rooms():
         check = dir.get_next()
 
 
+func get_player_stats() -> Resource:
+    return ResourceLoader.load("res://game/player/PlayerStats.tres")
+
+
 func get_random_room() -> PackedScene:
     if len(rooms) == 0:
         load_rooms()
