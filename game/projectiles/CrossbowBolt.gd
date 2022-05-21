@@ -27,3 +27,7 @@ func handle_collision(collision: KinematicCollision):
         else:
             collider.apply_impulse(collision.position, impulse)
             SoundFx.play_3d("ArrowHitObject", global_transform.origin)
+            hitbox.disabled = true  # Disable hitbox if we hit an object that's not an enemy
+    else:
+        # Disable hitbox if we hit a wall
+        hitbox.disabled = true

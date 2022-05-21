@@ -20,3 +20,5 @@ environment = ExtResource( 1 )
 [node name="NextRoomSpawn" type="Position3D" parent="."]
 
 [node name="PrevRoomSpawn" type="Position3D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

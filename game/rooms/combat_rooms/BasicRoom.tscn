@@ -62,7 +62,8 @@ roughness = 0.0
 material = SubResource( 6 )
 size = Vector3( 1.8, 1.8, 0.01 )
 
-[node name="StartRoom" instance=ExtResource( 1 )]
+[node name="BasicRoom" instance=ExtResource( 1 )]
+SONG = "res://assets/songs/MonsterVania_-_Ghost_Land.mp3"
 
 [node name="GIProbe" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.79535, 1.8601 )
