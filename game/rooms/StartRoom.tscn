@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://game/rooms/GameRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/fx/water/stylized_water_shader.gdshader" type="Shader" id=2]
@@ -25,6 +25,8 @@
 [ext_resource path="res://game/objects/weapons/Hammer.tscn" type="PackedScene" id=23]
 [ext_resource path="res://game/objects/weapons/StaffRare.tscn" type="PackedScene" id=24]
 [ext_resource path="res://game/objects/security_camera/SecurityCamera.tscn" type="PackedScene" id=25]
+[ext_resource path="res://game/objects/SkellyHead.tscn" type="PackedScene" id=26]
+[ext_resource path="res://game/environment/Walls/wall_window.tscn" type="PackedScene" id=27]
 [ext_resource path="res://game/objects/weapons/Shield.tscn" type="PackedScene" id=28]
 [ext_resource path="res://game/objects/weapons/Axe.tscn" type="PackedScene" id=29]
 [ext_resource path="res://game/objects/weapons/SpellBook.tscn" type="PackedScene" id=30]
@@ -330,7 +332,7 @@ transform = Transform( -23.3003, 0, -2.03697e-06, 0, 23.3003, 0, 2.03697e-06, 0,
 transform = Transform( -23.3003, 0, -2.03697e-06, 0, 23.3003, 0, 2.03697e-06, 0, -23.3003, 41.6704, 0, -31.8071 )
 
 [node name="watchtower" parent="PlayerArea/StartAreaEnvironment/RocksAndCastle" index="3" instance=ExtResource( 14 )]
-transform = Transform( -16.3979, 0, -2.8914, 0, 16.6509, 0, 2.8914, 0, -16.3979, -23.6897, 1.7974, -13.8059 )
+transform = Transform( -16.3979, 0, -2.8914, 0, 16.6509, 0, 2.8914, 0, -16.3979, -23.7125, 1.7974, -13.7521 )
 
 [node name="watchtower2" parent="PlayerArea/StartAreaEnvironment/RocksAndCastle" index="4" instance=ExtResource( 14 )]
 transform = Transform( -16.3979, 0, -2.8914, 0, 16.6509, 0, 2.8914, 0, -16.3979, 21.303, 1.7974, -13.8059 )
@@ -599,50 +601,44 @@ transform = Transform( 1.572, 0, 0, 0, 1.572, 0, 0, 0, 1.572, -2.40809, 7.34478,
 [node name="Wall10" parent="PlayerArea/DungeonHouse/Walls" index="17" instance=ExtResource( 7 )]
 transform = Transform( 1.572, 0, 0, 0, 1.572, 0, 0, 0, 1.572, 3.71448, 7.34478, -7.23657 )
 
-[node name="Wall11" parent="PlayerArea/DungeonHouse/Walls" index="18" instance=ExtResource( 7 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.59749, 7.34478, -1.02445 )
-
-[node name="Wall12" parent="PlayerArea/DungeonHouse/Walls" index="19" instance=ExtResource( 7 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.63713, 7.34478, 4.97555 )
-
-[node name="Wall13" parent="PlayerArea/DungeonHouse/Walls" index="20" instance=ExtResource( 7 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.59749, 7.34478, 8.97555 )
-
-[node name="Wall14" parent="PlayerArea/DungeonHouse/Walls" index="21" instance=ExtResource( 7 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.67612, 7.34478, -1.02445 )
-
-[node name="Wall15" parent="PlayerArea/DungeonHouse/Walls" index="22" instance=ExtResource( 7 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.68155, 7.34478, 4.97555 )
-
-[node name="Wall16" parent="PlayerArea/DungeonHouse/Walls" index="23" instance=ExtResource( 7 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.67612, 7.34478, 8.97555 )
-
-[node name="WallDoor" parent="PlayerArea/DungeonHouse/Walls" index="24" instance=ExtResource( 4 )]
+[node name="WallDoor" parent="PlayerArea/DungeonHouse/Walls" index="18" instance=ExtResource( 4 )]
 transform = Transform( 1.84, 0, 0, 0, 1.572, 0, 0, 0, 1.572, -0.0532908, 1.87532, 15.0555 )
 
-[node name="Wall17" parent="PlayerArea/DungeonHouse/Walls" index="25" instance=ExtResource( 7 )]
+[node name="Wall17" parent="PlayerArea/DungeonHouse/Walls" index="19" instance=ExtResource( 7 )]
 transform = Transform( 1.572, 0, 0, 0, 1.572, 0, 0, 0, 1.572, -2.40809, 7.34478, 15.0801 )
 
-[node name="Wall18" parent="PlayerArea/DungeonHouse/Walls" index="26" instance=ExtResource( 7 )]
+[node name="Wall18" parent="PlayerArea/DungeonHouse/Walls" index="20" instance=ExtResource( 7 )]
 transform = Transform( 1.572, 0, 0, 0, 1.572, 0, 0, 0, 1.572, 3.71448, 7.34478, 15.1042 )
 
-[node name="TorchWall" parent="PlayerArea/DungeonHouse/Walls" index="27" instance=ExtResource( 11 )]
+[node name="TorchWall" parent="PlayerArea/DungeonHouse/Walls" index="21" instance=ExtResource( 11 )]
 transform = Transform( -2.07535, 0, -1.81433e-07, 0, 2.07535, 0, 1.81433e-07, 0, -2.07535, -5.4339, 7.75364, 13.9095 )
 
-[node name="TorchWall4" parent="PlayerArea/DungeonHouse/Walls" index="28" instance=ExtResource( 11 )]
+[node name="TorchWall4" parent="PlayerArea/DungeonHouse/Walls" index="22" instance=ExtResource( 11 )]
 transform = Transform( 2.07535, 0, 0, 0, 2.07535, 0, 0, 0, 2.07535, -5.4339, 7.75364, -6.19351 )
 
-[node name="TorchWall3" parent="PlayerArea/DungeonHouse/Walls" index="29" instance=ExtResource( 11 )]
+[node name="TorchWall3" parent="PlayerArea/DungeonHouse/Walls" index="23" instance=ExtResource( 11 )]
 transform = Transform( -2.07535, 0, -1.81433e-07, 0, 2.07535, 0, 1.81433e-07, 0, -2.07535, 5.23199, 7.75364, 13.9095 )
 
-[node name="TorchWall2" parent="PlayerArea/DungeonHouse/Walls" index="30" instance=ExtResource( 11 )]
+[node name="TorchWall2" parent="PlayerArea/DungeonHouse/Walls" index="24" instance=ExtResource( 11 )]
 transform = Transform( 2.07535, 0, 0, 0, 2.07535, 0, 0, 0, 2.07535, 5.38894, 7.75364, -6.51986 )
 
-[node name="TorchWall5" parent="PlayerArea/DungeonHouse/Walls" index="31" instance=ExtResource( 11 )]
+[node name="TorchWall5" parent="PlayerArea/DungeonHouse/Walls" index="25" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76825, 4.19593, 16.7589 )
 
-[node name="TorchWall6" parent="PlayerArea/DungeonHouse/Walls" index="32" instance=ExtResource( 11 )]
+[node name="TorchWall6" parent="PlayerArea/DungeonHouse/Walls" index="26" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97833, 4.19593, 16.7589 )
+
+[node name="wall_window" parent="PlayerArea/DungeonHouse/Walls" index="27" instance=ExtResource( 27 )]
+transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.62291, 7.34693, -0.718571 )
+
+[node name="wall_window2" parent="PlayerArea/DungeonHouse/Walls" index="28" instance=ExtResource( 27 )]
+transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.64, 7.347, 7.834 )
+
+[node name="wall_window3" parent="PlayerArea/DungeonHouse/Walls" index="29" instance=ExtResource( 27 )]
+transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.60282, 7.34693, -0.718571 )
+
+[node name="wall_window4" parent="PlayerArea/DungeonHouse/Walls" index="30" instance=ExtResource( 27 )]
+transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.58573, 7.347, 7.834 )
 
 [node name="Floor" type="Spatial" parent="PlayerArea/DungeonHouse" index="1"]
 
@@ -818,6 +814,26 @@ transform = Transform( 0.68211, 0, 0, 0, 1, 0, 0, 0, 1, 6.08171, 1.82335, -2.851
 
 [node name="coffinA_top" parent="PlayerArea/DungeonHouse" index="8" instance=ExtResource( 8 )]
 transform = Transform( 4.6345, 0, 0, 0, -2.05737e-07, -4.10346, 0, 4.70671, -1.79368e-07, 0, 6.25957, -5.5725 )
+
+[node name="OutsideDungeonDecor" type="Spatial" parent="PlayerArea/DungeonHouse" index="9"]
+
+[node name="SkellyHead" parent="PlayerArea/DungeonHouse/OutsideDungeonDecor" index="0" instance=ExtResource( 26 )]
+transform = Transform( 3.76968, 0, 0, 0, 3.30925, -1.80538, 0, 1.80538, 3.30925, -0.0575362, 8.83135, 15.8373 )
+
+[node name="SkellyHead2" parent="PlayerArea/DungeonHouse/OutsideDungeonDecor" index="1" instance=ExtResource( 26 )]
+transform = Transform( 2.49541, -0.110825, -0.20314, 0, 2.20002, -1.20024, 0.231404, 1.19511, 2.19062, -1.90484, 8.16844, 15.7427 )
+
+[node name="SkellyHead3" parent="PlayerArea/DungeonHouse/OutsideDungeonDecor" index="2" instance=ExtResource( 26 )]
+transform = Transform( 2.45408, 0.243331, 0.446023, 0, 2.20002, -1.20024, -0.508081, 1.17531, 2.15433, 1.66914, 8.16844, 15.7427 )
+
+[node name="gravestone29" parent="PlayerArea/DungeonHouse/OutsideDungeonDecor" index="3" instance=ExtResource( 10 )]
+transform = Transform( 4.5823, 0, 0, 0, 4.57565, -0.0237446, 0, 0.246687, 0.440425, -0.155668, 7.80187, 16.2117 )
+
+[node name="gravestone30" parent="PlayerArea/DungeonHouse/OutsideDungeonDecor" index="4" instance=ExtResource( 10 )]
+transform = Transform( 2.70805, 0, 0, 0, 2.70805, 0, 0, 0, 0.26066, -4.81505, 7.80187, 16.2444 )
+
+[node name="gravestone31" parent="PlayerArea/DungeonHouse/OutsideDungeonDecor" index="5" instance=ExtResource( 10 )]
+transform = Transform( 2.70805, 0, 0, 0, 2.70805, 0, 0, 0, 0.26066, 4.42107, 7.80187, 16.2444 )
 
 [node name="VistaObjects" type="Spatial" parent="." index="6"]
 
@@ -1374,7 +1390,7 @@ render_target_v_flip = true
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="Mirror/Viewport" index="0"]
-transform = Transform( -1, 2.46761e-08, -1.15467e-07, -6.67727e-08, 0.688342, 0.725386, 9.73805e-08, 0.725386, -0.688342, 4.74031, 5.15406, 16.5742 )
+transform = Transform( -1, 2.46761e-08, -1.15467e-07, -6.67726e-08, 0.688342, 0.725386, 9.73805e-08, 0.725386, -0.688342, 4.7403, 5.15405, 16.5742 )
 current = true
 fov = 50.0
 
@@ -1402,7 +1418,7 @@ render_target_v_flip = true
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="Mirror2/Viewport" index="0"]
-transform = Transform( -0.297631, 0.511533, -0.806071, -0.00410153, 0.843642, 0.536891, 0.954672, 0.163101, -0.248996, -7.27881, 6.96623, 1.05791 )
+transform = Transform( -0.297631, 0.511533, -0.806071, -0.00410152, 0.843642, 0.53689, 0.954672, 0.163101, -0.248996, -7.27888, 6.96623, 1.058 )
 current = true
 fov = 95.0
 
@@ -1430,7 +1446,7 @@ render_target_v_flip = true
 render_target_update_mode = 3
 
 [node name="Camera" type="Camera" parent="Mirror3/Viewport" index="0"]
-transform = Transform( 0.0484041, 0.507985, -0.860005, -0.014673, 0.861283, 0.507914, 0.99872, -0.0119663, 0.0491433, -22.3046, 6.97134, 31.4356 )
+transform = Transform( 0.0484041, 0.507985, -0.860005, -0.014673, 0.861283, 0.507914, 0.99872, -0.0119663, 0.0491432, -22.3047, 6.97134, 31.4357 )
 current = true
 fov = 95.0
 
