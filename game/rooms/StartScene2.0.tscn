@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://game/rooms/BreakableFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/environment/SpookyKit/tileBrickB_large.gltf.glb" type="PackedScene" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://game/fx/water/stylized_water_shader.gdshader" type="Shader" id=19]
 [ext_resource path="res://game/fx/environment/WorldEnvironment.tres" type="Environment" id=20]
 [ext_resource path="res://game/objects/torch/TorchWall.tscn" type="PackedScene" id=21]
+[ext_resource path="res://game/environment/Walls/wall_window.tscn" type="PackedScene" id=22]
+[ext_resource path="res://game/objects/SkellyHead.tscn" type="PackedScene" id=23]
 
 [sub_resource type="OpenSimplexNoise" id=6]
 
@@ -454,6 +456,18 @@ transform = Transform( -1.31268e-08, 0.953843, 0.300306, 4.16938e-08, 0.300306, 
 
 [node name="Walls" type="Spatial" parent="PlayerArea/DungeonHouse"]
 
+[node name="wall_window" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 22 )]
+transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.62291, 7.34693, -0.718571 )
+
+[node name="wall_window2" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 22 )]
+transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.64, 7.347, 7.834 )
+
+[node name="wall_window3" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 22 )]
+transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.60282, 7.34693, -0.718571 )
+
+[node name="wall_window4" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 22 )]
+transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.58573, 7.347, 7.834 )
+
 [node name="WallCorner4" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 3 )]
 transform = Transform( -1.572, 0, -2.37365e-07, 0, 1.572, 0, 2.37365e-07, 0, -1.572, -8.6616, 1.87592, 15.0557 )
 
@@ -507,24 +521,6 @@ transform = Transform( 1.572, 0, 0, 0, 1.572, 0, 0, 0, 1.572, -2.40809, 7.34478,
 
 [node name="Wall10" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 6 )]
 transform = Transform( 1.572, 0, 0, 0, 1.572, 0, 0, 0, 1.572, 3.71448, 7.34478, -7.23657 )
-
-[node name="Wall11" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 6 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.59749, 7.34478, -1.02445 )
-
-[node name="Wall12" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 6 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.63713, 7.34478, 4.97555 )
-
-[node name="Wall13" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 6 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, 8.59749, 7.34478, 8.97555 )
-
-[node name="Wall14" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 6 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.67612, 7.34478, -1.02445 )
-
-[node name="Wall15" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 6 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.68155, 7.34478, 4.97555 )
-
-[node name="Wall16" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 6 )]
-transform = Transform( -6.87143e-08, 0, 1.572, 0, 1.572, 0, -1.572, 0, -6.87143e-08, -8.67612, 7.34478, 8.97555 )
 
 [node name="WallDoor" parent="PlayerArea/DungeonHouse/Walls" instance=ExtResource( 4 )]
 transform = Transform( 1.84, 0, 0, 0, 1.572, 0, 0, 0, 1.572, -0.0532908, 1.87532, 15.0555 )
@@ -635,6 +631,15 @@ transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.1100
 [node name="gravestone" parent="PlayerArea/DungeonHouse/Gravestones" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.2489, 1.82335, 11.9689 )
 
+[node name="gravestone29" parent="PlayerArea/DungeonHouse/Gravestones" instance=ExtResource( 7 )]
+transform = Transform( 4.5823, 0, 0, 0, 4.57565, -0.0237446, 0, 0.246687, 0.440425, -0.155668, 7.80187, 16.2117 )
+
+[node name="gravestone30" parent="PlayerArea/DungeonHouse/Gravestones" instance=ExtResource( 7 )]
+transform = Transform( 2.70805, 0, 0, 0, 2.70805, 0, 0, 0, 0.26066, -4.81505, 7.80187, 16.2444 )
+
+[node name="gravestone31" parent="PlayerArea/DungeonHouse/Gravestones" instance=ExtResource( 7 )]
+transform = Transform( 2.70805, 0, 0, 0, 2.70805, 0, 0, 0, 0.26066, 4.42107, 7.80187, 16.2444 )
+
 [node name="gravestone15" parent="PlayerArea/DungeonHouse/Gravestones" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.17474, 1.82335, 11.9689 )
 
@@ -730,6 +735,15 @@ transform = Transform( 0.68211, 0, 0, 0, 1, 0, 0, 0, 1, 6.08171, 1.82335, -2.851
 
 [node name="coffinA_top" parent="PlayerArea/DungeonHouse" instance=ExtResource( 9 )]
 transform = Transform( 4.6345, 0, 0, 0, -2.05737e-07, -4.10346, 0, 4.70671, -1.79368e-07, 0, 6.25957, -5.5725 )
+
+[node name="SkellyHead" parent="PlayerArea/DungeonHouse" instance=ExtResource( 23 )]
+transform = Transform( 3.76968, 0, 0, 0, 3.30925, -1.80538, 0, 1.80538, 3.30925, -0.0575362, 8.83135, 15.8373 )
+
+[node name="SkellyHead2" parent="PlayerArea/DungeonHouse" instance=ExtResource( 23 )]
+transform = Transform( 2.49541, -0.110825, -0.20314, 0, 2.20002, -1.20024, 0.231404, 1.19511, 2.19062, -1.90484, 8.16844, 15.7427 )
+
+[node name="SkellyHead3" parent="PlayerArea/DungeonHouse" instance=ExtResource( 23 )]
+transform = Transform( 2.45408, 0.243331, 0.446023, 0, 2.20002, -1.20024, -0.508081, 1.17531, 2.15433, 1.66914, 8.16844, 15.7427 )
 
 [node name="VistaObjects" type="Spatial" parent="."]
 
