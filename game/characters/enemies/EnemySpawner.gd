@@ -20,6 +20,7 @@ onready var hurtbox_collider = $Gravestone/gravestone/Hurtbox/CollisionShape
 
 func _ready():
     self.health = MAX_HEALTH
+    self.enabled = true
     pointer.visible = false
     dummy.visible = false
 

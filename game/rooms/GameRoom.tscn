@@ -17,3 +17,5 @@ environment = ExtResource( 1 )
 [node name="NextRoomSpawn" type="Position3D" parent="."]
 
 [node name="PrevRoomSpawn" type="Position3D" parent="."]
+
+[connection signal="floor_break" from="BreakableFloor" to="." method="_on_BreakableFloor_floor_break"]

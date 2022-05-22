@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://game/rooms/GameRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/fx/water/stylized_water_shader.gdshader" type="Shader" id=2]
@@ -150,6 +150,9 @@ resource_local_to_scene = true
 material = SubResource( 34 )
 size = Vector2( 1.5, 1.5 )
 
+[sub_resource type="BoxShape" id=35]
+extents = Vector3( 10.5796, 0.116345, 8.78355 )
+
 [node name="StartRoom" instance=ExtResource( 1 )]
 script = ExtResource( 22 )
 
@@ -162,7 +165,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10675, 0.899644, 0.72948 )
 START_ENABLED = true
 
 [node name="NextRoomSpawn" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000202775, 1.69906, 1.38109 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000202775, 0.894371, 1.38109 )
 
 [node name="PrevRoomSpawn" parent="." index="4"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0359176, 2.33138, 34.9657 )
@@ -1381,6 +1384,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.75735
 
 [node name="Mirror" type="MeshInstance" parent="." index="14"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.8348, 4.13163, 16.17 )
+visible = false
 mesh = SubResource( 28 )
 skeleton = NodePath("")
 
@@ -1409,6 +1413,7 @@ remote_path = NodePath("../../../../Viewport/Camera")
 
 [node name="Mirror2" type="MeshInstance" parent="." index="15"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -33.102, 4.44954, -17.4928 )
+visible = false
 mesh = SubResource( 32 )
 skeleton = NodePath("")
 
@@ -1437,6 +1442,7 @@ remote_path = NodePath("../../../../Viewport/Camera")
 
 [node name="Mirror3" type="MeshInstance" parent="." index="16"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35.0408, 4.44954, -17.4928 )
+visible = false
 mesh = SubResource( 23 )
 skeleton = NodePath("")
 
@@ -1466,6 +1472,13 @@ transform = Transform( 1, -9.31323e-10, 0, -2.79397e-09, 1, -1.62981e-09, 0, 8.7
 
 [node name="RemoteTransform" parent="Mirror3/SecurityCamera/CameraMount/CameraRemoteTransform" index="0"]
 remote_path = NodePath("../../../../Viewport/Camera")
+
+[node name="StaticBody" type="StaticBody" parent="." index="17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.81946 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0218, 5.91143 )
+shape = SubResource( 35 )
 
 [connection signal="body_entered" from="DoorCloseArea" to="." method="_on_Area_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

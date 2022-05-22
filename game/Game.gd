@@ -2,7 +2,7 @@ extends Spatial
 
 const StartRoom: PackedScene = preload("res://game/rooms/StartRoom.tscn")
 
-var next_room: PackedScene = null
+var next_room: GameRoom = null
 var current_room: GameRoom = null
 var playerStats: PlayerStats = null
 
@@ -24,14 +24,12 @@ func start_game():
 
 
 func get_next_room():
-    next_room = Utils.get_random_room()
+    next_room = Utils.get_random_room().instance() as GameRoom
+    add_child(next_room)
 
-
-func enable_next_room():
-    var instance: GameRoom = next_room.instance()
-    add_child(instance)
-    instance.spawn_room(current_room.get_next_room_spawn())
-
+    var offset = current_room.transform.origin
+    var exit = next_room.get_prev_room_spawn().origin
+    next_room.transform.origin = current_room.get_next_room_spawn().origin - exit
 
 
 func _on_PlayerStats_player_died():

@@ -1,5 +1,7 @@
 extends StaticBody
 
+signal floor_break
+
 export(bool) var START_ENABLED = false
 
 var enabled: bool = false setget set_enabled
@@ -16,6 +18,7 @@ func _ready():
 
 
 func break_floor():
+    emit_signal("floor_break")
     collider.disabled = true
     animationPlayer.play("Break")
     SoundFx.play_3d("FloorBreak3", global_transform.origin)

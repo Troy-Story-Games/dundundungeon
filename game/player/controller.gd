@@ -36,12 +36,14 @@ var grab_position: Position3D = null
 var held_object: Node = null
 var held_object_data := {"mode": RigidBody.MODE_RIGID, "layer": 1, "mask": 1}
 var weapon_visible: bool = false
+var vr_player_root: VRPlayer = null
 
 
 func _ready():
     grab_position = find_node("GrabPosition") as Position3D
     pickup_area = find_node("PlayerPickupArea") as Area
     origin_node = get_parent() as ARVROrigin
+    vr_player_root = origin_node.get_parent() as VRPlayer
     vr_camera = origin_node.find_node("*Camera") as ARVRCamera
 
     # Crash if we don't have the required nodes
@@ -146,7 +148,7 @@ func handle_directional_movement(delta):
 
     if movement_right.length() > 0 or movement_forward.length() > 0:
         # warning-ignore:unsafe_method_access
-        get_parent().translate(movement_right + movement_forward)
+        origin_node.translate(movement_right + movement_forward)
 
 
 func get_pickup_rigid_body() -> RigidBody:

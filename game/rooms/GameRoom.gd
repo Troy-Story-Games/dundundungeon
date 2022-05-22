@@ -12,13 +12,11 @@ func get_next_room_spawn() -> Transform:
 func get_prev_room_spawn() -> Transform:
     return prevRoomSpawn.global_transform
 
-
-func spawn_room(spawn_transform: Transform):
-    global_transform = spawn_transform
-    global_transform.origin += prevRoomSpawn.global_transform.origin
-    visible = false
-
-
 func start_room():
-    visible = true
-    # TODO: Enable the enemy spanwers - have them disabled by default
+    for child in get_children():
+        if child is EnemySpawner:
+            child.enabled = true
+
+
+func _on_BreakableFloor_floor_break():
+    get_parent().next_room.start_room()

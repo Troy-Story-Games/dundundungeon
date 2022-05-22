@@ -5,10 +5,10 @@
 [ext_resource path="res://game/environment/walls/WallCorner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/environment/walls/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/environment/floor/TileBrickALarge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/player/VRPlayer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/objects/torch/TorchWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/environment/door/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/objects/target/TargetStand.tscn" type="PackedScene" id=9]
-[ext_resource path="res://game/characters/enemies/skeleton_warrior/SkeletonWarrior.tscn" type="PackedScene" id=10]
 [ext_resource path="res://game/objects/crate/Crate.tscn" type="PackedScene" id=16]
 [ext_resource path="res://game/characters/enemies/EnemySpawner.tscn" type="PackedScene" id=22]
 [ext_resource path="res://game/objects/target/HangingTarget.tscn" type="PackedScene" id=24]
@@ -32,14 +32,17 @@ extents = Vector3( 0.678689, 2.07103, 11.8018 )
 
 [node name="BasicRoom" instance=ExtResource( 1 )]
 
-[node name="GIProbe" parent="." index="1"]
+[node name="VRPlayer" parent="." index="0" instance=ExtResource( 6 )]
+transform = Transform( -0.999996, 0, 0.00265279, 0, 1, 0, -0.00265279, 0, -0.999996, 0, -3.58495, -4.664 )
+
+[node name="GIProbe" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.79535, 1.8601 )
 subdiv = 0
 extents = Vector3( 10.1415, 3.69411, 14.1477 )
 interior = true
 data = SubResource( 1 )
 
-[node name="Enemies" type="Spatial" parent="." index="2"]
+[node name="Enemies" type="Spatial" parent="." index="3"]
 
 [node name="Spawners" type="Spatial" parent="Enemies" index="0"]
 
@@ -52,22 +55,11 @@ transform = Transform( -0.901281, 0, -0.433234, 0, 1, 0, 0.433234, 0, -0.901281,
 [node name="EnemySpawner3" parent="Enemies/Spawners" index="2" instance=ExtResource( 22 )]
 transform = Transform( -0.912242, 0, 0.409652, 0, 1, 0, -0.409652, 0, -0.912242, -4.05843, -3.44562, 9.89888 )
 
-[node name="SwordSkeleton" parent="Enemies" index="1" instance=ExtResource( 10 )]
-transform = Transform( -0.999916, 0, 0.0129675, 0, 1, 0, -0.0129675, 0, -0.999916, 1.04524, -3.51285, 8.08052 )
-SPEED = 0.0
-
-[node name="SwordSkeleton2" parent="Enemies" index="2" instance=ExtResource( 10 )]
-transform = Transform( -0.822482, 0, 0.568792, 0, 1, 0, -0.568792, 0, -0.822482, -4.24129, -3.51285, 7.58615 )
-SPEED = 0.0
-
-[node name="SwordSkeleton3" parent="Enemies" index="3" instance=ExtResource( 10 )]
-transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 4.90284, -3.61964, 7.33022 )
-SPEED = 0.0
-
-[node name="BreakableFloor" parent="." index="3"]
+[node name="BreakableFloor" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.78863, -7.6105 )
+visible = false
 
-[node name="Environment" type="Spatial" parent="." index="4"]
+[node name="Environment" type="Spatial" parent="." index="5"]
 
 [node name="OmniLight" type="OmniLight" parent="Environment" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.963672, 1.48265, 2.06985 )
@@ -119,34 +111,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, -2.10686 )
 [node name="tileBrickA_large5" parent="Environment/FloorPieces" index="3" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, -2.10686 )
 
-[node name="tileBrickA_large6" parent="Environment/FloorPieces" index="4" instance=ExtResource( 5 )]
+[node name="tileBrickA_large16" parent="Environment/FloorPieces" index="4" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, -7.97379 )
+
+[node name="tileBrickA_large6" parent="Environment/FloorPieces" index="5" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, -2.10686 )
 
-[node name="tileBrickA_large7" parent="Environment/FloorPieces" index="5" instance=ExtResource( 5 )]
+[node name="tileBrickA_large7" parent="Environment/FloorPieces" index="6" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 3.76034 )
 
-[node name="tileBrickA_large8" parent="Environment/FloorPieces" index="6" instance=ExtResource( 5 )]
+[node name="tileBrickA_large8" parent="Environment/FloorPieces" index="7" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 3.76034 )
 
-[node name="tileBrickA_large9" parent="Environment/FloorPieces" index="7" instance=ExtResource( 5 )]
+[node name="tileBrickA_large9" parent="Environment/FloorPieces" index="8" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 3.76034 )
 
-[node name="tileBrickA_large10" parent="Environment/FloorPieces" index="8" instance=ExtResource( 5 )]
+[node name="tileBrickA_large10" parent="Environment/FloorPieces" index="9" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 9.57841 )
 
-[node name="tileBrickA_large11" parent="Environment/FloorPieces" index="9" instance=ExtResource( 5 )]
+[node name="tileBrickA_large11" parent="Environment/FloorPieces" index="10" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 9.57841 )
 
-[node name="tileBrickA_large12" parent="Environment/FloorPieces" index="10" instance=ExtResource( 5 )]
+[node name="tileBrickA_large12" parent="Environment/FloorPieces" index="11" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 9.57841 )
 
-[node name="tileBrickA_large13" parent="Environment/FloorPieces" index="11" instance=ExtResource( 5 )]
+[node name="tileBrickA_large13" parent="Environment/FloorPieces" index="12" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56556, -4.78325, 15.5143 )
 
-[node name="tileBrickA_large14" parent="Environment/FloorPieces" index="12" instance=ExtResource( 5 )]
+[node name="tileBrickA_large14" parent="Environment/FloorPieces" index="13" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299738, -4.78325, 15.5143 )
 
-[node name="tileBrickA_large15" parent="Environment/FloorPieces" index="13" instance=ExtResource( 5 )]
+[node name="tileBrickA_large15" parent="Environment/FloorPieces" index="14" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14079, -4.78325, 15.5143 )
 
 [node name="WallPieces" type="Spatial" parent="Environment" index="3"]
@@ -287,17 +282,17 @@ transform = Transform( -0.871008, 0, 0.491268, 0, 1, 0, -0.491268, 0, -0.871008,
 [node name="door" parent="Environment" index="6" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772459, -3.40948, -10.0196 )
 
-[node name="NextRoomSpawn" parent="." index="5"]
+[node name="NextRoomSpawn" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0324795, -4.86848, -7.34078 )
 
-[node name="PrevRoomSpawn" parent="." index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328252, 1.33654, 0.521262 )
+[node name="PrevRoomSpawn" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328252, 0.911015, 0.521262 )
 
-[node name="HideTile" parent="." index="7" instance=ExtResource( 2 )]
+[node name="HideTile" parent="." index="8" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -0.635171, 0.189404, 0.561127 )
 visible = false
 
-[node name="Cieling" type="Spatial" parent="." index="8"]
+[node name="Cieling" type="Spatial" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60503, -0.920636, -0.817843 )
 
 [node name="DungeonTile3" parent="Cieling" index="0" instance=ExtResource( 2 )]
@@ -324,35 +319,38 @@ transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.110
 [node name="DungeonTile11" parent="Cieling" index="7" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, 1.37897 )
 
-[node name="DungeonTile12" parent="Cieling" index="8" instance=ExtResource( 2 )]
+[node name="DungeonTile23" parent="Cieling" index="8" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 0.00689977, 1.11004, 1.37897 )
+
+[node name="DungeonTile12" parent="Cieling" index="9" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 0, 1.11004, -3.62103 )
 
-[node name="DungeonTile13" parent="Cieling" index="9" instance=ExtResource( 2 )]
+[node name="DungeonTile13" parent="Cieling" index="10" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.11004, -3.62103 )
 
-[node name="DungeonTile14" parent="Cieling" index="10" instance=ExtResource( 2 )]
+[node name="DungeonTile14" parent="Cieling" index="11" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, -3.62103 )
 
-[node name="DungeonTile15" parent="Cieling" index="11" instance=ExtResource( 2 )]
+[node name="DungeonTile15" parent="Cieling" index="12" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, 11.379 )
 
-[node name="DungeonTile16" parent="Cieling" index="12" instance=ExtResource( 2 )]
+[node name="DungeonTile16" parent="Cieling" index="13" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, 6.37897 )
 
-[node name="DungeonTile17" parent="Cieling" index="13" instance=ExtResource( 2 )]
+[node name="DungeonTile17" parent="Cieling" index="14" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, 1.37897 )
 
-[node name="DungeonTile18" parent="Cieling" index="14" instance=ExtResource( 2 )]
+[node name="DungeonTile18" parent="Cieling" index="15" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, -3.62103 )
 
-[node name="DungeonTile19" parent="Cieling" index="15" instance=ExtResource( 2 )]
+[node name="DungeonTile19" parent="Cieling" index="16" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 0, 1.11004, -8.62103 )
 
-[node name="DungeonTile20" parent="Cieling" index="16" instance=ExtResource( 2 )]
+[node name="DungeonTile20" parent="Cieling" index="17" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.11004, -8.62103 )
 
-[node name="DungeonTile21" parent="Cieling" index="17" instance=ExtResource( 2 )]
+[node name="DungeonTile21" parent="Cieling" index="18" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, -8.62103 )
 
-[node name="DungeonTile22" parent="Cieling" index="18" instance=ExtResource( 2 )]
+[node name="DungeonTile22" parent="Cieling" index="19" instance=ExtResource( 2 )]
 transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, -8.62103 )
