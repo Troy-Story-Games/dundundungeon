@@ -374,26 +374,31 @@ surfaces/0 = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0194654, 0.00729951, 0 )
 mesh = SubResource( 1 )
 
-[node name="character_scrapbot_armLeft" type="MeshInstance" parent="character_scrapbot_body"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184579, 0.626257, 0 )
+[node name="character_scrapbot_armLeft" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.204044, 0.633556, 0 )
 mesh = SubResource( 2 )
+skeleton = NodePath("../character_scrapbot_body")
 
-[node name="character_scrapbot_armRight" type="MeshInstance" parent="character_scrapbot_body"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22351, 0.626257, 0 )
+[node name="character_scrapbot_armRight" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204045, 0.633556, 0 )
 mesh = SubResource( 3 )
+skeleton = NodePath("../character_scrapbot_body")
 
-[node name="character_scrapbot_battery" type="MeshInstance" parent="character_scrapbot_body"]
+[node name="character_scrapbot_battery" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0194654, 0.00729951, 0 )
 mesh = SubResource( 4 )
+skeleton = NodePath("../character_scrapbot_body")
 
-[node name="character_scrapbot_head" type="MeshInstance" parent="character_scrapbot_body"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.704538, 0 )
+[node name="character_scrapbot_head" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0194654, 0.711837, 0 )
 mesh = SubResource( 5 )
+skeleton = NodePath("../character_scrapbot_body")
 
-[node name="character_scrapbot_mouth" type="MeshInstance" parent="character_scrapbot_body/character_scrapbot_head"]
+[node name="character_scrapbot_mouth" type="MeshInstance" parent="character_scrapbot_head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194654, 0.246841, 0.0808422 )
 mesh = SubResource( 6 )
 
-[node name="strawhat" type="MeshInstance" parent="character_scrapbot_body/character_scrapbot_head"]
+[node name="strawhat" type="MeshInstance" parent="character_scrapbot_head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194654, 0.655609, 0 )
 mesh = SubResource( 7 )
-skeleton = NodePath("../../..")
+skeleton = NodePath("../..")

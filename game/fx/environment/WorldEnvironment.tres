@@ -5,4 +5,7 @@
 [resource]
 background_mode = 2
 background_sky = ExtResource( 1 )
+fog_enabled = true
+fog_depth_begin = 345.3
+fog_depth_end = 1345.5
 glow_enabled = true

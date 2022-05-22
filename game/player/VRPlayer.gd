@@ -1,11 +1,33 @@
 extends Spatial
 class_name VRPlayer
 
-var playerStats = null
+export(float) var GRAVITY = 9.8
+export(float) var MAX_FALL_SPEED = 100.0
+
+var playerStats: PlayerStats = null
+var fall_speed: float = 0.0
+
+onready var arvrOrigin = $FPController
+onready var rayCast: RayCast = $FPController/RayCast
 
 
 func _ready():
     playerStats = Utils.get_player_stats()
+
+
+func _physics_process(delta):
+    rayCast.force_raycast_update()
+    if rayCast.is_colliding():
+        if fall_speed > 0.0:
+            print("NEVER STOP!")
+            fall_speed = 0.0
+            return
+        else:
+            fall_speed = 0.0
+            return
+    print("FALLING!!!")
+    fall_speed = clamp(fall_speed + GRAVITY, 0, MAX_FALL_SPEED)
+    arvrOrigin.global_transform.origin.y -= fall_speed * delta
 
 
 func _on_SleepArea_body_entered(body):
@@ -21,4 +43,4 @@ func _on_SleepArea_body_exited(body):
 
 func _on_Hurtbox_take_damage(damage, _area):
     playerStats.health -= damage
-    # TODO: Play sound and effect
+    SoundFx.play_3d("PlayerTakeDamage2", global_transform.origin)

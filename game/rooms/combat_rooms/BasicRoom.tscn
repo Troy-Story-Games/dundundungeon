@@ -1,25 +1,16 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://game/rooms/GameRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/environment/SpookyKit/tileBrickB_large.gltf.glb" type="PackedScene" id=2]
 [ext_resource path="res://game/environment/walls/WallCorner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game/environment/walls/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/environment/floor/TileBrickALarge.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/objects/weapons/SpellBook.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/objects/torch/TorchWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://game/environment/door/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://game/objects/target/TargetStand.tscn" type="PackedScene" id=9]
 [ext_resource path="res://game/characters/enemies/skeleton_warrior/SkeletonWarrior.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/objects/tables/TableLarge.tscn" type="PackedScene" id=11]
-[ext_resource path="res://game/objects/weapons/Crossbow.tscn" type="PackedScene" id=12]
-[ext_resource path="res://game/objects/weapons/StaffRare.tscn" type="PackedScene" id=13]
-[ext_resource path="res://game/objects/weapons/Arrow.tscn" type="PackedScene" id=14]
-[ext_resource path="res://game/objects/weapons/Shield.tscn" type="PackedScene" id=15]
 [ext_resource path="res://game/objects/crate/Crate.tscn" type="PackedScene" id=16]
-[ext_resource path="res://game/objects/weapons/Axe.tscn" type="PackedScene" id=17]
-[ext_resource path="res://game/objects/weapons/SwordRare.tscn" type="PackedScene" id=18]
-[ext_resource path="res://game/objects/weapons/Hammer.tscn" type="PackedScene" id=19]
 [ext_resource path="res://game/characters/enemies/EnemySpawner.tscn" type="PackedScene" id=22]
-[ext_resource path="res://game/objects/security_camera/SecurityCamera.tscn" type="PackedScene" id=23]
 [ext_resource path="res://game/objects/target/HangingTarget.tscn" type="PackedScene" id=24]
 
 [sub_resource type="GIProbeData" id=1]
@@ -38,29 +29,6 @@ extents = Vector3( 9.11927, 0.554472, 15.4993 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.678689, 2.07103, 11.8018 )
-
-[sub_resource type="ViewportTexture" id=20]
-flags = 64
-viewport_path = NodePath("Mirror/Viewport")
-
-[sub_resource type="SpatialMaterial" id=21]
-resource_local_to_scene = true
-flags_unshaded = true
-albedo_texture = SubResource( 20 )
-
-[sub_resource type="PlaneMesh" id=8]
-resource_local_to_scene = true
-material = SubResource( 21 )
-size = Vector2( 1.5, 1.5 )
-
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0, 0, 0, 1 )
-metallic = 1.0
-roughness = 0.0
-
-[sub_resource type="CubeMesh" id=7]
-material = SubResource( 6 )
-size = Vector3( 1.8, 1.8, 0.01 )
 
 [node name="BasicRoom" instance=ExtResource( 1 )]
 
@@ -311,70 +279,80 @@ transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107,
 transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -6.1155, -3.79298, 11.1747 )
 
 [node name="HangingTarget" parent="Environment/Targets" index="3" instance=ExtResource( 24 )]
-transform = Transform( -0.871008, 0, -0.491269, 0, 1, 0, 0.491269, 0, -0.871008, 6.74896, -0.581487, 8.1811 )
+transform = Transform( -0.871008, 0, -0.491269, 0, 1, 0, 0.491269, 0, -0.871008, 6.74896, -0.93878, 8.1811 )
 
 [node name="HangingTarget2" parent="Environment/Targets" index="4" instance=ExtResource( 24 )]
-transform = Transform( -0.871008, 0, 0.491268, 0, 1, 0, -0.491268, 0, -0.871008, -6.7965, -0.581487, 8.1811 )
+transform = Transform( -0.871008, 0, 0.491268, 0, 1, 0, -0.491268, 0, -0.871008, -6.7965, -0.947529, 8.1811 )
 
 [node name="door" parent="Environment" index="6" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.772459, -3.40948, -10.0196 )
 
-[node name="Weapons" type="Spatial" parent="." index="5"]
-
-[node name="tableLarge" parent="Weapons" index="0" instance=ExtResource( 11 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.34032, -3.85057, 0 )
-
-[node name="hammer" parent="Weapons" index="1" instance=ExtResource( 19 )]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 6.95527, -2.91392, 1.1923 )
-
-[node name="axe" parent="Weapons" index="2" instance=ExtResource( 17 )]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 6.93682, -2.92325, -1.09918 )
-
-[node name="sword_rare" parent="Weapons" index="3" instance=ExtResource( 18 )]
-transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 6.89626, -3.05431, 0.606287 )
-
-[node name="arrow" parent="Weapons" index="4" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06052, -2.94284, -1.0312 )
-
-[node name="crossbow" parent="Weapons" index="5" instance=ExtResource( 12 )]
-transform = Transform( 0.743005, 0, -0.669286, 0, 1, 0, 0.669286, 0, 0.743005, 7.21931, -3.51407, 1.81933 )
-
-[node name="staff" parent="Weapons" index="6" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.19542, -3.08375, -1.64758 )
-
-[node name="spellBook" parent="Weapons" index="7" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.77894, -2.96648, -0.393639 )
-
-[node name="shield" parent="Weapons" index="8" instance=ExtResource( 15 )]
-transform = Transform( 4.37114e-08, 1, 4.37114e-08, -8.74228e-08, -4.37114e-08, 1, 1, -4.37114e-08, 8.74228e-08, 7.7981, -2.86753, 0.390311 )
-
-[node name="Mirror" type="MeshInstance" parent="." index="6"]
-transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 8.44018, -1.9472, 0.0661032 )
-mesh = SubResource( 8 )
-skeleton = NodePath("")
-
-[node name="Viewport" type="Viewport" parent="Mirror" index="0"]
-size = Vector2( 400, 400 )
-hdr = false
-keep_3d_linear = true
-usage = 3
-render_target_v_flip = true
-render_target_update_mode = 3
-
-[node name="Camera" type="Camera" parent="Mirror/Viewport" index="0"]
-transform = Transform( -3.91609e-08, -0.44426, 0.895898, -1.94192e-08, 0.895898, 0.44426, -1, 0, -4.37114e-08, 8.03304, -0.90786, -0.0178395 )
-current = true
-fov = 50.0
-
-[node name="Border" type="MeshInstance" parent="Mirror" index="1"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.0220327, 0 )
-mesh = SubResource( 7 )
-
-[node name="SecurityCamera" parent="Mirror" index="2" instance=ExtResource( 23 )]
-transform = Transform( -1, 2.46761e-08, -1.15467e-07, 1.1263e-07, 0.492879, -0.870098, 3.54407e-08, -0.870098, -0.492879, -0.0944954, 0.198406, -1.15939 )
-
-[node name="NextRoomSpawn" parent="." index="7"]
+[node name="NextRoomSpawn" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0324795, -4.86848, -7.34078 )
 
-[node name="PrevRoomSpawn" parent="." index="8"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0324795, 0.831996, -7.34078 )
+[node name="PrevRoomSpawn" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328252, 1.33654, 0.521262 )
+
+[node name="HideTile" parent="." index="7" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -0.635171, 0.189404, 0.561127 )
+visible = false
+
+[node name="Cieling" type="Spatial" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60503, -0.920636, -0.817843 )
+
+[node name="DungeonTile3" parent="Cieling" index="0" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 0, 1.11004, 11.379 )
+
+[node name="DungeonTile4" parent="Cieling" index="1" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.11004, 11.379 )
+
+[node name="DungeonTile5" parent="Cieling" index="2" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, 11.379 )
+
+[node name="DungeonTile6" parent="Cieling" index="3" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 0, 1.11004, 6.37897 )
+
+[node name="DungeonTile7" parent="Cieling" index="4" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.11004, 6.37897 )
+
+[node name="DungeonTile8" parent="Cieling" index="5" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, 6.37897 )
+
+[node name="DungeonTile10" parent="Cieling" index="6" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.11004, 1.37897 )
+
+[node name="DungeonTile11" parent="Cieling" index="7" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, 1.37897 )
+
+[node name="DungeonTile12" parent="Cieling" index="8" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 0, 1.11004, -3.62103 )
+
+[node name="DungeonTile13" parent="Cieling" index="9" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.11004, -3.62103 )
+
+[node name="DungeonTile14" parent="Cieling" index="10" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, -3.62103 )
+
+[node name="DungeonTile15" parent="Cieling" index="11" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, 11.379 )
+
+[node name="DungeonTile16" parent="Cieling" index="12" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, 6.37897 )
+
+[node name="DungeonTile17" parent="Cieling" index="13" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, 1.37897 )
+
+[node name="DungeonTile18" parent="Cieling" index="14" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, -3.62103 )
+
+[node name="DungeonTile19" parent="Cieling" index="15" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 0, 1.11004, -8.62103 )
+
+[node name="DungeonTile20" parent="Cieling" index="16" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, -5, 1.11004, -8.62103 )
+
+[node name="DungeonTile21" parent="Cieling" index="17" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 5, 1.11004, -8.62103 )
+
+[node name="DungeonTile22" parent="Cieling" index="18" instance=ExtResource( 2 )]
+transform = Transform( 0.840104, 0, 0, 0, 0.840104, 0, 0, 0, 0.840104, 10, 1.11004, -8.62103 )
